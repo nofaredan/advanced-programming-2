@@ -1,0 +1,26 @@
+c:/users/pc/documents/visual studio 2015/Projects/SearchAlgorithmsLib/SearchAlgorithmsLib/obj/Debug/SearchAlgorithmsLib.csprojResolveAssemblyReference.cache
+c:/users/pc/documents/visual studio 2015/Projects/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/SearchAlgorithmsLib.dll
+c:/users/pc/documents/visual studio 2015/Projects/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/SearchAlgorithmsLib.pdb
+c:/users/pc/documents/visual studio 2015/Projects/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/ConcurrentPriorityQueue.dll
+c:/users/pc/documents/visual studio 2015/Projects/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/Newtonsoft.Json.dll
+c:/users/pc/documents/visual studio 2015/Projects/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/Priority Queue.dll
+c:/users/pc/documents/visual studio 2015/Projects/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/Simple.dll
+c:/users/pc/documents/visual studio 2015/Projects/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/ConcurrentPriorityQueue.pdb
+c:/users/pc/documents/visual studio 2015/Projects/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/Newtonsoft.Json.xml
+c:/users/pc/documents/visual studio 2015/Projects/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/Priority Queue.pdb
+c:/users/pc/documents/visual studio 2015/Projects/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/Priority Queue.xml
+c:/users/pc/documents/visual studio 2015/Projects/SearchAlgorithmsLib/SearchAlgorithmsLib/obj/Debug/SearchAlgorithmsLib.dll
+c:/users/pc/documents/visual studio 2015/Projects/SearchAlgorithmsLib/SearchAlgorithmsLib/obj/Debug/SearchAlgorithmsLib.pdb
+/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/SearchAlgorithmsLib.dll
+/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/SearchAlgorithmsLib.dll.mdb
+/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/ConcurrentPriorityQueue.dll
+/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/Newtonsoft.Json.dll
+/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/Priority Queue.dll
+/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/Simple.dll
+/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/ConcurrentPriorityQueue.pdb
+/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/Newtonsoft.Json.xml
+/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/Priority Queue.pdb
+/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/Priority Queue.xml
+/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/obj/Debug/SearchAlgorithmsLib.csprojResolveAssemblyReference.cache
+/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/obj/Debug/SearchAlgorithmsLib.dll
+/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/obj/Debug/SearchAlgorithmsLib.dll.mdb

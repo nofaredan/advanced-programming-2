@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{81BB324E-AB31-49AC-9F44-166A85421C36}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MazeProject/Program.cs">
+    <Files>
+      <File FileName="MazeProject/Program.cs" Line="35" Column="1" />
+      <File FileName="SearchAlgorithmsLib/Solution.cs" Line="15" Column="1" />
+      <File FileName="MazeLib/Position.cs" Line="11" Column="44" />
+      <File FileName="MazeProject/MazeAdapter.cs" Line="26" Column="4" />
+      <File FileName="SearchAlgorithmsLib/State.cs" Line="45" Column="1" />
+      <File FileName="SearchAlgorithmsLib/DFS.cs" Line="19" Column="37" />
+      <File FileName="SearchAlgorithmsLib/BFS.cs" Line="33" Column="29" />
+      <File FileName="MazeLib/Maze.cs" Line="75" Column="23" />
+      <File FileName="SearchAlgorithmsLib/Searcher.cs" Line="93" Column="29" />
+      <File FileName="SearchAlgorithmsLib/CompareStates.cs" Line="14" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint enabled="false" file="/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/BFS.cs" relfile="SearchAlgorithmsLib/BFS.cs" line="29" column="1" />
+      <Breakpoint enabled="false" file="/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/Searcher.cs" relfile="SearchAlgorithmsLib/Searcher.cs" line="46" column="1" />
+      <Breakpoint enabled="false" file="/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/CompareStates.cs" relfile="SearchAlgorithmsLib/CompareStates.cs" line="13" column="1" />
+      <Breakpoint enabled="false" file="/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/State.cs" relfile="SearchAlgorithmsLib/State.cs" line="54" column="1" />
+      <Breakpoint enabled="false" file="/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/State.cs" relfile="SearchAlgorithmsLib/State.cs" line="59" column="1" />
+      <Breakpoint file="/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/MazeLib/Position.cs" relfile="MazeLib/Position.cs" line="22" column="1" />
+      <Breakpoint file="/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/DFS.cs" relfile="SearchAlgorithmsLib/DFS.cs" line="44" column="1" />
+      <Breakpoint file="/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/BFS.cs" relfile="SearchAlgorithmsLib/BFS.cs" line="53" column="1" />
+      <Breakpoint file="/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/MazeProject/Program.cs" relfile="MazeProject/Program.cs" line="24" column="1" />
+      <Breakpoint file="/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/BFS.cs" relfile="SearchAlgorithmsLib/BFS.cs" line="23" column="18" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.MazeProject PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Tester PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
