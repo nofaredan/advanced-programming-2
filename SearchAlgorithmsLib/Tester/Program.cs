@@ -8,6 +8,7 @@ class Program
 {
     static void Main(string[] args)
     {
+
         var temp = new CompareStates<int>();
         ISearcher<int> ser = new BFS<int>(temp);
 
