@@ -1,16 +1,17 @@
 ﻿<Properties StartupConfiguration="{81BB324E-AB31-49AC-9F44-166A85421C36}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MazeProject/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MazeProject/App.config">
     <Files>
-      <File FileName="MazeProject/Program.cs" Line="35" Column="1" />
+      <File FileName="MazeProject/Program.cs" Line="12" Column="15" />
       <File FileName="SearchAlgorithmsLib/Solution.cs" Line="15" Column="1" />
       <File FileName="MazeLib/Position.cs" Line="11" Column="44" />
       <File FileName="MazeProject/MazeAdapter.cs" Line="26" Column="4" />
-      <File FileName="SearchAlgorithmsLib/State.cs" Line="45" Column="1" />
+      <File FileName="SearchAlgorithmsLib/State.cs" Line="65" Column="4" />
       <File FileName="SearchAlgorithmsLib/DFS.cs" Line="19" Column="37" />
-      <File FileName="SearchAlgorithmsLib/BFS.cs" Line="33" Column="29" />
+      <File FileName="SearchAlgorithmsLib/BFS.cs" Line="23" Column="1" />
       <File FileName="MazeLib/Maze.cs" Line="75" Column="23" />
-      <File FileName="SearchAlgorithmsLib/Searcher.cs" Line="93" Column="29" />
+      <File FileName="SearchAlgorithmsLib/Searcher.cs" Line="68" Column="10" />
       <File FileName="SearchAlgorithmsLib/CompareStates.cs" Line="14" Column="1" />
+      <File FileName="MazeProject/App.config" Line="13" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

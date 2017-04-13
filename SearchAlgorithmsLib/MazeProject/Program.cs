@@ -9,12 +9,12 @@ using SearchAlgorithmsLib;
 
 namespace MazeProject
 {
-    class Program
+	class Program
     {
         
         static void Main(string[] args)
         {
-            CompareSolvers(400, 400);
+            CompareSolvers(320, 320);
             Console.ReadLine();
         }
 
