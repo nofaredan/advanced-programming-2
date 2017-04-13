@@ -52,12 +52,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller.cs" />
     <Compile Include="MazeAdapter.cs" />
-    <Compile Include="Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

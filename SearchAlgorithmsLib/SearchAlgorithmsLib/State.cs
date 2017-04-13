@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SearchAlgorithmsLib
 {
-	public class State<T> //: IEqualityComparer<T>
+	public class State<T>
     {
         private T state;
         private double cost;

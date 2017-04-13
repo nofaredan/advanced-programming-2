@@ -53,13 +53,13 @@ namespace MazeProject
             Solution<Position> dfsSol =  dfs.Search(mazeSearchable);
 
 			// print solutions
-			printSol(bfsSol);
+			//printSol(bfsSol);
 
-			Console.WriteLine(bfsSol.Count);
+			Console.WriteLine("BFS"+bfsSol.Count);
 
-			printSol(dfsSol);
+			//printSol(dfsSol);
 
-			Console.WriteLine(dfsSol.Count);
+			Console.WriteLine("DFS"+dfsSol.Count);
         }
 
 		static void printSol(Solution<Position> s)
