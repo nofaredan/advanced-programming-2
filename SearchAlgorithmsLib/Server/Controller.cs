@@ -22,12 +22,18 @@ namespace Server
             commands.Add("generate", new GenerateMazeCommand(model));
             // more commands...
         }
-        public string ExecuteCommand(string commandLine, TcpClient client)
+		public ConnectionInfo ExecuteCommand(string commandLine, TcpClient client)
         {
             string[] arr = commandLine.Split(' ');
             string commandKey = arr[0];
-            if (!commands.ContainsKey(commandKey))
-                return "Command not found";
+			if (!commands.ContainsKey(commandKey))
+			{
+				ConnectionInfo connectionInfo = new ConnectionInfo();
+				connectionInfo.Answer = "Command not found";
+				connectionInfo.CloseConnection = false;
+				return connectionInfo;
+			}
+				
             string[] args = arr.Skip(1).ToArray();
             ICommand command = commands[commandKey];
             return command.Execute(args, client);
