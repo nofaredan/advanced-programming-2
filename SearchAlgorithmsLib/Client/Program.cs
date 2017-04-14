@@ -11,27 +11,47 @@ namespace Client
 {
     class Program
     {
+		private static Dictionary<string, ICommand> commands;
+
         static void Main(string[] args)
         {
+			commands = new Dictionary<string, ICommand>();
+			commands.Add("generate", new CloseConnection());
+
+			bool connectionAlive = true;
             TcpClient client = new TcpClient();
-            IPEndPoint ep = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 6565);
+            IPEndPoint ep = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 5555);
+
             client.Connect(ep);
-            while (true) {
+
                 using (NetworkStream stream = client.GetStream())
-                using (BinaryReader reader = new BinaryReader(stream))
-                using (BinaryWriter writer = new BinaryWriter(stream))
+				using (StreamReader reader = new StreamReader(stream))
+				using (StreamWriter writer = new StreamWriter(stream))
                 {
-                    // Send data to server
-                   Console.WriteLine("1");
-                    string message = Console.ReadLine();
-                    Console.WriteLine("2");
-                    writer.Write(message);
-                    writer.Flush();
-                    Console.WriteLine("3");
-                    // Get result from server
-                    string result = reader.ReadString();
-                    Console.WriteLine("Result = {0}", result);
-                }
+					while (connectionAlive)
+					{
+						// Send data to server
+						string message = Console.ReadLine();
+
+						string[] arr = message.Split(' ');
+						string commandKey = arr[0];
+						
+						// send message
+						writer.WriteLine(message);
+	                    writer.Flush();
+	                    // Get result from server
+						string result = reader.ReadToEnd();
+	                    Console.WriteLine("Result = {0}", result);
+
+
+						// check whats next (close connection or continue)
+						if (commands.ContainsKey(commandKey))
+						{
+							string[] arguments = arr.Skip(1).ToArray();
+							ICommand command = commands[commandKey];
+							connectionAlive = command.Execute(arguments, client);
+						}
+                	}
                }
             client.Close();
         }
