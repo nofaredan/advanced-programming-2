@@ -14,7 +14,7 @@ namespace Server
         Controller controller;
         public View(Controller newController)
         {
-            server = new Server(6565, this);
+            server = new Server(5555, this);
             server.Start();
             controller = newController;
         }
@@ -31,11 +31,17 @@ namespace Server
                     string commandLine = reader.ReadLine();
                   //  Console.WriteLine("2");
                       Console.WriteLine("Got command: {0}", commandLine);
-                    string result = controller.ExecuteCommand(commandLine, client);
-                    Console.WriteLine("3");
-                    writer.Write(result);
+					ConnectionInfo result = controller.ExecuteCommand(commandLine, client);
+					writer.WriteLine(result.Answer);
+					writer.Flush();
+
+					if (result.CloseConnection) {
+						stream.Flush();
+						stream.Close();
+						client.Close();
+					}
                 }
-                client.Close();
+              //  client.Close();
             }).Start();
         }
     }
