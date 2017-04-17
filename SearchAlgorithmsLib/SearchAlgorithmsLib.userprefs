@@ -1,4 +1,4 @@
-﻿<Properties StartupConfiguration="{906CE9F1-14DF-4D29-8F36-3CF76129CDDB}|Default">
+﻿<Properties StartupConfiguration="{9D639B3C-B1F8-4B4C-BD68-0E534C38BF95}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Server/IModel.cs">
     <Files>
       <File FileName="Server/View.cs" Line="53" Column="2" />
@@ -37,6 +37,7 @@
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Server PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint enabled="false" file="/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/BFS.cs" relfile="SearchAlgorithmsLib/BFS.cs" line="29" column="1" />
