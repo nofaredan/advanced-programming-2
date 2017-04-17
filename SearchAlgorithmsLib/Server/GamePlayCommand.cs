@@ -33,7 +33,7 @@ namespace Server
                 }
                 index++;
             }
-            game.WriteMessage(clientFound, json.ToString());
+			game.WriteMessage(new System.IO.StreamWriter(clientFound.GetStream()), json.ToString());
             return null;
         }
     }

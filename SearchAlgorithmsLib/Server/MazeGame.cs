@@ -52,13 +52,13 @@ namespace Server
                 foreach (TcpClient currentPlayer in players)
                 {
                //     WriteMessage(player, maze.ToJSON());
-                    WriteMessage(currentPlayer,maze.ToJSON());
+					WriteMessage(new StreamWriter(currentPlayer.GetStream()),maze.ToJSON());
                 }
             }
-            using (NetworkStream stream = player.GetStream())
-            using (StreamReader reader = new StreamReader(stream))
-            using (StreamWriter writer = new StreamWriter(stream))
-            {
+		NetworkStream stream = player.GetStream();
+		StreamReader reader = new StreamReader(stream);
+		StreamWriter writer = new StreamWriter(stream);
+            
                 while (!isEnd)
                 {
                     while (!isStart)
@@ -75,21 +75,15 @@ namespace Server
                     ConnectionInfo result = gameCommands[commandKey].Execute(args,players, player);
 
                 }
-            }
+            
                
         }
 
-        public void WriteMessage(TcpClient client, string message)
+        public void WriteMessage(StreamWriter writer, string message)
         {
-            using (NetworkStream stream = client.GetStream())
-            using (StreamWriter writer = new StreamWriter(stream))
-            {
-                Console.WriteLine("client 1 "+client.Connected);
                 // write maze to both players:
                 writer.WriteLine(message);
                 writer.Flush();
-                Console.WriteLine("client 2 " + client.Connected);
-            }
         }
     }
 }

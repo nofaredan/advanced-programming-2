@@ -17,18 +17,18 @@ namespace Client
         {
             gameAlive = true;
             new Task(() => {
-                while (gameAlive)
-                {
-                    // wait for join
-                    using (NetworkStream stream = server.GetStream())
-                    using (StreamReader reader = new StreamReader(stream))
-                    {
+		// wait for join
+		using (NetworkStream stream = server.GetStream())
+		using (StreamReader reader = new StreamReader(stream))
+		{
+			while (gameAlive)
+                	{
+                    
                         bool answer = SendAndRecieve.RecieveInfo(reader);   
                         
                         //string message =               
-                    }
+                    	}
                 }
-
             }).Start();
         }
     }
