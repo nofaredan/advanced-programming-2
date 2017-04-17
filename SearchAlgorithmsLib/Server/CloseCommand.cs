@@ -18,6 +18,7 @@ namespace Server
         {
             string name = args[0];
 
+            // here we need to dispose netwrok connection
             throw new NotImplementedException();
         }
     }

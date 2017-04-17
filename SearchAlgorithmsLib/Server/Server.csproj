@@ -51,6 +51,7 @@
     <Compile Include="ConnectionInfo.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="GameCloseCommand.cs" />
+    <Compile Include="GameInfo.cs" />
     <Compile Include="GamePlayCommand.cs" />
     <Compile Include="GenerateMazeCommand.cs" />
     <Compile Include="ICommand.cs" />
