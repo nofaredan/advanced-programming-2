@@ -24,38 +24,51 @@ namespace Client
 
         public void Connect()
         {
-            bool connectionAlive = true;
-            TcpClient client = new TcpClient();
-            IPEndPoint ep = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 5555);
-
-            client.Connect(ep);
-      
-            using (NetworkStream stream = client.GetStream())
-            using (StreamReader reader = new StreamReader(stream))
-            using (StreamWriter writer = new StreamWriter(stream))
+            while (true)
             {
-                while (connectionAlive)
+                // Send data to server
+                string message = Console.ReadLine();
+
+                new Task(() =>
                 {
-                    // Send data to server
-                    string message = Console.ReadLine();
 
-                    string[] arr = message.Split(' ');
-                    string commandKey = arr[0];
+                    bool connectionAlive = true;
+                    TcpClient client = new TcpClient();
+                    IPEndPoint ep = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 5555);
 
-                    SendAndRecieve.Send(writer, message);
+                    client.Connect(ep);
 
-                    bool isValid = SendAndRecieve.RecieveInfo(reader);
-
-                    // check whats next (close connection or continue)
-                    if (commands.ContainsKey(commandKey) && isValid)
+                    using (NetworkStream stream = client.GetStream())
+                    using (StreamReader reader = new StreamReader(stream))
+                    using (StreamWriter writer = new StreamWriter(stream))
                     {
-                        string[] arguments = arr.Skip(1).ToArray();
-                        ICommand command = commands[commandKey];
-                        connectionAlive = command.Execute(arguments, client);
+                        while (connectionAlive)
+                        {
+                            string[] arr = message.Split(' ');
+                            string commandKey = arr[0];
+
+                            SendAndRecieve.Send(writer, message);
+
+                            bool isValid = SendAndRecieve.RecieveInfo(reader);
+
+                            // check whats next (close connection or continue)
+                            if (commands.ContainsKey(commandKey) && isValid)
+                            {
+                                string[] arguments = arr.Skip(1).ToArray();
+                                ICommand command = commands[commandKey];
+                                connectionAlive = command.Execute(arguments, client);
+
+                                if (connectionAlive)
+                                {
+                                    // NEED other input
+                                    message = Console.ReadLine();
+                                }
+                            }
+                        }
                     }
-                }
+                    client.Close();
+                }).Start();
             }
-            client.Close();
         }
       
     }

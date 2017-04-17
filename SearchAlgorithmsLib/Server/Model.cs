@@ -90,7 +90,7 @@ namespace Server
             MazeGame game = new MazeGame(maze);
             games[name] =  game;
 
-            game.addPlayer(client);
+            game.addPlayer(client, name);
 
             return false;
         }
@@ -107,12 +107,10 @@ namespace Server
                 return null;
             }
             MazeGame game = games[name];
-            // the game started:
-            game.isStart = true;
 
-            game.addPlayer(client);
+            game.addPlayer(client, name);
 
-            return games[name].maze;
+            return MazeGame.gamesInfo[name].maze;
         }
 
 

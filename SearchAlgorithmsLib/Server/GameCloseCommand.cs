@@ -15,7 +15,7 @@ namespace Server
             game = myGame;
         }
 
-        public ConnectionInfo Execute(string[] args, List<TcpClient> clients, TcpClient player = null)
+        public ConnectionInfo Execute(string[] args, string name, TcpClient currentPlayer = null)
         {
             throw new NotImplementedException();
         }
