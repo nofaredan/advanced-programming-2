@@ -9,6 +9,6 @@ namespace Server
 {
     interface IGameCommand
     {
-        ConnectionInfo Execute(string[] args,List<TcpClient> clients, TcpClient currentPlayer = null);
+        ConnectionInfo Execute(string[] args, string name, TcpClient currentPlayer = null);
     }
 }
