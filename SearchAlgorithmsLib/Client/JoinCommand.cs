@@ -11,7 +11,8 @@ namespace Client
     {
         public bool Execute(string[] args, TcpClient client = null)
         {
-            new Task(() => { }).Start();
+            Game.server = client;
+            Game.StartGame();
             // connection alive
             return true;
         }

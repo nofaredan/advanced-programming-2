@@ -41,8 +41,6 @@ namespace Server
             {
                 foreach (TcpClient currentPlayer in currenrGameInfo.players)
                 {
-               //     WriteMessage(player, maze.ToJSON());
-
                     WriteMessage(new StreamWriter(currentPlayer.GetStream()), currenrGameInfo.maze.ToJSON());
                 }
 
@@ -75,8 +73,10 @@ namespace Server
 
         public void WriteMessage(StreamWriter writer, string message)
         {
-                // write maze to both players:
-                writer.WriteLine(message);
+            // write maze to both players:
+            writer.WriteLine(message);
+            writer.Flush();
+            writer.WriteLine("end");
             writer.Flush();
         }
     }
