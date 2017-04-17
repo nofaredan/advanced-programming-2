@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{802F5E42-41B3-440E-A51D-F4F5906EAA97}</ProjectGuid>
+    <ProjectGuid>{B05AB6F8-6202-4ED1-B9A6-61DD248988B6}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Client</RootNamespace>
@@ -43,10 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CloseConnection.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="ICommand.cs" />
+    <Compile Include="JoinCommand.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ICommand.cs" />
-    <Compile Include="CloseConnection.cs" />
+    <Compile Include="SendAndRecieve.cs" />
+    <Compile Include="StartCommand.cs" />
+    <Compile Include="View.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
