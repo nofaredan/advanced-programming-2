@@ -9,81 +9,75 @@ using MazeLib;
 
 namespace Server
 {
-    public class MazeGame
-    {
-        private Dictionary<string, IGameCommand> gameCommands;
-        public bool isStart { get; set; }
-        public bool isEnd { get; set; }
-        public Maze maze { get; set; }
-        List<TcpClient> players;
+	public class MazeGame
+	{
+		public static Dictionary<string, GameInfo> gamesInfo { get; set; }
+		private static Dictionary<string, IGameCommand> gameCommands;
 
-        public MazeGame(Maze myMaze)
-        {
-            maze = myMaze;
-            isStart = false;
-            isEnd = false;
-            players = new List<TcpClient>();
-            gameCommands = new Dictionary<string, IGameCommand>();
-            gameCommands.Add("play", new GamePlayCommand(this));
-            gameCommands.Add("close", new GameCloseCommand(this));
-        }
 
-        public List<TcpClient> Players
-        {
-            get
-            {
-                return players;
-            }
+		public MazeGame(Maze myMaze)
+		{
+			gamesInfo = new Dictionary<string, GameInfo>();
+			GameInfo gameInfo = new GameInfo();
+			gameInfo.maze = myMaze;
+			gameInfo.isStart = false;
+			gameInfo.isEnd = false;
+			gameInfo.players = new List<TcpClient>();
 
-            set
-            {
-                players = value;
-            }
-        }
+			gamesInfo.Add(myMaze.Name, gameInfo);
 
-        public void addPlayer(TcpClient player)
-        {
-            System.Net.ServicePointManager.Expect100Continue = false;
-            players.Add(player);
-            
-            // if its the second player
-            if (players.Count == 2)
-            {
-                foreach (TcpClient currentPlayer in players)
-                {
-               //     WriteMessage(player, maze.ToJSON());
-					WriteMessage(new StreamWriter(currentPlayer.GetStream()),maze.ToJSON());
-                }
-            }
-		NetworkStream stream = player.GetStream();
-		StreamReader reader = new StreamReader(stream);
-		StreamWriter writer = new StreamWriter(stream);
-            
-                while (!isEnd)
-                {
-                    while (!isStart)
-                    {
-                        // first is waiting
-                    }
-                    // play
-                   
-                    string commandLine = reader.ReadLine();
-                    //Console.WriteLine("2");
-                    string[] arr = commandLine.Split(' ');
-                    string commandKey = arr[0];
-                    string[] args = arr.Skip(1).ToArray();
-                    ConnectionInfo result = gameCommands[commandKey].Execute(args,players, player);
+			gameCommands = new Dictionary<string, IGameCommand>();
+			gameCommands.Add("play", new GamePlayCommand(this));
+			gameCommands.Add("close", new GameCloseCommand(this));
+		}
 
-                }
-            
-               
-        }
+		public void addPlayer(TcpClient player, string name)
+		{
+			GameInfo currenrGameInfo = gamesInfo[name];
+			currenrGameInfo.players.Add(player);
 
-        public void WriteMessage(StreamWriter writer, string message)
-        {
-                // write maze to both players:
-                writer.WriteLine(message);
-                writer.Flush();
-        }
-    }
+			// if its the second player
+			if (currenrGameInfo.players.Count == 2)
+			{
+				foreach (TcpClient currentPlayer in currenrGameInfo.players)
+				{
+					WriteMessage(new StreamWriter(currentPlayer.GetStream()), currenrGameInfo.maze.ToJSON());
+				}
+
+				// game stated
+				currenrGameInfo.isStart = true;
+			}
+
+			NetworkStream stream = player.GetStream();
+			StreamReader reader = new StreamReader(stream);
+			StreamWriter writer = new StreamWriter(stream);
+			while (!currenrGameInfo.isEnd)
+			{
+				while (!currenrGameInfo.isStart)
+				{
+					// first is waiting
+				}
+				// play
+
+				string commandLine = reader.ReadLine();
+				//Console.WriteLine("2");
+				string[] arr = commandLine.Split(' ');
+				string commandKey = arr[0];
+				string[] args = arr.Skip(1).ToArray();
+				ConnectionInfo result = gameCommands[commandKey].Execute(args, name, player);
+
+			}
+			//TODO:: DISPOSE CONNECTION ON END
+
+		}
+
+		public void WriteMessage(StreamWriter writer, string message)
+		{
+			// write maze to both players:
+			writer.WriteLine(message);
+			writer.Flush();
+			writer.WriteLine("end");
+			writer.Flush();
+		}
+	}
 }

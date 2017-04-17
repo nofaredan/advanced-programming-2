@@ -8,34 +8,34 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-    public class StartMazeCommand: ICommand
-    {
-        IModel model;
-        public StartMazeCommand(IModel newModel)
-        {
-            model = newModel;
-        }
+	public class StartMazeCommand : ICommand
+	{
+		IModel model;
+		public StartMazeCommand(IModel newModel)
+		{
+			model = newModel;
+		}
 
-        public ConnectionInfo Execute(string[] args, TcpClient client = null)
-        {
+		public ConnectionInfo Execute(string[] args, TcpClient client = null)
+		{
 
-            string name = args[0];
-            int rows = int.Parse(args[1]);
-            int cols = int.Parse(args[2]);
-            ConnectionInfo connectionInfo = new ConnectionInfo();
-            // *** NO ANSWER HERE - WAIT TO ANOTHER PLAYER ****
-            connectionInfo.CloseConnection = false;
+			string name = args[0];
+			int rows = int.Parse(args[1]);
+			int cols = int.Parse(args[2]);
+			ConnectionInfo connectionInfo = new ConnectionInfo();
+			// *** NO ANSWER HERE - WAIT TO ANOTHER PLAYER ****
+			connectionInfo.CloseConnection = false;
 
-            // create new maze
-            bool isAnswerNeeded = model.StartGame(name, rows, cols, client);
+			// create new maze
+			bool isAnswerNeeded = model.StartGame(name, rows, cols, client);
 
-            if (isAnswerNeeded)
-            {
-                // exist
-                connectionInfo.Answer = "invalid command";
-            }
-           
-            return connectionInfo;
-        }
-    }
+			if (isAnswerNeeded)
+			{
+				// exist
+				connectionInfo.Answer = "invalid command";
+			}
+
+			return connectionInfo;
+		}
+	}
 }

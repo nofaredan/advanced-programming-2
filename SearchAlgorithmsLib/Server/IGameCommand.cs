@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-    interface IGameCommand
-    {
-        ConnectionInfo Execute(string[] args, string name, TcpClient currentPlayer = null);
-    }
+	interface IGameCommand
+	{
+		ConnectionInfo Execute(string[] args, string name, TcpClient currentPlayer = null);
+	}
 }

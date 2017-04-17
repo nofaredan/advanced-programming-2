@@ -7,8 +7,8 @@ using System.Net.Sockets;
 
 namespace Server
 {
-    public interface IView
-    {
-        void HandleClient(TcpClient tcpClient);
-    }
+	public interface IView
+	{
+		void HandleClient(TcpClient tcpClient);
+	}
 }

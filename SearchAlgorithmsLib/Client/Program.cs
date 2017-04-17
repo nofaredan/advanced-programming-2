@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace Client
 {
-    class Program
-    {
+	class Program
+	{
 
-        static void Main(string[] args)
-        {
-            View view = new View();
-            view.Connect();	
-        }
-    }
+		static void Main(string[] args)
+		{
+			View view = new View();
+			view.Connect();
+		}
+	}
 
-   
+
 
 }

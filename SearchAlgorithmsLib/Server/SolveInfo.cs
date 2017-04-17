@@ -8,40 +8,40 @@ using MazeLib;
 
 namespace Server
 {
-    public class SolveInfo
-    {
-        int nodesEvaluated;
-        Solution<Position> solution;
+	public class SolveInfo
+	{
+		int nodesEvaluated;
+		Solution<Position> solution;
 
-        public SolveInfo(int nEvaluated, Solution<Position> mySolution)
-        {
-            nodesEvaluated = nEvaluated;
-            solution = mySolution;
-        }
-        public int NodesEvaluated
-        {
-            get
-            {
-                return nodesEvaluated;
-            }
+		public SolveInfo(int nEvaluated, Solution<Position> mySolution)
+		{
+			nodesEvaluated = nEvaluated;
+			solution = mySolution;
+		}
+		public int NodesEvaluated
+		{
+			get
+			{
+				return nodesEvaluated;
+			}
 
-            set
-            {
-                nodesEvaluated = value;
-            }
-        }
+			set
+			{
+				nodesEvaluated = value;
+			}
+		}
 
-        public Solution<Position> Solution
-        {
-            get
-            {
-                return solution;
-            }
+		public Solution<Position> Solution
+		{
+			get
+			{
+				return solution;
+			}
 
-            set
-            {
-                solution = value;
-            }
-        }
-    }
+			set
+			{
+				solution = value;
+			}
+		}
+	}
 }

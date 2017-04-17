@@ -8,32 +8,32 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-    public class JoinCommand : ICommand
-    {
-        IModel model;
-        public JoinCommand(IModel myModel)
-        {
-            model = myModel;
-        }
-        public ConnectionInfo Execute(string[] args, TcpClient client = null)
-        {
+	public class JoinCommand : ICommand
+	{
+		IModel model;
+		public JoinCommand(IModel myModel)
+		{
+			model = myModel;
+		}
+		public ConnectionInfo Execute(string[] args, TcpClient client = null)
+		{
 
-            //model.HandleJoin(client);
+			//model.HandleJoin(client);
 
-            string name = args[0];
-            Maze maze = model.JoinGame(name, client);
-            ConnectionInfo connectionInfo = new ConnectionInfo();
-            connectionInfo.CloseConnection = false;
+			string name = args[0];
+			Maze maze = model.JoinGame(name, client);
+			ConnectionInfo connectionInfo = new ConnectionInfo();
+			connectionInfo.CloseConnection = false;
 
-            if (maze == null)
-            {
-                connectionInfo.Answer = "invalid command";
-            }
-            else
-            {
-                connectionInfo.Answer = maze.ToJSON();
-            }
-            return connectionInfo;
-        }
-    }
+			if (maze == null)
+			{
+				connectionInfo.Answer = "invalid command";
+			}
+			else
+			{
+				connectionInfo.Answer = maze.ToJSON();
+			}
+			return connectionInfo;
+		}
+	}
 }

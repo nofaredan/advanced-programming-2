@@ -1,20 +1,39 @@
 ﻿<Properties StartupConfiguration="{906CE9F1-14DF-4D29-8F36-3CF76129CDDB}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Server/GameInfo.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Server/IModel.cs">
     <Files>
-      <File FileName="Server/View.cs" Line="26" Column="24" />
-      <File FileName="Server/Controller.cs" Line="30" Column="10" />
-      <File FileName="Server/GenerateMazeCommand.cs" Line="14" Column="38" />
-      <File FileName="Server/Model.cs" Line="1" Column="1" />
-      <File FileName="Client/Program.cs" Line="25" Column="1" />
-      <File FileName="Server/ICommand.cs" Line="5" Column="30" />
-      <File FileName="Client/ICommand.cs" Line="7" Column="47" />
-      <File FileName="Client/CloseConnection.cs" Line="14" Column="8" />
-      <File FileName="Server/SolveMazeCommand.cs" Line="1" Column="1" />
-      <File FileName="Server/MazeGame.cs" Line="1" Column="1" />
-      <File FileName="Client/Game.cs" Line="1" Column="1" />
-      <File FileName="Client/View.cs" Line="1" Column="1" />
-      <File FileName="Server/GamePlayCommand.cs" Line="1" Column="1" />
-      <File FileName="Server/GameInfo.cs" Line="1" Column="1" />
+      <File FileName="Server/View.cs" Line="53" Column="2" />
+      <File FileName="Server/Controller.cs" Line="46" Column="2" />
+      <File FileName="Server/GenerateMazeCommand.cs" Line="39" Column="2" />
+      <File FileName="Server/Model.cs" Line="118" Column="2" />
+      <File FileName="Client/Program.cs" Line="24" Column="2" />
+      <File FileName="Server/ICommand.cs" Line="14" Column="2" />
+      <File FileName="Client/ICommand.cs" Line="9" Column="2" />
+      <File FileName="Client/CloseConnection.cs" Line="21" Column="2" />
+      <File FileName="Server/SolveMazeCommand.cs" Line="40" Column="2" />
+      <File FileName="Server/MazeGame.cs" Line="83" Column="2" />
+      <File FileName="Client/Game.cs" Line="34" Column="2" />
+      <File FileName="Client/View.cs" Line="16" Column="11" />
+      <File FileName="Server/GamePlayCommand.cs" Line="18" Column="3" />
+      <File FileName="Server/GameInfo.cs" Line="18" Column="2" />
+      <File FileName="Client/JoinCommand.cs" Line="20" Column="2" />
+      <File FileName="Client/SendAndRecieve.cs" Line="46" Column="2" />
+      <File FileName="Client/StartCommand.cs" Line="11" Column="3" />
+      <File FileName="MazeProject/Program.cs" Line="73" Column="2" />
+      <File FileName="Server/CloseCommand.cs" Line="25" Column="2" />
+      <File FileName="Server/ConnectionInfo.cs" Line="17" Column="2" />
+      <File FileName="Server/GameCloseCommand.cs" Line="23" Column="2" />
+      <File FileName="Server/IGameCommand.cs" Line="14" Column="2" />
+      <File FileName="Server/IModel.cs" Line="19" Column="2" />
+      <File FileName="Server/IView.cs" Line="14" Column="2" />
+      <File FileName="Server/JoinCommand.cs" Line="39" Column="2" />
+      <File FileName="Server/ListCommand.cs" Line="29" Column="2" />
+      <File FileName="Server/PlayCommand.cs" Line="24" Column="2" />
+      <File FileName="Server/Program.cs" Line="17" Column="2" />
+      <File FileName="Server/Server.cs" Line="58" Column="2" />
+      <File FileName="Server/SolutionAdapter.cs" Line="43" Column="3" />
+      <File FileName="Server/SolveInfo.cs" Line="47" Column="2" />
+      <File FileName="Server/StartMazeCommand.cs" Line="22" Column="10" />
+      <File FileName="../../../../../../../../../../../Library/Frameworks/Mono.framework/Versions/5.0.0/lib/mono/msbuild/15.0/bin/Microsoft.Common.CurrentVersion.targets" Line="1980" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -28,13 +47,9 @@
       <Breakpoint file="/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/MazeLib/Position.cs" relfile="MazeLib/Position.cs" line="22" column="1" />
       <Breakpoint file="/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/DFS.cs" relfile="SearchAlgorithmsLib/DFS.cs" line="44" column="1" />
       <Breakpoint file="/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/BFS.cs" relfile="SearchAlgorithmsLib/BFS.cs" line="53" column="1" />
-      <Breakpoint file="/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/MazeProject/Program.cs" relfile="MazeProject/Program.cs" line="24" column="1" />
       <Breakpoint file="/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/BFS.cs" relfile="SearchAlgorithmsLib/BFS.cs" line="23" column="18" />
-      <Breakpoint file="/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/Server/GenerateMazeCommand.cs" relfile="Server/GenerateMazeCommand.cs" line="29" column="1" />
-      <Breakpoint file="/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/Server/GenerateMazeCommand.cs" relfile="Server/GenerateMazeCommand.cs" line="20" column="1" />
-      <Breakpoint file="/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/Server/Model.cs" relfile="Server/Model.cs" line="28" column="1" />
-      <Breakpoint file="/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/Server/View.cs" relfile="Server/View.cs" line="34" column="1" />
-      <Breakpoint file="/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/Client/Program.cs" relfile="Client/Program.cs" line="43" column="1" />
+      <Breakpoint file="/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/Client/Program.cs" relfile="Client/Program.cs" line="42" column="1" />
+      <Breakpoint file="/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/Server/IModel.cs" relfile="Server/IModel.cs" line="1" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
