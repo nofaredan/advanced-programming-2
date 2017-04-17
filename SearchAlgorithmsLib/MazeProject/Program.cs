@@ -55,13 +55,12 @@ namespace MazeProject
 			// print solutions
 			//printSol(bfsSol);
 
-			Console.WriteLine("BFS"+bfsSol.Count);
+			Console.WriteLine("BFS"+bfs.getNumberOfNodesEvaluated());
 
 			//printSol(dfsSol);
 
-			Console.WriteLine("DFS"+dfsSol.Count);
+			Console.WriteLine("DFS"+dfs.getNumberOfNodesEvaluated());
         }
-
 		static void printSol(Solution<Position> s)
 		{
 			for (int i = s.Count - 1 ; i > 0 ; i--)

@@ -27,19 +27,24 @@ namespace Server
                 using (StreamReader reader = new StreamReader(stream))
                 using (StreamWriter writer = new StreamWriter(stream))
                 {
-                  //  Console.WriteLine("1");
-                    string commandLine = reader.ReadLine();
-                  //  Console.WriteLine("2");
-                      Console.WriteLine("Got command: {0}", commandLine);
-					ConnectionInfo result = controller.ExecuteCommand(commandLine, client);
-					writer.WriteLine(result.Answer);
-					writer.Flush();
+                   // while (true)
+                    //{
+                        //Console.WriteLine("1");
+                        string commandLine = reader.ReadLine();
+                        //Console.WriteLine("2");
+                        Console.WriteLine("Got command: {0}", commandLine);
+                        ConnectionInfo result = controller.ExecuteCommand(commandLine, client);
+                        writer.WriteLine(result.Answer);
+                        writer.Flush();
 
-					if (result.CloseConnection) {
-						stream.Flush();
-						stream.Close();
-						client.Close();
-					}
+                        if (result.CloseConnection)
+                        {
+                            stream.Flush();
+                            stream.Close();
+                            client.Close();
+                            return;
+                        }
+                   // }
                 }
               //  client.Close();
             }).Start();

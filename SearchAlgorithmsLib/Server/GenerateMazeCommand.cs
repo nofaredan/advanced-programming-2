@@ -22,10 +22,17 @@ namespace Server
             int cols = int.Parse(args[2]);
             Maze maze = model.GenerateMaze(name, rows, cols);
 
-			ConnectionInfo connectionInfo = new ConnectionInfo();
-			connectionInfo.Answer = maze.ToJSON();
-			connectionInfo.CloseConnection = true;
+            ConnectionInfo connectionInfo = new ConnectionInfo();
+            connectionInfo.CloseConnection = true;
 
+            if (maze == null)
+            {
+                connectionInfo.Answer = "invalid command";
+            }
+            else
+            {
+                connectionInfo.Answer = maze.ToJSON();
+            }
 			return connectionInfo;
         }
 	}
