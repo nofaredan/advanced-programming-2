@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Client
 {
-    public class JoinCommand : ICommand
-    {
-        public bool Execute(string[] args, TcpClient client = null)
-        {
-            Game.server = client;
-            Game.StartGame();
-            // connection alive
-            return true;
-        }
-    }
+	public class JoinCommand : ICommand
+	{
+		public bool Execute(string[] args, TcpClient client = null)
+		{
+			Game.server = client;
+			Game.StartGame();
+			// connection alive
+			return true;
+		}
+	}
 }

@@ -10,17 +10,17 @@ using SearchAlgorithmsLib;
 namespace MazeProject
 {
 	class Program
-    {
-        
-        static void Main(string[] args)
-        {
-            CompareSolvers(320, 320);
-            Console.ReadLine();
-        }
+	{
 
-        private static void CompareSolvers(int rows, int cols)
-        {
-            DFSMazeGenerator dfsMazeGenerator = new DFSMazeGenerator();
+		static void Main(string[] args)
+		{
+			CompareSolvers(320, 320);
+			Console.ReadLine();
+		}
+
+		private static void CompareSolvers(int rows, int cols)
+		{
+			DFSMazeGenerator dfsMazeGenerator = new DFSMazeGenerator();
 			Maze maze = dfsMazeGenerator.Generate(rows, cols);
 			//Maze maze;
 			/*using (var fil = System.IO.File.OpenWrite("nofar"))
@@ -29,7 +29,6 @@ namespace MazeProject
 				{
 					writer.Write(maze.ToJSON());
 				}
-
 			}*/
 
 			/*using (var fil = System.IO.File.OpenRead("nofar"))
@@ -40,35 +39,35 @@ namespace MazeProject
 				}
 			}*/
 			MazeAdapter mazeSearchable = new MazeAdapter(maze); // Isearchable
-            Console.WriteLine(maze.ToString());
+			Console.WriteLine(maze.ToString());
 
-            var temp = new CompareStates<Position>();
+			var temp = new CompareStates<Position>();
 
-            // BFS search:
-            BFS<Position> bfs = new BFS<Position>(temp);
+			// BFS search:
+			BFS<Position> bfs = new BFS<Position>(temp);
 			Solution<Position> bfsSol = bfs.Search(mazeSearchable);
 
-            // DFS search
-            DFS<Position> dfs = new DFS<Position>(temp);
-            Solution<Position> dfsSol =  dfs.Search(mazeSearchable);
+			// DFS search
+			DFS<Position> dfs = new DFS<Position>(temp);
+			Solution<Position> dfsSol = dfs.Search(mazeSearchable);
 
 			// print solutions
 			//printSol(bfsSol);
 
-			Console.WriteLine("BFS"+bfs.getNumberOfNodesEvaluated());
+			Console.WriteLine("BFS" + bfs.getNumberOfNodesEvaluated());
 
 			//printSol(dfsSol);
 
-			Console.WriteLine("DFS"+dfs.getNumberOfNodesEvaluated());
-        }
+			Console.WriteLine("DFS" + dfs.getNumberOfNodesEvaluated());
+		}
 		static void printSol(Solution<Position> s)
 		{
-			for (int i = s.Count - 1 ; i > 0 ; i--)
+			for (int i = s.Count - 1; i > 0; i--)
 			{
 				Console.Write("{0}->", s[i]);
 			}
 			Console.WriteLine();
 			Console.ReadLine();
 		}
-    }
+	}
 }
