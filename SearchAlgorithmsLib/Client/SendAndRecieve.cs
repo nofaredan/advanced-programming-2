@@ -27,7 +27,7 @@ namespace Client
                 {
                     Console.WriteLine("Result = {0}", result);
                     result = reader.ReadLine();
-                    while (result != null && !result.Equals(""))
+                    while (result != null && !result.Equals("end") && !result.Equals(""))
                     {
                         Console.WriteLine(result);
                         // Get result from server
