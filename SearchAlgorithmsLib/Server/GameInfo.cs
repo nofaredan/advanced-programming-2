@@ -13,6 +13,7 @@ namespace Server
         public bool isStart { get; set; }
         public bool isEnd { get; set; }
         public Maze maze { get; set; }
+        public string name { get; set; }
         public List<TcpClient> players { get; set; }
     }
 }

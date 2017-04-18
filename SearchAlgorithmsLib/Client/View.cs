@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Net.Sockets;
 using System.Net;
 using System.IO;
+using System.Configuration;
 
 namespace Client
 {
@@ -19,14 +20,20 @@ namespace Client
             commands.Add("generate", new CloseConnection());
             commands.Add("solve", new CloseConnection());
             commands.Add("start", new StartCommand());
+            commands.Add("play", new StartCommand());
+            commands.Add("list", new StartCommand());
             commands.Add("join", new JoinCommand());
+            commands.Add("close", new JoinCommand());
         }
 
         public void Connect()
-        {           
+        {
+            string ipAdresss = ConfigurationManager.AppSettings["IP"].ToString();
+            string strPort = ConfigurationManager.AppSettings["port"].ToString();
+            int port = Int32.Parse(strPort);
+
             while (true)
             {
-                Console.WriteLine("connect before read");
                 // Send data to server
                 string message = Console.ReadLine();
 
@@ -34,7 +41,7 @@ namespace Client
                 {
                     bool connectionAlive = true;
                     TcpClient client = new TcpClient();
-                    IPEndPoint ep = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 5555);
+                    IPEndPoint ep = new IPEndPoint(IPAddress.Parse(ipAdresss), port);
 
                     client.Connect(ep);
 
@@ -44,40 +51,22 @@ namespace Client
                     {
                         while (connectionAlive)
                         {
-                            Console.WriteLine("connection Alive");
                             string[] arr = message.Split(' ');
                             string commandKey = arr[0];
 
-                            Console.WriteLine("before send ");
-
                             SendAndRecieve.Send(writer, message);
 
-                            Console.WriteLine("after send ");
-
-                            Console.WriteLine("before recieve ");
-
-                            bool isValid = SendAndRecieve.RecieveInfo(reader);
-
-                            Console.WriteLine("after recieve ");
-
                             // check whats next (close connection or continue)
-                            if (commands.ContainsKey(commandKey) && isValid)
+                            if (commands.ContainsKey(commandKey) )
                             {
-                                Console.WriteLine("commandKey " + commandKey);
-
                                 string[] arguments = arr.Skip(1).ToArray();
                                 ICommand command = commands[commandKey];
                                 connectionAlive = command.Execute(arguments, client);
 
                                 if (connectionAlive)
                                 {
-                                    Console.WriteLine("in if connection Alive");
-
-                                    Console.WriteLine("in connection alive " + connectionAlive);
-
                                     // NEED other input
                                     message = Console.ReadLine();
-                                    Console.WriteLine("after read line ");
 
                                 }
                             }

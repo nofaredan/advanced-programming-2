@@ -26,7 +26,6 @@ namespace Client
                         bool answer = SendAndRecieve.RecieveInfo(reader);          
                     }
                 
-
             }).Start();
         }
     }

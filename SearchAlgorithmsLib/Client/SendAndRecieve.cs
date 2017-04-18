@@ -23,11 +23,11 @@ namespace Client
                 {
                     return false;
                 }
-                if (!result.Equals(""))
+                if (!result.Equals("end"))
                 {
                     Console.WriteLine("Result = {0}", result);
                     result = reader.ReadLine();
-                    while (result != null && !result.Equals("end") && !result.Equals(""))
+                    while (!result.Equals("end"))
                     {
                         Console.WriteLine(result);
                         // Get result from server

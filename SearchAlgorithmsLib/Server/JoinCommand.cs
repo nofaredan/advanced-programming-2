@@ -17,9 +17,6 @@ namespace Server
         }
         public ConnectionInfo Execute(string[] args, TcpClient client = null)
         {
-
-            //model.HandleJoin(client);
-
             string name = args[0];
             Maze maze = model.JoinGame(name, client);
             ConnectionInfo connectionInfo = new ConnectionInfo();

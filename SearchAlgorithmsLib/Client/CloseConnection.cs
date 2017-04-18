@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net.Sockets;
 
 namespace Client
@@ -11,7 +12,10 @@ namespace Client
 
 		public bool Execute(string[] args, TcpClient client = null)
 		{
-			client.GetStream().Flush();
+            NetworkStream stream = client.GetStream();
+            StreamReader reader = new StreamReader(stream);
+            SendAndRecieve.RecieveInfo(reader);
+            client.GetStream().Flush();
 			client.GetStream().Close();
 			client.Close();
 

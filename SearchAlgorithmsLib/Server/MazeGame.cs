@@ -19,6 +19,7 @@ namespace Server
         {
             gamesInfo = new Dictionary<string, GameInfo>();
             GameInfo gameInfo = new GameInfo();
+            gameInfo.name = myMaze.Name;
             gameInfo.maze = myMaze;
             gameInfo.isStart = false;
             gameInfo.isEnd = false;
@@ -27,6 +28,7 @@ namespace Server
             gamesInfo.Add(myMaze.Name, gameInfo);
 
             gameCommands = new Dictionary<string, IGameCommand>();
+            gameCommands.Add("list", new GameListCommand(this));
             gameCommands.Add("play", new GamePlayCommand(this));
             gameCommands.Add("close", new GameCloseCommand(this));
         }
@@ -53,22 +55,21 @@ namespace Server
             StreamWriter writer = new StreamWriter(stream);
                 while (!currenrGameInfo.isEnd)
                 {
-                    while (!currenrGameInfo.isStart)
+                  /*  while (!currenrGameInfo.isStart)
                     {
                         // first is waiting
                     }
+                    */
+
                     // play
-                   
                     string commandLine = reader.ReadLine();
                     //Console.WriteLine("2");
                     string[] arr = commandLine.Split(' ');
                     string commandKey = arr[0];
                     string[] args = arr.Skip(1).ToArray();
-                    ConnectionInfo result = gameCommands[commandKey].Execute(args, name, player);
+                    gameCommands[commandKey].Execute(args, name, player);
 
-                }
-            //TODO:: DISPOSE CONNECTION ON END
-               
+                }               
         }
 
         public void WriteMessage(StreamWriter writer, string message)

@@ -14,7 +14,7 @@ namespace Server
         Controller controller;
         public View(Controller newController)
         {
-            server = new Server(5555, this);
+            server = new Server(this);
             server.Start();
             controller = newController;
         }

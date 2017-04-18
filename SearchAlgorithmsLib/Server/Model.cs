@@ -97,6 +97,14 @@ namespace Server
 
         public Dictionary<string, MazeGame> ShowList()
         {
+            List<string> list = new List<string>();
+            foreach (string nameGame in games.Keys)
+            { 
+                if (MazeGame.gamesInfo[nameGame].players.Count !=2)
+                {
+                    list.Add(nameGame);
+                }
+            }
             return games;
         }
 

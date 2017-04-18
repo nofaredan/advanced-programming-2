@@ -17,7 +17,7 @@ namespace Server
             game = myGame;
         }
 
-        public ConnectionInfo Execute(string[] args, string name, TcpClient currentPlayer = null)
+        public void Execute(string[] args, string name, TcpClient currentPlayer = null)
         {
             List<TcpClient> clients = MazeGame.gamesInfo[name].players;
             JObject json = new JObject();
@@ -40,7 +40,6 @@ namespace Server
             }
             // send json to client
             game.WriteMessage(new StreamWriter(clientFound.GetStream()), json.ToString());
-            return null;
         }
     }
 }
