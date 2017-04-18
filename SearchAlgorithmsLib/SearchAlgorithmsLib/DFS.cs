@@ -32,6 +32,7 @@ namespace SearchAlgorithmsLib
                 List<State<T>> succerssors = searchable.getAllPossibleStates(temp);
                 foreach (State<T> s in succerssors)
                 {
+		evaluatedNodes++;
                     // if s is white
                     if (!greys.Contains(s) && !blacks.Contains(s))
                     {

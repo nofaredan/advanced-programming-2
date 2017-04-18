@@ -14,7 +14,8 @@ namespace MazeProject
         private Maze maze;
         public MazeAdapter(Maze myMaze)
         {
-            maze = myMaze;
+            	maze = myMaze;
+		State<Position>.StatePool.initDictionary();
         }
         public List<State<Position>> getAllPossibleStates(State<Position> state)
         {

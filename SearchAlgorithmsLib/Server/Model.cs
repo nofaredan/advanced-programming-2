@@ -35,7 +35,27 @@ namespace Server
 
 			DFSMazeGenerator dfsMazeGenerator = new DFSMazeGenerator();
 			Maze maze = dfsMazeGenerator.Generate(rows, cols);
+
+
+			//Maze maze;
+			/*using (var fil = System.IO.File.OpenWrite("nofar"))
+			{
+				using (var writer = new System.IO.StreamWriter(fil))
+				{
+					writer.Write(maze.ToJSON());
+				}
+			}*/
+
+			/*using (var fil = System.IO.File.OpenRead("nofar"))
+			{
+				using (var reader = new System.IO.StreamReader(fil))
+				{
+					maze = Maze.FromJSON(reader.ReadToEnd());
+				}
+			}*/
+
 			maze.Name = name;
+
 
 			singleplayerMazeList.Add(maze.Name, maze);
 			return maze;

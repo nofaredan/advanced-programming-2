@@ -26,6 +26,7 @@ namespace SearchAlgorithmsLib
                 List<State<T>> succerssors = searchable.getAllPossibleStates(n);
                 foreach (State<T> s in succerssors)
                 {
+			evaluatedNodes++;
                     if (!closed.Contains(s) && !openContains(s))
                     {
                         s.SetCost(s.GetCost()+n.GetCost());

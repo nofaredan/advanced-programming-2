@@ -25,12 +25,39 @@ namespace Server
 			}
 
 			string result = "";
-			State<Position> s = solution[0];
-			int index = 1;
+
+			State<Position> s = solution[solution.Count - 1];
+			//int index = 1;
 			Position firstPos = s.GetState();
 			Position secondPos;
 
-			while (index < solution.Count)
+			for (int i = solution.Count - 2 ; i >= 0 ; i--)
+			{
+				secondPos = solution[i].GetState();
+				if (secondPos.Row > firstPos.Row)
+				{
+					// DOWN
+					result = result + "3";
+				}
+				else if (secondPos.Row < firstPos.Row)
+				{
+					// UP
+					result = result + "2";
+				}
+				else if (secondPos.Col > firstPos.Col)
+				{
+					// RIGHT
+					result = result + "1";
+				}
+				else
+				{
+					// LEFT
+					result = result + "0";
+				}
+				firstPos = secondPos;
+			}
+
+			/*while (index < solution.Count)
 			{
 				secondPos = solution[index].GetState();
 				if (secondPos.Row > firstPos.Row)
@@ -55,7 +82,7 @@ namespace Server
 				}
 				firstPos = secondPos;
 				index++;
-			}
+			}*/
 			return result;
 		}
 	}
