@@ -9,14 +9,15 @@ using System.IO;
 
 namespace Server
 {
-    public class GamePlayCommand : IGameCommand
-    {
-        MazeGame game;
-        public GamePlayCommand(MazeGame myGame)
-        {
-            game = myGame;
-        }
+	public class GamePlayCommand : IGameCommand
+	{
+		MazeGame game;
+		public GamePlayCommand(MazeGame myGame)
+		{
+			game = myGame;
+		}
 
+<<<<<<< HEAD
         public void Execute(string[] args, string name, TcpClient currentPlayer = null)
         {
             List<TcpClient> clients = MazeGame.gamesInfo[name].players;
@@ -43,3 +44,32 @@ namespace Server
         }
     }
 }
+=======
+		public ConnectionInfo Execute(string[] args, string name, TcpClient currentPlayer = null)
+		{
+			List<TcpClient> clients = MazeGame.gamesInfo[name].players;
+			JObject json = new JObject();
+			json["Name"] = name;
+			json["Direction"] = args[0];
+			bool found = false;
+			int index = 0;
+			TcpClient clientFound = null;
+			// ConnectionInfo connectionInfo = new ConnectionInfo();
+
+			// find client
+			while (!found && index < clients.Count)
+			{
+				if (clients[index] != currentPlayer)
+				{
+					clientFound = clients[index];
+					found = true;
+				}
+				index++;
+			}
+			// send json to client
+			game.WriteMessage(new StreamWriter(clientFound.GetStream()), json.ToString());
+			return null;
+		}
+	}
+}
+>>>>>>> ed4fabfa7ebd57e25b740162d6dc41f2519e9a48

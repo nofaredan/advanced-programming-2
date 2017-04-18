@@ -8,12 +8,12 @@ using System.Net.Sockets;
 
 namespace Server
 {
-    public interface IModel
-    {
-        Maze GenerateMaze(string name, int rows, int cols);
-        SolveInfo SolveMaze(string name, string typeAlgo);
-        bool StartGame(string name, int rows, int cols, TcpClient client);
-        Dictionary<string, MazeGame> ShowList();
-        Maze JoinGame(string name, TcpClient client);
-    }
+	public interface IModel
+	{
+		Maze GenerateMaze(string name, int rows, int cols);
+		SolveInfo SolveMaze(string name, string typeAlgo);
+		bool StartGame(string name, int rows, int cols, TcpClient client);
+		Dictionary<string, MazeGame> ShowList();
+		Maze JoinGame(string name, TcpClient client);
+	}
 }

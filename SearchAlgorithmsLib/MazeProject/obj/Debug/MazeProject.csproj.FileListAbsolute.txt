@@ -8,28 +8,28 @@ C:/Users/PC/documents/visual studio 2015/Projects/SearchAlgorithmsLib/MazeProjec
 C:/Users/PC/documents/visual studio 2015/Projects/SearchAlgorithmsLib/MazeProject/obj/Debug/MazeProject.pdb
 C:/Users/PC/documents/visual studio 2015/Projects/SearchAlgorithmsLib/MazeProject/bin/Debug/SearchAlgorithmsLib.dll
 C:/Users/PC/documents/visual studio 2015/Projects/SearchAlgorithmsLib/MazeProject/bin/Debug/SearchAlgorithmsLib.pdb
+C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced-programming-2/SearchAlgorithmsLib/MazeProject/bin/Debug/MazeProject.exe.config
+C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced-programming-2/SearchAlgorithmsLib/MazeProject/bin/Debug/MazeProject.exe
+C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced-programming-2/SearchAlgorithmsLib/MazeProject/bin/Debug/MazeProject.pdb
+C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced-programming-2/SearchAlgorithmsLib/MazeProject/bin/Debug/MazeGeneratorLib.dll
+C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced-programming-2/SearchAlgorithmsLib/MazeProject/bin/Debug/MazeLib.dll
+C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced-programming-2/SearchAlgorithmsLib/MazeProject/bin/Debug/Newtonsoft.Json.dll
+C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced-programming-2/SearchAlgorithmsLib/MazeProject/bin/Debug/SearchAlgorithmsLib.dll
+C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced-programming-2/SearchAlgorithmsLib/MazeProject/bin/Debug/SearchAlgorithmsLib.pdb
+C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced-programming-2/SearchAlgorithmsLib/MazeProject/bin/Debug/Newtonsoft.Json.xml
+C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced-programming-2/SearchAlgorithmsLib/MazeProject/obj/Debug/MazeProject.csprojResolveAssemblyReference.cache
+C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced-programming-2/SearchAlgorithmsLib/MazeProject/obj/Debug/MazeProject.exe
+C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced-programming-2/SearchAlgorithmsLib/MazeProject/obj/Debug/MazeProject.pdb
 /Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/MazeProject/bin/Debug/MazeProject.exe.config
 /Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/MazeProject/bin/Debug/MazeProject.exe
-/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/MazeProject/bin/Debug/MazeProject.exe.mdb
+/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/MazeProject/bin/Debug/MazeProject.pdb
 /Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/MazeProject/bin/Debug/MazeGeneratorLib.dll
 /Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/MazeProject/bin/Debug/MazeLib.dll
 /Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/MazeProject/bin/Debug/Newtonsoft.Json.dll
 /Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/MazeProject/bin/Debug/SearchAlgorithmsLib.dll
 /Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/MazeProject/bin/Debug/SearchAlgorithmsLib.pdb
-/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/MazeProject/bin/Debug/SearchAlgorithmsLib.dll.mdb
 /Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/MazeProject/bin/Debug/Newtonsoft.Json.xml
 /Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/MazeProject/obj/Debug/MazeProject.csprojResolveAssemblyReference.cache
+/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/MazeProject/obj/Debug/MazeProject.csproj.CoreCompileInputs.cache
 /Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/MazeProject/obj/Debug/MazeProject.exe
-/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/MazeProject/obj/Debug/MazeProject.exe.mdb
-C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\MazeProject\bin\Debug\MazeProject.exe.config
-C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\MazeProject\bin\Debug\MazeProject.exe
-C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\MazeProject\bin\Debug\MazeProject.pdb
-C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\MazeProject\bin\Debug\MazeGeneratorLib.dll
-C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\MazeProject\bin\Debug\MazeLib.dll
-C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\MazeProject\bin\Debug\Newtonsoft.Json.dll
-C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\MazeProject\bin\Debug\SearchAlgorithmsLib.dll
-C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\MazeProject\bin\Debug\SearchAlgorithmsLib.pdb
-C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\MazeProject\bin\Debug\Newtonsoft.Json.xml
-C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\MazeProject\obj\Debug\MazeProject.csprojResolveAssemblyReference.cache
-C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\MazeProject\obj\Debug\MazeProject.exe
-C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\MazeProject\obj\Debug\MazeProject.pdb
+/Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/MazeProject/obj/Debug/MazeProject.pdb

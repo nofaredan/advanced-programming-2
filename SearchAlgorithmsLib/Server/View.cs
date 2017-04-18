@@ -8,6 +8,7 @@ using System.IO;
 
 namespace Server
 {
+<<<<<<< HEAD
     class View: IView
     {
         Server server;
@@ -18,36 +19,48 @@ namespace Server
             server.Start();
             controller = newController;
         }
+=======
+	class View : IView
+	{
+		Server server;
+		Controller controller;
+		public View(Controller newController)
+		{
+			server = new Server(5555, this);
+			server.Start();
+			controller = newController;
+		}
+>>>>>>> ed4fabfa7ebd57e25b740162d6dc41f2519e9a48
 
-        public void HandleClient(TcpClient client)
-        {
-            new Task(() =>
-            {
-                using (NetworkStream stream = client.GetStream())
-                using (StreamReader reader = new StreamReader(stream))
-                using (StreamWriter writer = new StreamWriter(stream))
-                {
-                   // while (true)
-                    //{
-                        //Console.WriteLine("1");
-                        string commandLine = reader.ReadLine();
-                        //Console.WriteLine("2");
-                        Console.WriteLine("Got command: {0}", commandLine);
-                        ConnectionInfo result = controller.ExecuteCommand(commandLine, client);
-                        writer.WriteLine(result.Answer);
-                        writer.Flush();
+		public void HandleClient(TcpClient client)
+		{
+			new Task(() =>
+			{
+				using (NetworkStream stream = client.GetStream())
+				using (StreamReader reader = new StreamReader(stream))
+				using (StreamWriter writer = new StreamWriter(stream))
+				{
+					// while (true)
+					//{
+					//Console.WriteLine("1");
+					string commandLine = reader.ReadLine();
+					//Console.WriteLine("2");
+					Console.WriteLine("Got command: {0}", commandLine);
+					ConnectionInfo result = controller.ExecuteCommand(commandLine, client);
+					writer.WriteLine(result.Answer);
+					writer.Flush();
 
-                        if (result.CloseConnection)
-                        {
-                            stream.Flush();
-                            stream.Close();
-                            client.Close();
-                            return;
-                        }
-                   // }
-                }
-              //  client.Close();
-            }).Start();
-        }
-    }
+					if (result.CloseConnection)
+					{
+						stream.Flush();
+						stream.Close();
+						client.Close();
+						return;
+					}
+					// }
+				}
+				//  client.Close();
+			}).Start();
+		}
+	}
 }

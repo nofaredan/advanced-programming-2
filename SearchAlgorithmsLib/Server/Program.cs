@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Controller c = new Controller();
-            var x = Console.ReadLine();
-        }
-    }
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			Controller c = new Controller();
+			var x = Console.ReadLine();
+		}
+	}
 }

@@ -7,8 +7,8 @@ using System.Net.Sockets;
 
 namespace Server
 {
-    public interface ICommand
-    {
+	public interface ICommand
+	{
 		ConnectionInfo Execute(string[] args, TcpClient client = null);
-    }
+	}
 }

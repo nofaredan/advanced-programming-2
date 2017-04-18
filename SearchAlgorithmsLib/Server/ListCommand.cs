@@ -9,21 +9,21 @@ using Newtonsoft.Json;
 
 namespace Server
 {
-    public class ListCommand : ICommand
-    {
-        IModel model;
-        public ListCommand(IModel newModel)
-        {
-            model = newModel;
-        }
+	public class ListCommand : ICommand
+	{
+		IModel model;
+		public ListCommand(IModel newModel)
+		{
+			model = newModel;
+		}
 
-        public ConnectionInfo Execute(string[] args, TcpClient client = null)
-        {
-            Dictionary<string, MazeGame> list = model.ShowList();
-            ConnectionInfo connectionInfo = new ConnectionInfo();
-            connectionInfo.Answer = JsonConvert.SerializeObject(list.Keys.ToArray());
-            connectionInfo.CloseConnection = false;
-            return connectionInfo;
-        }
-    }
+		public ConnectionInfo Execute(string[] args, TcpClient client = null)
+		{
+			Dictionary<string, MazeGame> list = model.ShowList();
+			ConnectionInfo connectionInfo = new ConnectionInfo();
+			connectionInfo.Answer = JsonConvert.SerializeObject(list.Keys.ToArray());
+			connectionInfo.CloseConnection = false;
+			return connectionInfo;
+		}
+	}
 }

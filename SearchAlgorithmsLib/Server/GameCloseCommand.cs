@@ -9,14 +9,15 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-    public class GameCloseCommand : IGameCommand
-    {
-        MazeGame game;
-        public GameCloseCommand(MazeGame myGame)
-        {
-            game = myGame;
-        }
+	public class GameCloseCommand : IGameCommand
+	{
+		MazeGame game;
+		public GameCloseCommand(MazeGame myGame)
+		{
+			game = myGame;
+		}
 
+<<<<<<< HEAD
         public void Execute(string[] args, string name, TcpClient currentPlayer = null)
         {
             List<TcpClient> clients = MazeGame.gamesInfo[name].players;
@@ -45,3 +46,11 @@ namespace Server
         }
     }
 }
+=======
+		public ConnectionInfo Execute(string[] args, string name, TcpClient currentPlayer = null)
+		{
+			throw new NotImplementedException();
+		}
+	}
+}
+>>>>>>> ed4fabfa7ebd57e25b740162d6dc41f2519e9a48

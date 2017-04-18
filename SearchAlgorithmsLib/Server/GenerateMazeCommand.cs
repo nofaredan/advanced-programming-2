@@ -8,32 +8,33 @@ using System.Net.Sockets;
 
 namespace Server
 {
-    public class GenerateMazeCommand : ICommand
-    {
-        private IModel model;
-        public GenerateMazeCommand(IModel model)
-        {
-            this.model = model;
-        }
+	public class GenerateMazeCommand : ICommand
+	{
+		private IModel model;
+		public GenerateMazeCommand(IModel model)
+		{
+			this.model = model;
+		}
 		public ConnectionInfo Execute(string[] args, TcpClient client)
-        {
-            string name = args[0];
-            int rows = int.Parse(args[1]);
-            int cols = int.Parse(args[2]);
-            Maze maze = model.GenerateMaze(name, rows, cols);
+		{
+			string name = args[0];
+			int rows = int.Parse(args[1]);
+			int cols = int.Parse(args[2]);
+			Maze maze = model.GenerateMaze(name, rows, cols);
 
-            ConnectionInfo connectionInfo = new ConnectionInfo();
-            connectionInfo.CloseConnection = true;
 
-            if (maze == null)
-            {
-                connectionInfo.Answer = "invalid command";
-            }
-            else
-            {
-                connectionInfo.Answer = maze.ToJSON();
-            }
+			ConnectionInfo connectionInfo = new ConnectionInfo();
+			connectionInfo.CloseConnection = true;
+
+			if (maze == null)
+			{
+				connectionInfo.Answer = "invalid command";
+			}
+			else
+			{
+				connectionInfo.Answer = maze.ToJSON();
+			}
 			return connectionInfo;
-        }
+		}
 	}
 }

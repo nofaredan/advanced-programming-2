@@ -9,8 +9,8 @@ namespace SearchAlgorithmsLib
 {
     public abstract class Searcher<T>: ISearcher<T>
     {
-		private List<State<T>> open;
-        private int evaluatedNodes;
+	private List<State<T>> open;
+	protected int evaluatedNodes;
         IComparer<State<T>> comperator;
 
         public Searcher(IComparer<State<T>> newComperator)
@@ -21,7 +21,7 @@ namespace SearchAlgorithmsLib
         }
         protected State<T> popOpenList()
         {
-            evaluatedNodes++;
+           // evaluatedNodes++;
             State<T> first = open.First();
             open.Remove(first);
 			open.Sort(comperator);
@@ -76,7 +76,7 @@ namespace SearchAlgorithmsLib
               
             open = temp; 
 			open.Sort(comperator);
-            evaluatedNodes--;
+          //  evaluatedNodes--;
         }
 
         protected Solution<T> backTrace(State<T> goal)

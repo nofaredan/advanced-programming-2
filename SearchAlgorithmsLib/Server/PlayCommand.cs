@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-    public class PlayCommand : ICommand
-    {
-        IModel model;
-        public PlayCommand(IModel myModel)
-        {
-            model = myModel;
-        }
-        public ConnectionInfo Execute(string[] args, TcpClient client = null)
-        {
-            string move = args[0];
+	public class PlayCommand : ICommand
+	{
+		IModel model;
+		public PlayCommand(IModel myModel)
+		{
+			model = myModel;
+		}
+		public ConnectionInfo Execute(string[] args, TcpClient client = null)
+		{
+			string move = args[0];
 
-            throw new NotImplementedException();
-        }
-    }
+			throw new NotImplementedException();
+		}
+	}
 }
