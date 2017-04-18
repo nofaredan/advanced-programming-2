@@ -64,18 +64,22 @@ namespace SearchAlgorithmsLib
 			return state.ToString();
 		}
 
-		public class StatePool
+	public class StatePool
         {
-            private static Dictionary<int, State<T>> dictionary = new Dictionary<int, State<T>>();
-            public static State<T> getState(T stateKey, double cost)
-            {
-                if (!dictionary.ContainsKey(stateKey.ToString().GetHashCode()))
-                {
-                    dictionary.Add(stateKey.ToString().GetHashCode(), new State<T>(stateKey, cost));
+            	private static Dictionary<int, State<T>> dictionary = new Dictionary<int, State<T>>();
+            	public static State<T> getState(T stateKey, double cost)
+            	{
+                	if (!dictionary.ContainsKey(stateKey.ToString().GetHashCode()))
+                	{
+                	    dictionary.Add(stateKey.ToString().GetHashCode(), new State<T>(stateKey, cost));
 
-                }
-                return dictionary[(stateKey.ToString().GetHashCode())];
-            }
+                	}
+                	return dictionary[(stateKey.ToString().GetHashCode())];
+           	 }
+
+		public static void initDictionary(){
+			dictionary.Clear();
+		}
         }
     } 
 }
