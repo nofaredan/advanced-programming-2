@@ -7,16 +7,14 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-<<<<<<< HEAD
     interface IGameCommand
     {
+        /// <summary>
+        /// Execute.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+        /// <param name="name">The name.</param>
+        /// <param name="currentPlayer">The current player.</param>
         void Execute(string[] args, string name, TcpClient currentPlayer = null);
     }
 }
-=======
-	interface IGameCommand
-	{
-		ConnectionInfo Execute(string[] args, string name, TcpClient currentPlayer = null);
-	}
-}
->>>>>>> ed4fabfa7ebd57e25b740162d6dc41f2519e9a48

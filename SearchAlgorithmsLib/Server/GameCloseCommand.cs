@@ -12,12 +12,22 @@ namespace Server
 	public class GameCloseCommand : IGameCommand
 	{
 		MazeGame game;
-		public GameCloseCommand(MazeGame myGame)
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GameCloseCommand"/> class.
+        /// </summary>
+        /// <param name="myGame">My game.</param>
+        public GameCloseCommand(MazeGame myGame)
 		{
 			game = myGame;
 		}
 
-<<<<<<< HEAD
+        /// <summary>
+        /// Execute.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+        /// <param name="name">The name.</param>
+        /// <param name="currentPlayer">The current player.</param>
         public void Execute(string[] args, string name, TcpClient currentPlayer = null)
         {
             List<TcpClient> clients = MazeGame.gamesInfo[name].players;
@@ -26,7 +36,6 @@ namespace Server
             bool found = false;
             int index = 0;
             TcpClient clientFound = null;
-            // ConnectionInfo connectionInfo = new ConnectionInfo();
 
             // find client
             while (!found && index < clients.Count)
@@ -46,11 +55,3 @@ namespace Server
         }
     }
 }
-=======
-		public ConnectionInfo Execute(string[] args, string name, TcpClient currentPlayer = null)
-		{
-			throw new NotImplementedException();
-		}
-	}
-}
->>>>>>> ed4fabfa7ebd57e25b740162d6dc41f2519e9a48

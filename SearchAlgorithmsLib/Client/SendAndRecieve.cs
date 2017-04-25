@@ -7,23 +7,35 @@ using System.Threading.Tasks;
 
 namespace Client
 {
-<<<<<<< HEAD
     public static class SendAndRecieve
     {
+        /// <summary>
+        /// Send information.
+        /// </summary>
+        /// <param name="writer">The writer.</param>
+        /// <param name="message">The message.</param>
         public static void Send(StreamWriter writer, string message)
         {
             // send message
             writer.WriteLine(message);
             writer.Flush();
         }
+
+        /// <summary>
+        /// Recieves information.
+        /// </summary>
+        /// <param name="reader">The reader.</param>
+        /// <returns></returns>
         public static bool RecieveInfo(StreamReader reader)
         {
-            try {
+            try
+            {
                 string result = reader.ReadLine();
                 if (result == null || result.Equals("invalid command"))
                 {
                     return false;
                 }
+                // read until end:
                 if (!result.Equals("end"))
                 {
                     Console.WriteLine("Result = {0}", result);
@@ -38,42 +50,8 @@ namespace Client
             }
             catch
             {
-=======
-	public static class SendAndRecieve
-	{
-		public static void Send(StreamWriter writer, string message)
-		{
-			// send message
-			writer.WriteLine(message);
-			writer.Flush();
-		}
-		public static bool RecieveInfo(StreamReader reader)
-		{
-			try
-			{
-				string result = reader.ReadLine();
-				if (result == null || result.Equals("invalid command"))
-				{
-					return false;
-				}
-				if (!result.Equals(""))
-				{
-					Console.WriteLine("Result = {0}", result);
-					result = reader.ReadLine();
-					while (result != null && !result.Equals("end") && !result.Equals(""))
-					{
-						Console.WriteLine(result);
-						// Get result from server
-						result = reader.ReadLine();
-					}
-				}
-			}
-			catch
-			{
->>>>>>> ed4fabfa7ebd57e25b740162d6dc41f2519e9a48
-
-			}
-			return true;
-		}
-	}
+            }
+            return true;
+        }
+    }
 }

@@ -9,19 +9,25 @@ using System.Configuration;
 
 namespace Server
 {
-<<<<<<< HEAD
     public class Server
     {
         List<TcpClient> clientsPool;
         private TcpListener listener;
         private IView ch;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Server"/> class.
+        /// </summary>
+        /// <param name="ch">The ch.</param>
         public Server(IView ch)
         {
             clientsPool = new List<TcpClient>();
             this.ch = ch;
         }
 
+        /// <summary>
+        /// Starts this instance.
+        /// </summary>
         public void Start()
         {
             string ipAdresss = ConfigurationManager.AppSettings["IP"].ToString();
@@ -30,26 +36,6 @@ namespace Server
 
             IPEndPoint ep = new IPEndPoint(IPAddress.Parse(ipAdresss), port);
             listener = new TcpListener(ep);
-=======
-	public class Server
-	{
-		List<TcpClient> clientsPool;
-		private int port;
-		private TcpListener listener;
-		private IView ch;
-
-		public Server(int port, IView ch)
-		{
-			clientsPool = new List<TcpClient>();
-			this.port = port;
-			this.ch = ch;
-		}
-
-		public void Start()
-		{
-			IPEndPoint ep = new IPEndPoint(IPAddress.Parse("127.0.0.1"), port);
-			listener = new TcpListener(ep);
->>>>>>> ed4fabfa7ebd57e25b740162d6dc41f2519e9a48
 
 			listener.Start();
 
@@ -73,10 +59,6 @@ namespace Server
 				Console.WriteLine("Server stopped");
 			});
 			task.Start();
-		}
-		public void Stop()
-		{
-			listener.Stop();
 		}
 	}
 }

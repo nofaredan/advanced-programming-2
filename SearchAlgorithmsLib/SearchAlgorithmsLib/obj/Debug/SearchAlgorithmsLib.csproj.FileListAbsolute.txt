@@ -11,18 +11,6 @@ c:/users/pc/documents/visual studio 2015/Projects/SearchAlgorithmsLib/SearchAlgo
 c:/users/pc/documents/visual studio 2015/Projects/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/Priority Queue.xml
 c:/users/pc/documents/visual studio 2015/Projects/SearchAlgorithmsLib/SearchAlgorithmsLib/obj/Debug/SearchAlgorithmsLib.dll
 c:/users/pc/documents/visual studio 2015/Projects/SearchAlgorithmsLib/SearchAlgorithmsLib/obj/Debug/SearchAlgorithmsLib.pdb
-C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced-programming-2/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/SearchAlgorithmsLib.dll
-C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced-programming-2/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/SearchAlgorithmsLib.pdb
-C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced-programming-2/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/ConcurrentPriorityQueue.dll
-C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced-programming-2/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/Newtonsoft.Json.dll
-C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced-programming-2/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/Priority Queue.dll
-C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced-programming-2/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/Simple.dll
-C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced-programming-2/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/ConcurrentPriorityQueue.pdb
-C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced-programming-2/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/Newtonsoft.Json.xml
-C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced-programming-2/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/Priority Queue.pdb
-C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced-programming-2/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/Priority Queue.xml
-C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced-programming-2/SearchAlgorithmsLib/SearchAlgorithmsLib/obj/Debug/SearchAlgorithmsLib.dll
-C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced-programming-2/SearchAlgorithmsLib/SearchAlgorithmsLib/obj/Debug/SearchAlgorithmsLib.pdb
 /Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/SearchAlgorithmsLib.dll
 /Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/SearchAlgorithmsLib.pdb
 /Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/bin/Debug/ConcurrentPriorityQueue.dll
@@ -37,3 +25,16 @@ C:/Users/PC/Desktop/שנה ב/סמסטר ב/תכנות מתקדם 2/git/advanced
 /Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/obj/Debug/SearchAlgorithmsLib.dll
 /Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/obj/Debug/SearchAlgorithmsLib.pdb
 /Users/nofaredan/Desktop/nofar/Study/Computer Science/B/תכנות מתקדם2/Tasks/advanced programming 2/SearchAlgorithmsLib/SearchAlgorithmsLib/obj/Debug/SearchAlgorithmsLib.csprojResolveAssemblyReference.cache
+C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\SearchAlgorithmsLib\bin\Debug\SearchAlgorithmsLib.dll
+C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\SearchAlgorithmsLib\bin\Debug\SearchAlgorithmsLib.pdb
+C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\SearchAlgorithmsLib\bin\Debug\ConcurrentPriorityQueue.dll
+C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\SearchAlgorithmsLib\bin\Debug\Newtonsoft.Json.dll
+C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\SearchAlgorithmsLib\bin\Debug\Priority Queue.dll
+C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\SearchAlgorithmsLib\bin\Debug\Simple.dll
+C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\SearchAlgorithmsLib\bin\Debug\ConcurrentPriorityQueue.pdb
+C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\SearchAlgorithmsLib\bin\Debug\Newtonsoft.Json.xml
+C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\SearchAlgorithmsLib\bin\Debug\Priority Queue.pdb
+C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\SearchAlgorithmsLib\bin\Debug\Priority Queue.xml
+C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\SearchAlgorithmsLib\obj\Debug\SearchAlgorithmsLib.csprojResolveAssemblyReference.cache
+C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\SearchAlgorithmsLib\obj\Debug\SearchAlgorithmsLib.dll
+C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\SearchAlgorithmsLib\obj\Debug\SearchAlgorithmsLib.pdb

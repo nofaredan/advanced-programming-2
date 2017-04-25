@@ -7,13 +7,19 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-	public class Controller
+    /// <summary>
+    /// Controller.
+    /// </summary>
+    public class Controller
 	{
 		private Dictionary<string, ICommand> commands;
 		private IModel model;
 		private IView view;
 
-		public Controller()
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Controller"/> class.
+        /// </summary>
+        public Controller()
 		{
 			model = new Model(this);
 			view = new View(this);
@@ -26,10 +32,19 @@ namespace Server
 			commands.Add("join", new JoinCommand(model));
 
 		}
-		public ConnectionInfo ExecuteCommand(string commandLine, TcpClient client)
+
+        /// <summary>
+        /// Executes the command.
+        /// </summary>
+        /// <param name="commandLine">The command line.</param>
+        /// <param name="client">The client.</param>
+        /// <returns></returns>
+        public ConnectionInfo ExecuteCommand(string commandLine, TcpClient client)
 		{
 			string[] arr = commandLine.Split(' ');
 			string commandKey = arr[0];
+
+            // if the commands don't contain the command key
 			if (!commands.ContainsKey(commandKey))
 			{
 				ConnectionInfo connectionInfo = new ConnectionInfo();

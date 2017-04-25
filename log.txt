@@ -1,0 +1,209 @@
+*   commit 2a3742809e09a44b678828e5b4754459b6abcd7b
+|\  Merge: 5fb6233 ed4fabf
+| | Author: Rotem <Rotem>
+| | Date:   Tue Apr 18 19:53:10 2017 +0300
+| | 
+| |     before merging with nofar2
+| |   
+| *   commit ed4fabfa7ebd57e25b740162d6dc41f2519e9a48
+| |\  Merge: 37e4893 de6e34e
+| | | Author: nofaredan <nofaredan@gmail.com>
+| | | Date:   Tue Apr 18 12:43:07 2017 +0300
+| | | 
+| | |     Merge pull request #8 from nofaredan/ex1
+| | |     
+| | |     Fixed route bug
+| | | 
+| | * commit de6e34e7cd950b2b87ccaef0bc32b409cd3b80c4
+| | | Author: nofar  edan <nofaredan@gmail.com>
+| | | Date:   Tue Apr 18 12:42:11 2017 +0300
+| | | 
+| | |     Fixed route bug
+| | |   
+| * |   commit 37e4893d32c3fc755022564ebd54885597092da9
+| |\ \  Merge: e5ae94d 68e0e16
+| | |/  Author: nofaredan <nofaredan@gmail.com>
+| | |   Date:   Tue Apr 18 02:43:55 2017 +0300
+| | |   
+| | |       Merge pull request #7 from nofaredan/ex1
+| | |       
+| | |       Ex1
+| | | 
+| | * commit 68e0e16fbd4f1da89cdc39d57731ad49158e40d9
+| | | Author: nofar  edan <nofaredan@gmail.com>
+| | | Date:   Tue Apr 18 02:43:17 2017 +0300
+| | | 
+| | |     updated + gitignore 2
+| | | 
+| | * commit 27bcad00471ce482c0213091cbf4c7ef09c6ade7
+| | | Author: nofar  edan <nofaredan@gmail.com>
+| | | Date:   Tue Apr 18 02:37:14 2017 +0300
+| | | 
+| | |     updated + gitignore
+| | |   
+| | *   commit 01cb57898e580578850fc12eabe0da27a95acaf4
+| | |\  Merge: 7f039ca e5ae94d
+| | |/  Author: nofar  edan <nofaredan@gmail.com>
+| |/|   Date:   Tue Apr 18 02:13:58 2017 +0300
+| | |   
+| | |       Merged from master
+| | |   
+| * |   commit e5ae94db1916f85104c840ec763d3c863fb52040
+| |\ \  Merge: 1d02469 ca0a3fc
+| | | | Author: rotemhas <rotemhss@gmail.com>
+| | | | Date:   Tue Apr 18 00:04:51 2017 +0300
+| | | | 
+| | | |     Merge pull request #6 from nofaredan/exe1rotem
+| | | |     
+| | | |     after play
+| | | |   
+| | | *   commit 7f039cad8f0ad9006f8b4cb5213de9a0b76c05d8
+| | | |\  Merge: 09954a8 1d02469
+| | |_|/  Author: nofar  edan <nofaredan@gmail.com>
+| |/| |   Date:   Mon Apr 17 23:33:38 2017 +0300
+| | | |   
+| | | |       Nofar changes + gitignore
+| | | |   
+| * | |   commit 1d024692e3fbfc93ebde4251b0c83f1b3dd4ea52
+| |\ \ \  Merge: 7b1062c f0ee125
+| | | | | Author: rotemhas <rotemhss@gmail.com>
+| | | | | Date:   Mon Apr 17 18:36:23 2017 +0300
+| | | | | 
+| | | | |     Merge pull request #5 from nofaredan/exe1rotem
+| | | | |     
+| | | | |     problem in client - start and play
+| | | | | 
+| | | | * commit 09954a80f96818bac83c01a3385498fa87cc88e6
+| | |_|/  Author: nofar  edan <nofaredan@gmail.com>
+| |/| |   Date:   Mon Apr 17 18:38:23 2017 +0300
+| | | |   
+| | | |       mac update
+| | | |   
+| * | |   commit 7b1062c238e178bd361da15643e6a6e86b4ef1fd
+| |\ \ \  Merge: ad8b78b 0b315f8
+| | | | | Author: rotemhas <rotemhss@gmail.com>
+| | | | | Date:   Mon Apr 17 16:12:18 2017 +0300
+| | | | | 
+| | | | |     Merge pull request #4 from nofaredan/exe1rotem
+| | | | |     
+| | | | |     Exe1rotem
+| | | | | 
+* | | | | commit 5fb62338e41b5458357bb0f3e9482509bbaa76b7
+| | | | | Author: Rotem <Rotem>
+| | | | | Date:   Tue Apr 18 19:50:26 2017 +0300
+| | | | | 
+| | | | |     before merging 2
+| | | | | 
+* | | | | commit 953f0ce51154d5b4282101320fcce4af1cc95c33
+| |_|_|/  Author: Rotem <Rotem>
+|/| | |   Date:   Tue Apr 18 19:26:57 2017 +0300
+| | | |   
+| | | |       before merging with nofar
+| | | | 
+* | | | commit ca0a3fc9d46c80ec86f76504f77e289d2365edbe
+| |_|/  Author: Rotem <Rotem>
+|/| |   Date:   Tue Apr 18 00:03:04 2017 +0300
+| | |   
+| | |       after play
+| | | 
+* | | commit f0ee1256ff6bc28ba08029e7087ca757cc0c63fb
+| |/  Author: Rotem <Rotem>
+|/|   Date:   Mon Apr 17 18:35:26 2017 +0300
+| |   
+| |       problem in client - start and play
+| | 
+* | commit 0b315f88371dba066ae77dcada151daeffc917fe
+| | Author: Rotem <Rotem>
+| | Date:   Mon Apr 17 16:10:55 2017 +0300
+| | 
+| |     adding multiplayer
+| |   
+* |   commit ea7cd86dbaa2fb2398e19cf25bf2b85ffa007ad5
+|\ \  Merge: 4e7ac91 ad8b78b
+| |/  Author: Rotem <Rotem>
+| |   Date:   Sat Apr 15 10:51:22 2017 +0300
+| |   
+| |       generate
+| |   
+| *   commit ad8b78bed1f8e4a49e4db4a6c8e00eae3d82ef3e
+| |\  Merge: 397dc2b b1284b2
+| | | Author: nofaredan <nofaredan@gmail.com>
+| | | Date:   Fri Apr 14 19:20:42 2017 +0300
+| | | 
+| | |     Merge pull request #3 from nofaredan/ex1
+| | |     
+| | |     Ex1
+| | |   
+| | *   commit b1284b296c70b43974f894c5ce7752e3f239191d
+| | |\  Merge: 9b5492b 1f1ec61
+| | | | Author: nofar  edan <nofaredan@gmail.com>
+| | | | Date:   Fri Apr 14 19:19:32 2017 +0300
+| | | | 
+| | | |     Merge branch 'ex1' of https://github.com/nofaredan/advanced-programming-2 into ex1
+| | | | 
+| | | * commit 1f1ec61c031530aebbb51a8b4ca1901def9bb1ec
+| | | | Author: nofaredan <nofaredan@gmail.com>
+| | | | Date:   Thu Apr 13 20:50:03 2017 +0300
+| | | | 
+| | | |     Update .gitignore
+| | | | 
+| | * | commit 9b5492be8e2fe5c6d98a64c0b4a3631364320a9b
+| | |/  Author: nofar  edan <nofaredan@gmail.com>
+| | |   Date:   Fri Apr 14 19:15:27 2017 +0300
+| | |   
+| | |       nofar commit - after adding generate command
+| | |   
+| | *   commit d83b001ec75c0d36393d4549ffda85ff1fae4d1c
+| | |\  Merge: 811b905 397dc2b
+| | |/  Author: nofar  edan <nofaredan@gmail.com>
+| |/|   Date:   Thu Apr 13 20:45:48 2017 +0300
+| | |   
+| | |       ex1 commit sec with gitignore
+| | |   
+| * |   commit 397dc2bcc6c932a03bec089bdeeb3352e7a3890e
+| |\ \  Merge: d38cd9a 1bc5a7e
+| | | | Author: rotemhas <rotemhss@gmail.com>
+| | | | Date:   Thu Apr 13 20:24:36 2017 +0300
+| | | | 
+| | | |     Merge pull request #2 from nofaredan/exe1rotem
+| | | |     
+| | | |     second
+| | | | 
+| | | * commit 811b9055b36a75da95a05fceff5889788c72e331
+| | |/  Author: nofar  edan <nofaredan@gmail.com>
+| |/|   Date:   Thu Apr 13 20:34:00 2017 +0300
+| | |   
+| | |       ex1 commit sec
+| | |   
+| * |   commit d38cd9ae1a4033fa91f654280824b81dd8f53a26
+| |\ \  Merge: 8dfd57d 0d958aa
+| | | | Author: rotemhas <rotemhss@gmail.com>
+| | | | Date:   Thu Apr 13 16:25:45 2017 +0300
+| | | | 
+| | | |     Merge pull request #1 from nofaredan/exe1rotem
+| | | |     
+| | | |     Rotem first
+| | | | 
+* | | | commit 4e7ac91976ea7b6337d0239d9fe880ee0bebc0d0
+| |_|/  Author: Rotem <Rotem>
+|/| |   Date:   Fri Apr 14 22:59:17 2017 +0300
+| | |   
+| | |       adter adding generate
+| | | 
+* | | commit 1bc5a7edcd5686e4740abb37e781d14a6f1116fc
+| |/  Author: Rotem <Rotem>
+|/|   Date:   Thu Apr 13 20:23:12 2017 +0300
+| |   
+| |       second
+| | 
+* | commit 0d958aaa455c5207a9d978182f3d6e4a41a38009
+|/  Author: Rotem <Rotem>
+|   Date:   Thu Apr 13 16:20:47 2017 +0300
+|   
+|       Rotem first
+| 
+* commit 8dfd57d3e2ee90d4c0e1b1bee1c923c1c3dbfb2b
+  Author: nofar  edan <nofaredan@gmail.com>
+  Date:   Tue Apr 11 22:02:29 2017 +0300
+  
+      first commit

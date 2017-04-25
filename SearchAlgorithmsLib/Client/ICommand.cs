@@ -4,6 +4,12 @@ namespace Client
 {
 	public interface ICommand
 	{
-		bool Execute(string[] args, TcpClient client = null);
+        /// <summary>
+        /// Execute.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+        /// <param name="client">The client.</param>
+        /// <returns></returns>
+        bool Execute(string[] args, TcpClient client = null);
 	}
 }

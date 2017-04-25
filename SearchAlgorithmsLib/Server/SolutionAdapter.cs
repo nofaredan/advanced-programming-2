@@ -12,12 +12,20 @@ namespace Server
 	{
 		private Solution<Position> solution;
 
-		public SolutionAdapter(Solution<Position> newSolution)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SolutionAdapter"/> class.
+        /// </summary>
+        /// <param name="newSolution">The new solution.</param>
+        public SolutionAdapter(Solution<Position> newSolution)
 		{
 			solution = newSolution;
 		}
 
-		public string CreateString()
+        /// <summary>
+        /// Creates the string.
+        /// </summary>
+        /// <returns></returns>
+        public string CreateString()
 		{
 			if (solution.Count == 0)
 			{
@@ -56,33 +64,6 @@ namespace Server
 				}
 				firstPos = secondPos;
 			}
-
-			/*while (index < solution.Count)
-			{
-				secondPos = solution[index].GetState();
-				if (secondPos.Row > firstPos.Row)
-				{
-					// DOWN
-					result = result + "3";
-				}
-				else if (secondPos.Row < firstPos.Row)
-				{
-					// UP
-					result = result + "2";
-				}
-				else if (secondPos.Col > firstPos.Col)
-				{
-					// RIGHT
-					result = result + "1";
-				}
-				else
-				{
-					// LEFT
-					result = result + "0";
-				}
-				firstPos = secondPos;
-				index++;
-			}*/
 			return result;
 		}
 	}

@@ -11,8 +11,11 @@ namespace Client
 {
 	class Program
 	{
-
-		static void Main(string[] args)
+        /// <summary>
+        /// Main function.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+        static void Main(string[] args)
 		{
 			View view = new View();
 			view.Connect();
