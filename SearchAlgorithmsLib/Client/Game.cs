@@ -13,22 +13,25 @@ namespace Client
 		private static bool gameAlive;
 		public static TcpClient server { get; set; }
 
-		public static void StartGame()
-		{
-			gameAlive = true;
-			new Task(() =>
-			{
-				// wait for join
-				NetworkStream stream = server.GetStream();
-				StreamReader reader = new StreamReader(stream);
-
-				while (gameAlive)
-				{
-					bool answer = SendAndRecieve.RecieveInfo(reader);
-				}
-
-
-			}).Start();
-		}
-	}
+        /// <summary>
+        /// Starts the game.
+        /// </summary>
+        public static void StartGame()
+        {
+            gameAlive = true;
+            new Task(() => {
+                // wait for join
+                NetworkStream stream = server.GetStream();
+                StreamReader reader = new StreamReader(stream);
+                
+                    while (gameAlive)
+                    {
+                        bool answer = SendAndRecieve.RecieveInfo(reader);          
+                    }
+                
+            }).Start();
+        }
+    }
 }
+	
+

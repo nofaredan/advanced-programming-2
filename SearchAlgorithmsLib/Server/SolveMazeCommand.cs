@@ -11,12 +11,23 @@ namespace Server
 	public class SolveMazeCommand : ICommand
 	{
 		private IModel model;
-		public SolveMazeCommand(IModel newModel)
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SolveMazeCommand"/> class.
+        /// </summary>
+        /// <param name="newModel">The new model.</param>
+        public SolveMazeCommand(IModel newModel)
 		{
 			model = newModel;
 		}
 
-		public ConnectionInfo Execute(string[] args, TcpClient client = null)
+        /// <summary>
+        /// Executes the specified arguments.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+        /// <param name="client">The client.</param>
+        /// <returns></returns>
+        public ConnectionInfo Execute(string[] args, TcpClient client = null)
 		{
 			string name = args[0];
 			string algo = args[1];

@@ -9,7 +9,13 @@ namespace Client
 {
 	public class JoinCommand : ICommand
 	{
-		public bool Execute(string[] args, TcpClient client = null)
+        /// <summary>
+        /// Execute.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+        /// <param name="client">The client.</param>
+        /// <returns></returns>
+        public bool Execute(string[] args, TcpClient client = null)
 		{
 			Game.server = client;
 			Game.StartGame();

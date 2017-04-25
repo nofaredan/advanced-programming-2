@@ -9,6 +9,15 @@ namespace SearchAlgorithmsLib
     public class Solution<T>
     {
         private List<State<T>> path = new List<State<T>>();
+
+        /// <summary>
+        /// Gets the <see cref="State{T}"/> with the specified index.
+        /// </summary>
+        /// <value>
+        /// The <see cref="State{T}"/>.
+        /// </value>
+        /// <param name="idx">The index.</param>
+        /// <returns></returns>
         public State<T> this [int idx] {
             get
             {
@@ -16,12 +25,21 @@ namespace SearchAlgorithmsLib
             }
         }
 
+        /// <summary>
+        /// Adds the specified value.
+        /// </summary>
+        /// <param name="value">The value.</param>
         public void Add(State<T> value)
         {
             path.Add(value);
         }
 
-        // a property of openList
+        /// <summary>
+        /// Gets the count.
+        /// </summary>
+        /// <value>
+        /// The count.
+        /// </value>
         public int Count
         {
             get { return path.Count; }

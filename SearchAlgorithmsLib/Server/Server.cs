@@ -5,27 +5,37 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace Server
 {
-	public class Server
-	{
-		List<TcpClient> clientsPool;
-		private int port;
-		private TcpListener listener;
-		private IView ch;
+    public class Server
+    {
+        List<TcpClient> clientsPool;
+        private TcpListener listener;
+        private IView ch;
 
-		public Server(int port, IView ch)
-		{
-			clientsPool = new List<TcpClient>();
-			this.port = port;
-			this.ch = ch;
-		}
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Server"/> class.
+        /// </summary>
+        /// <param name="ch">The ch.</param>
+        public Server(IView ch)
+        {
+            clientsPool = new List<TcpClient>();
+            this.ch = ch;
+        }
 
-		public void Start()
-		{
-			IPEndPoint ep = new IPEndPoint(IPAddress.Parse("127.0.0.1"), port);
-			listener = new TcpListener(ep);
+        /// <summary>
+        /// Starts this instance.
+        /// </summary>
+        public void Start()
+        {
+            string ipAdresss = ConfigurationManager.AppSettings["IP"].ToString();
+            string strPort = ConfigurationManager.AppSettings["port"].ToString();
+            int port = Int32.Parse(strPort);
+
+            IPEndPoint ep = new IPEndPoint(IPAddress.Parse(ipAdresss), port);
+            listener = new TcpListener(ep);
 
 			listener.Start();
 
@@ -49,10 +59,6 @@ namespace Server
 				Console.WriteLine("Server stopped");
 			});
 			task.Start();
-		}
-		public void Stop()
-		{
-			listener.Stop();
 		}
 	}
 }

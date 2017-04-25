@@ -18,7 +18,11 @@ namespace Server
 		Dictionary<Maze, SolveInfo> solutionsList;
 		Controller controller;
 
-		public Model(Controller newController)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Model"/> class.
+        /// </summary>
+        /// <param name="newController">The new controller.</param>
+        public Model(Controller newController)
 		{
 			controller = newController;
 			singleplayerMazeList = new Dictionary<string, Maze>();
@@ -26,7 +30,14 @@ namespace Server
 			solutionsList = new Dictionary<Maze, SolveInfo>();
 		}
 
-		public Maze GenerateMaze(string name, int rows, int cols)
+        /// <summary>
+        /// Generates the maze.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="rows">The rows.</param>
+        /// <param name="cols">The cols.</param>
+        /// <returns></returns>
+        public Maze GenerateMaze(string name, int rows, int cols)
 		{
 			if (singleplayerMazeList.ContainsKey(name))
 			{
@@ -35,33 +46,19 @@ namespace Server
 
 			DFSMazeGenerator dfsMazeGenerator = new DFSMazeGenerator();
 			Maze maze = dfsMazeGenerator.Generate(rows, cols);
-
-
-			//Maze maze;
-			/*using (var fil = System.IO.File.OpenWrite("nofar"))
-			{
-				using (var writer = new System.IO.StreamWriter(fil))
-				{
-					writer.Write(maze.ToJSON());
-				}
-			}*/
-
-			/*using (var fil = System.IO.File.OpenRead("nofar"))
-			{
-				using (var reader = new System.IO.StreamReader(fil))
-				{
-					maze = Maze.FromJSON(reader.ReadToEnd());
-				}
-			}*/
-
 			maze.Name = name;
-
-
+            // add to single player list:
 			singleplayerMazeList.Add(maze.Name, maze);
 			return maze;
 		}
 
-		public SolveInfo SolveMaze(string name, string typeAlgo)
+        /// <summary>
+        /// Solves the maze.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="typeAlgo">The type algo.</param>
+        /// <returns></returns>
+        public SolveInfo SolveMaze(string name, string typeAlgo)
 		{
 			Maze maze = singleplayerMazeList[name];
 			MazeAdapter mazeSearchable = new MazeAdapter(maze); // Isearchable
@@ -94,7 +91,15 @@ namespace Server
 			return solveInfo;
 		}
 
-		public bool StartGame(string name, int rows, int cols, TcpClient client)
+        /// <summary>
+        /// Starts the game.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="rows">The rows.</param>
+        /// <param name="cols">The cols.</param>
+        /// <param name="client">The client.</param>
+        /// <returns></returns>
+        public bool StartGame(string name, int rows, int cols, TcpClient client)
 		{
 			// if the game doesn't exist
 			if (games.ContainsKey(name))
@@ -115,12 +120,22 @@ namespace Server
 			return false;
 		}
 
-		public Dictionary<string, MazeGame> ShowList()
+        /// <summary>
+        /// Shows the list.
+        /// </summary>
+        /// <returns></returns>
+        public Dictionary<string, MazeGame> ShowList()
 		{
 			return games;
 		}
 
-		public Maze JoinGame(string name, TcpClient client)
+        /// <summary>
+        /// Joins the game.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="client">The client.</param>
+        /// <returns></returns>
+        public Maze JoinGame(string name, TcpClient client)
 		{
 			if (!games.ContainsKey(name))
 			{
@@ -132,7 +147,5 @@ namespace Server
 
 			return MazeGame.gamesInfo[name].maze;
 		}
-
-
 	}
 }

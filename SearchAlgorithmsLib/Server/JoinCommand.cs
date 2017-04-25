@@ -8,22 +8,31 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-	public class JoinCommand : ICommand
-	{
-		IModel model;
-		public JoinCommand(IModel myModel)
-		{
-			model = myModel;
-		}
-		public ConnectionInfo Execute(string[] args, TcpClient client = null)
-		{
+    public class JoinCommand : ICommand
+    {
+        IModel model;
 
-			//model.HandleJoin(client);
+        /// <summary>
+        /// Initializes a new instance of the <see cref="JoinCommand"/> class.
+        /// </summary>
+        /// <param name="myModel">My model.</param>
+        public JoinCommand(IModel myModel)
+        {
+            model = myModel;
+        }
 
-			string name = args[0];
-			Maze maze = model.JoinGame(name, client);
-			ConnectionInfo connectionInfo = new ConnectionInfo();
-			connectionInfo.CloseConnection = false;
+        /// <summary>
+        /// Execute.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+        /// <param name="client">The client.</param>
+        /// <returns></returns>
+        public ConnectionInfo Execute(string[] args, TcpClient client = null)
+        {
+            string name = args[0];
+            Maze maze = model.JoinGame(name, client);
+            ConnectionInfo connectionInfo = new ConnectionInfo();
+            connectionInfo.CloseConnection = false;
 
 			if (maze == null)
 			{

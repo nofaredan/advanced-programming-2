@@ -12,35 +12,45 @@ namespace Server
 	public class GamePlayCommand : IGameCommand
 	{
 		MazeGame game;
-		public GamePlayCommand(MazeGame myGame)
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GamePlayCommand"/> class.
+        /// </summary>
+        /// <param name="myGame">My game.</param>
+        public GamePlayCommand(MazeGame myGame)
 		{
 			game = myGame;
 		}
 
-		public ConnectionInfo Execute(string[] args, string name, TcpClient currentPlayer = null)
-		{
-			List<TcpClient> clients = MazeGame.gamesInfo[name].players;
-			JObject json = new JObject();
-			json["Name"] = name;
-			json["Direction"] = args[0];
-			bool found = false;
-			int index = 0;
-			TcpClient clientFound = null;
-			// ConnectionInfo connectionInfo = new ConnectionInfo();
+        /// <summary>
+        /// Execute.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+        /// <param name="name">The name.</param>
+        /// <param name="currentPlayer">The current player.</param>
+        public void Execute(string[] args, string name, TcpClient currentPlayer = null)
+        {
+            List<TcpClient> clients = MazeGame.gamesInfo[name].players;
+            JObject json = new JObject();
+            json["Name"] = name;
+            json["Direction"] = args[0];
+            bool found = false;
+            int index = 0;
+            TcpClient clientFound = null;
+           // ConnectionInfo connectionInfo = new ConnectionInfo();
 
-			// find client
-			while (!found && index < clients.Count)
-			{
-				if (clients[index] != currentPlayer)
-				{
-					clientFound = clients[index];
-					found = true;
-				}
-				index++;
-			}
-			// send json to client
-			game.WriteMessage(new StreamWriter(clientFound.GetStream()), json.ToString());
-			return null;
-		}
-	}
+            // find client
+            while (!found && index< clients.Count)
+            {
+                if (clients[index] != currentPlayer)
+                {
+                    clientFound = clients[index];
+                    found = true;
+                }
+                index++;
+            }
+            // send json to client
+            game.WriteMessage(new StreamWriter(clientFound.GetStream()), json.ToString());
+        }
+    }
 }

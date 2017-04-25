@@ -8,39 +8,50 @@ using MazeLib;
 
 namespace MazeProject
 {
-    // an adapter from maze to searchable
     public class MazeAdapter : ISearchable<Position>
     {
         private Maze maze;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MazeAdapter"/> class.
+        /// </summary>
+        /// <param name="myMaze">My maze.</param>
         public MazeAdapter(Maze myMaze)
         {
-            	maze = myMaze;
-		State<Position>.StatePool.initDictionary();
+            maze = myMaze;
+            State<Position>.StatePool.initDictionary();
         }
+
+        /// <summary>
+        /// Gets all possible states.
+        /// </summary>
+        /// <param name="state">The state.</param>
+        /// <returns></returns>
         public List<State<Position>> getAllPossibleStates(State<Position> state)
         {
             State<Position> tempState;
             Position position = new Position();
             int newRow, newCol;
             List<State<Position>> list = new List<State<Position>>();
+
+            // direction matrix:
             int[,] arr = new int[4, 2] { { 0, 1 }, { 0, -1 }, { 1, 0 }, { -1, 0 } };
 
-            for(int i=0; i<arr.GetLength(0); i++)
+            // go over the direction matrix and add states (neighbors) to the list:
+            for (int i = 0; i < arr.GetLength(0); i++)
             {
                 newRow = state.GetState().Row + arr[i, 0];
                 newCol = state.GetState().Col + arr[i, 1];
-                if (newRow >=0 && newRow<maze.Rows && newCol>=0 && newCol< maze.Cols &&
-                    maze[newRow,newCol] == MazeLib.CellType.Free)
+                if (newRow >= 0 && newRow < maze.Rows && newCol >= 0 && newCol < maze.Cols &&
+                    maze[newRow, newCol] == MazeLib.CellType.Free)
                 {
                     position.Row = state.GetState().Row + arr[i, 0];
                     position.Col = state.GetState().Col + arr[i, 1];
-                   // s = new State<Position>(position);
-                   // s.SetCost(1);
                     tempState = State<Position>.StatePool.getState(position, 1);
                     list.Add(tempState);
                 }
             }
-
+            // if the list is null, return an empty one.
             if (list == null)
             {
                 list = new List<State<Position>>();
@@ -48,14 +59,22 @@ namespace MazeProject
             return list;
         }
 
+        /// <summary>
+        /// Gets the state of the i goall.
+        /// </summary>
+        /// <returns></returns>
         public State<Position> getIGoallState()
         {
-			return State<Position>.StatePool.getState(maze.GoalPos, 1);
+            return State<Position>.StatePool.getState(maze.GoalPos, 1);
         }
 
+        /// <summary>
+        /// Gets the initial state.
+        /// </summary>
+        /// <returns></returns>
         public State<Position> getInitialState()
         {
-			return State<Position>.StatePool.getState(maze.InitialPos, 1);
+            return State<Position>.StatePool.getState(maze.InitialPos, 1);
         }
     }
 }

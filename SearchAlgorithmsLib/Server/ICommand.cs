@@ -9,6 +9,12 @@ namespace Server
 {
 	public interface ICommand
 	{
-		ConnectionInfo Execute(string[] args, TcpClient client = null);
+        /// <summary>
+        /// Executes the specified arguments.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+        /// <param name="client">The client.</param>
+        /// <returns></returns>
+        ConnectionInfo Execute(string[] args, TcpClient client = null);
 	}
 }

@@ -13,12 +13,24 @@ namespace Server
 		int nodesEvaluated;
 		Solution<Position> solution;
 
-		public SolveInfo(int nEvaluated, Solution<Position> mySolution)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SolveInfo"/> class.
+        /// </summary>
+        /// <param name="nEvaluated">The n evaluated.</param>
+        /// <param name="mySolution">My solution.</param>
+        public SolveInfo(int nEvaluated, Solution<Position> mySolution)
 		{
 			nodesEvaluated = nEvaluated;
 			solution = mySolution;
 		}
-		public int NodesEvaluated
+
+        /// <summary>
+        /// Gets or sets the nodes evaluated.
+        /// </summary>
+        /// <value>
+        /// The nodes evaluated.
+        /// </value>
+        public int NodesEvaluated
 		{
 			get
 			{
@@ -31,7 +43,13 @@ namespace Server
 			}
 		}
 
-		public Solution<Position> Solution
+        /// <summary>
+        /// Gets or sets the solution.
+        /// </summary>
+        /// <value>
+        /// The solution.
+        /// </value>
+        public Solution<Position> Solution
 		{
 			get
 			{

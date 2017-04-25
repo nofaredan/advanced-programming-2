@@ -7,19 +7,33 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-	public class CloseCommand : ICommand
+    /// <summary>
+    /// Close Command
+    /// </summary>
+    /// <seealso cref="Server.ICommand" />
+    public class CloseCommand : ICommand
 	{
 		IModel model;
-		public CloseCommand(IModel myModel)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CloseCommand"/> class.
+        /// </summary>
+        /// <param name="myModel">My model.</param>
+        public CloseCommand(IModel myModel)
 		{
 			model = myModel;
 		}
-		public ConnectionInfo Execute(string[] args, TcpClient client = null)
+
+        /// <summary>
+        /// Execute function.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+        /// <param name="client">The client.</param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public ConnectionInfo Execute(string[] args, TcpClient client = null)
 		{
 			string name = args[0];
-
-			// here we need to dispose netwrok connection
-			throw new NotImplementedException();
+            return null;
 		}
 	}
 }

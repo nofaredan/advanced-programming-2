@@ -12,12 +12,23 @@ namespace Server
 	public class ListCommand : ICommand
 	{
 		IModel model;
-		public ListCommand(IModel newModel)
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListCommand"/> class.
+        /// </summary>
+        /// <param name="newModel">The new model.</param>
+        public ListCommand(IModel newModel)
 		{
 			model = newModel;
 		}
 
-		public ConnectionInfo Execute(string[] args, TcpClient client = null)
+        /// <summary>
+        /// Executes the specified arguments.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+        /// <param name="client">The client.</param>
+        /// <returns></returns>
+        public ConnectionInfo Execute(string[] args, TcpClient client = null)
 		{
 			Dictionary<string, MazeGame> list = model.ShowList();
 			ConnectionInfo connectionInfo = new ConnectionInfo();

@@ -12,10 +12,19 @@ namespace SearchAlgorithmsLib
         List<State<T>> greys = new List<State<T>>();
         List<State<T>> blacks = new List<State<T>>();
 
-        public DFS(IComparer<State<T>> newComperator):base(newComperator)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DFS{T}"/> class.
+        /// </summary>
+        /// <param name="newComperator">The new comperator.</param>
+        public DFS(IComparer<State<T>> newComperator) : base(newComperator)
         {
         }
 
+        /// <summary>
+        /// Searches the specified searchable.
+        /// </summary>
+        /// <param name="searchable">The searchable.</param>
+        /// <returns></returns>
         public override Solution<T> Search(ISearchable<T> searchable)
         {
             State<T> temp;
@@ -32,7 +41,7 @@ namespace SearchAlgorithmsLib
                 List<State<T>> succerssors = searchable.getAllPossibleStates(temp);
                 foreach (State<T> s in succerssors)
                 {
-		evaluatedNodes++;
+                    evaluatedNodes++;
                     // if s is white
                     if (!greys.Contains(s) && !blacks.Contains(s))
                     {
@@ -45,11 +54,17 @@ namespace SearchAlgorithmsLib
             return null;
         }
 
+        /// <summary>
+        /// Changes the color.
+        /// </summary>
+        /// <param name="state">The state.</param>
+        /// <param name="original">The original.</param>
+        /// <param name="changeTo">The change to.</param>
         private void ChangeColor(State<T> state, List<State<T>> original, List<State<T>> changeTo)
         {
             if (original.Contains(state))
             {
-                original.Remove(state);   
+                original.Remove(state);
             }
             changeTo.Add(state);
         }

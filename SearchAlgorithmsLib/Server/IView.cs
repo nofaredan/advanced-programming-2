@@ -9,6 +9,10 @@ namespace Server
 {
 	public interface IView
 	{
-		void HandleClient(TcpClient tcpClient);
+        /// <summary>
+        /// Handles the client.
+        /// </summary>
+        /// <param name="tcpClient">The TCP client.</param>
+        void HandleClient(TcpClient tcpClient);
 	}
 }
