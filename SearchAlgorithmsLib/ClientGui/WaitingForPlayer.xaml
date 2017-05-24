@@ -1,0 +1,13 @@
+﻿<Window x:Class="ClientGui.WaitingForPlayer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClientGui"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="WaitingForPlayer" Height="300" Width="300">
+    <Grid>
+        <Label x:Name="cols_label" Content="Waiting for partner" Foreground="Black" FontWeight="Bold" FontFamily="Tahoma" FontSize="20" Margin="41,83,10,135" RenderTransformOrigin="0.5,0.5"/>
+    </Grid>
+</Window>

@@ -24,36 +24,36 @@ namespace SearchAlgorithmsLib
         /// <returns></returns>
         public override Solution<T> Search(ISearchable<T> searchable)
         {
-            addToOpenList(searchable.getInitialState());
+            AddToOpenList(searchable.GetInitialState());
             HashSet<State<T>> closed = new HashSet<State<T>>();
             while (OpenListSize > 0)
             {
-                State<T> n = popOpenList();
+                State<T> n = PopOpenList();
                 closed.Add(n);
-                if (n.Equals(searchable.getIGoallState()))
-                    return backTrace(n);
-                List<State<T>> succerssors = searchable.getAllPossibleStates(n);
+                if (n.Equals(searchable.GetIGoallState()))
+                    return BackTrace(n);
+                List<State<T>> succerssors = searchable.GetAllPossibleStates(n);
                 foreach (State<T> s in succerssors)
                 {
                     evaluatedNodes++;
-                    if (!closed.Contains(s) && !openContains(s))
+                    if (!closed.Contains(s) && !OpenContains(s))
                     {
                         s.SetCost(s.GetCost() + n.GetCost());
                         s.SetCameFrom(n);
-                        addToOpenList(s);
+                        AddToOpenList(s);
                     }
                     else
                     {
                         State<T> currentFromQueue = null;
-                        if (openContains(s))
+                        if (OpenContains(s))
                         {
-                            currentFromQueue = getStateFromQueue(s);
+                            currentFromQueue = GetStateFromQueue(s);
                             if (s.GetCost() + n.GetCost() < currentFromQueue.GetCost())
                             {
                                 s.SetCost(s.GetCost() + n.GetCost());
-                                popStateFromQueue(currentFromQueue);
+                                PopStateFromQueue(currentFromQueue);
                                 s.SetCameFrom(n);
-                                addToOpenList(s);
+                                AddToOpenList(s);
                             }
                         }
                     }

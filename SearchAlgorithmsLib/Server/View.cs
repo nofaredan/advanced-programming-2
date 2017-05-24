@@ -45,8 +45,10 @@ namespace Server
 					Console.WriteLine("Got command: {0}", commandLine);
 					ConnectionInfo result = controller.ExecuteCommand(commandLine, client);
                     // write:
-					writer.WriteLine(result.Answer);
-					writer.Flush();
+                    if (!result.Answer.Equals("")) {
+                        writer.WriteLine(result.Answer);
+                        writer.Flush();
+                    }
 
                     // if needed to close connection:
 					if (result.CloseConnection)

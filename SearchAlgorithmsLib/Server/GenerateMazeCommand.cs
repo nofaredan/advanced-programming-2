@@ -29,16 +29,19 @@ namespace Server
         /// <returns></returns>
         public ConnectionInfo Execute(string[] args, TcpClient client)
 		{
-            // maze information:
-			string name = args[0];
-			int rows = int.Parse(args[1]);
-			int cols = int.Parse(args[2]);
-			Maze maze = model.GenerateMaze(name, rows, cols);
+            Maze maze = null;
+            ConnectionInfo connectionInfo = new ConnectionInfo();
+            connectionInfo.CloseConnection = true;
 
-			ConnectionInfo connectionInfo = new ConnectionInfo();
-			connectionInfo.CloseConnection = true;
-
-            // if the maze doesn't exist
+            if (args[0]!="" && args[1] != "" && args[2] != "")
+            {
+                // maze information:
+                string name = args[0];
+                int rows = int.Parse(args[1]);
+                int cols = int.Parse(args[2]);
+                maze = model.GenerateMaze(name, rows, cols);
+            }
+            // if the maze already exist
 			if (maze == null)
 			{
 				connectionInfo.Answer = "invalid command";

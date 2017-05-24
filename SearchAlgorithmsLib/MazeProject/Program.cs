@@ -43,9 +43,9 @@ namespace MazeProject
             DFS<Position> dfs = new DFS<Position>(temp);
             Solution<Position> dfsSol = dfs.Search(mazeSearchable);
 
-            Console.WriteLine("BFS" + bfs.getNumberOfNodesEvaluated());
+            Console.WriteLine("BFS" + bfs.GetNumberOfNodesEvaluated());
 
-            Console.WriteLine("DFS" + dfs.getNumberOfNodesEvaluated());
+            Console.WriteLine("DFS" + dfs.GetNumberOfNodesEvaluated());
         }
     }
 }

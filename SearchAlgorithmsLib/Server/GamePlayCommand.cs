@@ -30,7 +30,7 @@ namespace Server
         /// <param name="currentPlayer">The current player.</param>
         public void Execute(string[] args, string name, TcpClient currentPlayer = null)
         {
-            List<TcpClient> clients = MazeGame.gamesInfo[name].players;
+            List<TcpClient> clients = MazeGame.gamesInfo[name].Players;
             JObject json = new JObject();
             json["Name"] = name;
             json["Direction"] = args[0];

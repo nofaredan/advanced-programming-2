@@ -21,6 +21,10 @@ namespace ClientGui
     {
         ViewModel vm;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SettingsWindow"/> class.
+        /// </summary>
+        /// <param name="vm">The vm.</param>
         public SettingsWindow(ViewModel vm)
         {
             this.vm = vm;
@@ -28,6 +32,11 @@ namespace ClientGui
             this.DataContext = vm;
         }
 
+        /// <summary>
+        /// Handles the Click event of the OK control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void OK_Click(object sender, RoutedEventArgs e)
         {
             vm.SaveSettings();
@@ -36,12 +45,26 @@ namespace ClientGui
             this.Close();
         }
 
+        /// <summary>
+        /// Handles the Click event of the Cancel control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             vm.CancelSettings();
             MainWindow win = (MainWindow)Application.Current.MainWindow;
             win.Show();
             this.Close();
+        }
+
+        /// <summary>
+        /// Starts this instance.
+        /// </summary>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public void Start()
+        {
+            throw new NotImplementedException();
         }
     }
 }

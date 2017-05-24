@@ -30,8 +30,7 @@ namespace Server
 			commands.Add("start", new StartMazeCommand(model));
 			commands.Add("list", new ListCommand(model));
 			commands.Add("join", new JoinCommand(model));
-
-		}
+        }
 
         /// <summary>
         /// Executes the command.

@@ -26,30 +26,37 @@ namespace ClientGui
         private Grid grid;
         private double gridHeight;
         private double gridWidth;
-        private Image playerImg;
-        private Image exitImg;
+        private Rectangle playerImg;
+        private Rectangle exitImg;
+        private ViewModel viewModel;
+        private bool isMainPlayer;
+        public DependencyProperty CurrentPosition { get; set; }
+        private bool isSinglePlayer;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GridSinglePlayer"/> class.
+        /// </summary>
         public GridSinglePlayer()
         {
             InitializeComponent();
-
             grid = new Grid();
             gridHeight = this.Height;
             gridWidth = this.Width;
-
             Content = grid;
-
-         //   ImageSource imgSource = new BitmapImage(new Uri("/pics/bob.jpg", UriKind.Relative));
-            
-            playerImg = new Image();
-            playerImg.Source = new BitmapImage(new Uri("/ClientGui;pics/bob.jpg", UriKind.Relative));
-
-            exitImg = new Image();
-            playerImg.Source = new BitmapImage(new Uri("/ClientGui;pics/exit.jpg", UriKind.Relative));
         }
 
-        public void DrawMaze(string jsonMaze)
+        /// <summary>
+        /// Draws the maze.
+        /// </summary>
+        /// <param name="jsonMaze">The json maze.</param>
+        /// <param name="viewModel">The view model.</param>
+        /// <param name="isSinglePlayer">if set to <c>true</c> [is single player].</param>
+        /// <param name="isMainPlayer">if set to <c>true</c> [is main player].</param>
+        public void DrawMaze(string jsonMaze, ViewModel viewModel, bool isSinglePlayer = true, bool isMainPlayer = true)
         {
+            this.isSinglePlayer = isSinglePlayer;
+            this.isMainPlayer = isMainPlayer;
+            this.viewModel = viewModel;
             maze = Maze.FromJSON(jsonMaze);
 
             CreateRows();
@@ -58,8 +65,9 @@ namespace ClientGui
             // draw maze:
             for (int row = 0; row < maze.Rows; row++)
             {
-                for (int col = 0; col < maze.Cols; col++)
+                for (int col = 0; col < maze.Cols - 1; col++)
                 {
+
                     Rectangle rectangle = DrawRectangle(row, col);
                     Grid.SetRow(rectangle, row);
                     Grid.SetColumn(rectangle, col);
@@ -67,55 +75,58 @@ namespace ClientGui
                 }
             }
 
-            //DrawPlayer();
-            DrawGoal();
+            BindPlayer();
         }
 
-        private void DrawGoal()
+        /// <summary>
+        /// Binds the player.
+        /// </summary>
+        private void BindPlayer()
         {
-            double heightRec = gridHeight / maze.Rows;
-            double widthRec = gridWidth / maze.Cols;
+            string path;
+            playerImg = new Rectangle();
 
-            Rectangle exitRec = new Rectangle();
-            BitmapImage exitBitMap = new BitmapImage(new Uri("pack://application:,,,/ClientGui;component/pics/bob.jpg"));
+            if (isMainPlayer)
+            {
+                path = "pack://application:,,,/ClientGui;component/pics/bob.jpg";
+                Bind(path, "VM_CurrentRow", "VM_CurrentCol");
+            }
+            else
+            {
+                path = "pack://application:,,,/ClientGui;component/pics/purple.jpg";
+                Bind(path, "VM_OtherCurrentRow", "VM_OtherCurrentCol");
+            }
 
+            BitmapImage exitBitMap = new BitmapImage(new Uri(path));
             ImageBrush brush = new ImageBrush(exitBitMap);
-            exitRec.Fill = brush;
+            playerImg.Fill = brush;
 
-            //exitRec.Height = heightRec;
-            //exitRec.Width = widthRec;
-            exitRec.VerticalAlignment = VerticalAlignment.Center;
-
-            Grid.SetRow(exitRec, maze.GoalPos.Row);
-            Grid.SetColumn(exitRec, maze.GoalPos.Col);
-
-            grid.Children.Add(exitRec);
-
-            
+            this.grid.Children.Add(playerImg);
         }
 
-        private void DrawPlayer()
+        /// <summary>
+        /// Binds the specified path.
+        /// </summary>
+        /// <param name="path">The path.</param>
+        /// <param name="rowPropertyName">Name of the row property.</param>
+        /// <param name="colPropertyName">Name of the col property.</param>
+        private void Bind(string path, string rowPropertyName, string colPropertyName)
         {
-            double heightRec = gridHeight / maze.Rows;
-            double widthRec = gridWidth / maze.Cols;
+            Binding bindingRow = new Binding();
+            bindingRow.Path = new PropertyPath(rowPropertyName);
+            BindingOperations.SetBinding(playerImg, Grid.RowProperty, bindingRow);
 
-            playerImg.Height = heightRec;
-            playerImg.Width = widthRec;
-            playerImg.VerticalAlignment = VerticalAlignment.Center;
-
-            // ----------> SET PLAYER PLACE BY DATA BINDING
-            /*Binding bindingCurrImgRow = new Binding();
-            bindingCurrImgRow.Path = new PropertyPath("VM_CurrRow");
-            BindingOperations.SetBinding(playerImg, Grid.RowProperty, bindingCurrImgRow);
-            Binding bindingCurrImgCol = new Binding();
-            bindingCurrImgCol.Path = new PropertyPath("VM_CurrCol");
-            BindingOperations.SetBinding(playerImg,Grid.ColumnProperty, bindingCurrImgCol);
-            */
-
-            // add to screen
-            //  grid.Children.Add(playerImg);
+            Binding bindingCol = new Binding();
+            bindingCol.Path = new PropertyPath(colPropertyName);
+            BindingOperations.SetBinding(playerImg, Grid.ColumnProperty, bindingCol);
         }
 
+        /// <summary>
+        /// Draws the rectangle.
+        /// </summary>
+        /// <param name="row">The row.</param>
+        /// <param name="col">The col.</param>
+        /// <returns></returns>
         private Rectangle DrawRectangle(int row, int col)
         {
             double heightRec = gridHeight / maze.Rows;
@@ -125,10 +136,19 @@ namespace ClientGui
             rectangle.Height = heightRec;
             rectangle.Width = widthRec;
 
-            if (maze[row, col] == MazeLib.CellType.Wall)
+            if (col == maze.GoalPos.Col && row == maze.GoalPos.Row)
+            {
+                BitmapImage exitBitMap = new BitmapImage(new Uri("pack://application:,,,/ClientGui;component/pics/exit.jpg"));
+                ImageBrush brush = new ImageBrush(exitBitMap);
+                rectangle.Fill = brush;
+                exitImg = rectangle;
+
+            }
+            else if (maze[row, col] == MazeLib.CellType.Wall)
             {
                 // wall
                 rectangle.Fill = new SolidColorBrush(Colors.Black);
+
             }
             else
             {
@@ -139,6 +159,9 @@ namespace ClientGui
             return rectangle;
         }
 
+        /// <summary>
+        /// Creates the columns.
+        /// </summary>
         private void CreateColumns()
         {
             // Create Columns
@@ -149,6 +172,9 @@ namespace ClientGui
             }
         }
 
+        /// <summary>
+        /// Creates the rows.
+        /// </summary>
         private void CreateRows()
         {
             // Create rows
@@ -158,5 +184,56 @@ namespace ClientGui
                 grid.RowDefinitions.Add(row);
             }
         }
+
+        /// <summary>
+        /// Called when [click event].
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="KeyEventArgs"/> instance containing the event data.</param>
+        private void OnClickEvent(object sender, KeyEventArgs e)
+        {
+            MovePlayer(e.Key);
+            e.Handled = true;
+        }
+
+        /// <summary>
+        /// Moves the player.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        public void MovePlayer(Key key)
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                viewModel.MovePlayer(key, isSinglePlayer);
+                this.grid.Children.Remove(playerImg);
+                this.grid.Children.Add(playerImg);
+            });
+        }
+
+        /// <summary>
+        /// Moves the player solve.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        public void MovePlayerSolve(Key key)
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                viewModel.MovePlayerSolve(key);
+                this.grid.Children.Remove(playerImg);
+                this.grid.Children.Add(playerImg);
+            });
+        }
+
+        /// <summary>
+        /// Restarts the player.
+        /// </summary>
+        public void RestartPlayer()
+        {
+            viewModel.RestartPlayer();
+            this.grid.Children.Remove(playerImg);
+            this.grid.Children.Add(playerImg);
+        }
+
+
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Net.Sockets;
+using MazeLib;
 
 namespace ClientGui
 {
@@ -23,7 +24,7 @@ namespace ClientGui
         /// <param name="args">The arguments.</param>
         /// <param name="client">The client.</param>
         /// <returns></returns>
-        public RecieveInfo Execute(string[] args, TcpClient client = null)
+        public RecieveInfo Execute(string[] args, IServerModel model, TcpClient client = null)
         {
             NetworkStream stream = client.GetStream();
             StreamReader reader = new StreamReader(stream);
@@ -32,6 +33,18 @@ namespace ClientGui
             client.GetStream().Close();
             client.Close();
 
+            if (!result.Equals("invalid command"))
+            {
+                // save start and end point
+                Maze maze = Maze.FromJSON(result);
+                model.CurrentRow = maze.InitialPos.Row;
+                model.CurrentCol = maze.InitialPos.Col;
+                model.Maze = maze;
+                model.GameName = maze.Name;
+
+                model.EndRow = maze.GoalPos.Row;
+                model.EndCol = maze.GoalPos.Col;
+            }
             return new RecieveInfo(result, false, "generate");
         }
     }

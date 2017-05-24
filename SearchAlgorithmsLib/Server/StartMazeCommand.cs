@@ -29,18 +29,24 @@ namespace Server
         /// <returns></returns>
         public ConnectionInfo Execute(string[] args, TcpClient client = null)
 		{
+            ConnectionInfo connectionInfo = new ConnectionInfo();
+            // NO ANSWER HERE - WAIT TO ANOTHER PLAYER
+            connectionInfo.CloseConnection = true;
+            connectionInfo.Answer = "";
+            bool isAnswerNeeded = true;
 
-			string name = args[0];
-			int rows = int.Parse(args[1]);
-			int cols = int.Parse(args[2]);
-			ConnectionInfo connectionInfo = new ConnectionInfo();
-			// NO ANSWER HERE - WAIT TO ANOTHER PLAYER
-			connectionInfo.CloseConnection = false;
+            if (args[0] != "" && args[1] != "" && args[2] != "")
+            {
+                string name = args[0];
+                int rows = int.Parse(args[1]);
+                int cols = int.Parse(args[2]);
 
-			// create new maze
-			bool isAnswerNeeded = model.StartGame(name, rows, cols, client);
+                // create new maze
+                isAnswerNeeded = model.StartGame(name, rows, cols, client);
+            }
 
-			if (isAnswerNeeded)
+
+            if (isAnswerNeeded)
 			{
 				// exist
 				connectionInfo.Answer = "invalid command";

@@ -64,41 +64,69 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CloseConnection.cs" />
-    <Compile Include="GenerateCommand.cs" />
-    <Compile Include="GridMultiPlayer.xaml.cs">
-      <DependentUpon>GridMultiPlayer.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="commands\CloseConnection.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="commands\GenerateCommand.cs" />
     <Compile Include="GridSinglePlayer.xaml.cs">
       <DependentUpon>GridSinglePlayer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ICommand.cs" />
-    <Compile Include="IServerModel.cs" />
-    <Compile Include="IViewCommand.cs" />
+    <Compile Include="commands\ICommand.cs" />
+    <Compile Include="InvalidCommand.xaml.cs">
+      <DependentUpon>InvalidCommand.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\IServerModel.cs" />
+    <Compile Include="IsRestart.xaml.cs">
+      <DependentUpon>IsRestart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="commands\IUpdateCommand.cs" />
+    <Compile Include="ViewCommands\IViewCommand.cs" />
+    <Compile Include="commands\JoinCommand.cs" />
     <Compile Include="MazeCommand.cs" />
-    <Compile Include="Model.cs" />
+    <Compile Include="ViewCommands\MessageUser.cs" />
+    <Compile Include="MVVM\Model.cs" />
     <Compile Include="MultiPlayerMenu.xaml.cs">
       <DependentUpon>MultiPlayerMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="MultiPlayerWindow.xaml.cs">
       <DependentUpon>MultiPlayerWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RecieveInfo.cs" />
-    <Compile Include="Recive.cs" />
-    <Compile Include="SendAndRecieve.cs" />
+    <Compile Include="PassInformation\RecieveInfo.cs" />
+    <Compile Include="PassInformation\Recive.cs" />
+    <Compile Include="PassInformation\SendAndRecieve.cs" />
+    <Compile Include="commands\SendMultiPlayerListCommand.cs" />
     <Compile Include="SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InitializeSinglePlayer.xaml.cs">
+      <DependentUpon>InitializeSinglePlayer.xaml</DependentUpon>
     </Compile>
     <Compile Include="SinglePlayerWindow.xaml.cs">
       <DependentUpon>SinglePlayerWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewGenerateMode.cs" />
-    <Compile Include="ViewModel.cs" />
-    <Page Include="GridMultiPlayer.xaml">
+    <Compile Include="commands\SolveCommand.cs" />
+    <Compile Include="commands\StartCommand.cs" />
+    <Compile Include="ViewCommands\ViewGenerateMode.cs" />
+    <Compile Include="ViewCommands\ViewJoinMode.cs" />
+    <Compile Include="MVVM\ViewModel.cs" />
+    <Compile Include="UpdateCommands\ViewSendMultiPlayerList.cs" />
+    <Compile Include="UpdateCommands\ViewSolveMode.cs" />
+    <Compile Include="ViewCommands\ViewStartMode.cs" />
+    <Compile Include="ViewCommands\ViewWinMode.cs" />
+    <Compile Include="WaitingForPlayer.xaml.cs">
+      <DependentUpon>WaitingForPlayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinSinglePlayer.xaml.cs">
+      <DependentUpon>WinSinglePlayer.xaml</DependentUpon>
+    </Compile>
+    <Page Include="GridSinglePlayer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GridSinglePlayer.xaml">
+    <Page Include="InvalidCommand.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IsRestart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -110,10 +138,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="InitializeSinglePlayer.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -121,9 +145,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="SinglePlayerMenu.xaml.cs">
-      <DependentUpon>InitializeSinglePlayer.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -133,7 +154,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="InitializeSinglePlayer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="SinglePlayerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WaitingForPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinSinglePlayer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -172,6 +205,26 @@
   <ItemGroup>
     <Resource Include="pics\bob.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pics\youWin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SearchAlgorithmsLib\SearchAlgorithmsLib.csproj">
+      <Project>{71d671ca-a8a5-483a-a61b-1c57d3bec287}</Project>
+      <Name>SearchAlgorithmsLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SolutionLib\SolutionLib.csproj">
+      <Project>{cf0c79bd-c604-441c-87fd-3b6d0d74ea8d}</Project>
+      <Name>SolutionLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pics\purple.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pics\background.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

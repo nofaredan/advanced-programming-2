@@ -67,7 +67,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Server.cs" />
-    <Compile Include="SolutionAdapter.cs" />
     <Compile Include="SolveInfo.cs" />
     <Compile Include="SolveMazeCommand.cs" />
     <Compile Include="StartMazeCommand.cs" />
@@ -95,6 +94,10 @@
     <ProjectReference Include="..\SearchAlgorithmsLib\SearchAlgorithmsLib.csproj">
       <Project>{71d671ca-a8a5-483a-a61b-1c57d3bec287}</Project>
       <Name>SearchAlgorithmsLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SolutionLib\SolutionLib.csproj">
+      <Project>{cf0c79bd-c604-441c-87fd-3b6d0d74ea8d}</Project>
+      <Name>SolutionLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

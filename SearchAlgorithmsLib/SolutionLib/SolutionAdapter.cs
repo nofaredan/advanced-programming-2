@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using SearchAlgorithmsLib;
 using MazeLib;
+ 
 
-namespace Server
+namespace SolutionLib
 {
 	public class SolutionAdapter
 	{

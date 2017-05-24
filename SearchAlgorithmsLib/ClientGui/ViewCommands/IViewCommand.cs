@@ -15,6 +15,6 @@ namespace ClientGui
         /// <param name="args">The arguments.</param>
         /// <param name="client">The client.</param>
         /// <returns></returns>
-        Window Execute(string e);
+        Window Execute(string result, ViewModel viewModel);
     }
 }

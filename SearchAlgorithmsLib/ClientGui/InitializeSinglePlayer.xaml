@@ -18,8 +18,8 @@
             </Button.BorderBrush>
         </Button>
 
-        <TextBox x:Name="rows_text" Canvas.Left="184" TextWrapping="Wrap" Canvas.Top="130" Margin="386,270,228,335"/>
-        <TextBox x:Name="cols_text" TextWrapping="Wrap" Margin="386,357,228,248"/>
+        <TextBox x:Name="rows_text" Text="{Binding VM_MazeRows}" Canvas.Left="184" TextWrapping="Wrap" Canvas.Top="130" Margin="386,270,228,335"/>
+        <TextBox x:Name="cols_text" Text="{Binding VM_MazeCols}" TextWrapping="Wrap" Margin="386,357,228,248"/>
         <TextBox x:Name="game_name_text" TextWrapping="Wrap" Margin="386,186,228,419"/>
         <Label x:Name="game_name_label" Content="Game Name:" Canvas.Left="145" Canvas.Top="89" Foreground="Black" FontWeight="Bold" FontFamily="Tahoma" FontSize="30" Margin="136,186,643,419"/>
         <Label x:Name="rows_label" Content="Rows:" Foreground="Black" FontWeight="Bold" FontFamily="Tahoma" FontSize="30" Margin="234,268,643,337"/>

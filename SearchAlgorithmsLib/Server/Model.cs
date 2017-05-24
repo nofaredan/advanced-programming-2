@@ -14,7 +14,7 @@ namespace Server
 	public class Model : IModel
 	{
 		Dictionary<string, Maze> singleplayerMazeList;
-		Dictionary<string, MazeGame> games;
+        public Dictionary<string, MazeGame> MultiplayerMazeList { get; set; }
 		Dictionary<Maze, SolveInfo> solutionsList;
 		Controller controller;
 
@@ -26,7 +26,7 @@ namespace Server
 		{
 			controller = newController;
 			singleplayerMazeList = new Dictionary<string, Maze>();
-			games = new Dictionary<string, MazeGame>();
+			MultiplayerMazeList = new Dictionary<string, MazeGame>();
 			solutionsList = new Dictionary<Maze, SolveInfo>();
 		}
 
@@ -39,6 +39,7 @@ namespace Server
         /// <returns></returns>
         public Maze GenerateMaze(string name, int rows, int cols)
 		{
+            Console.WriteLine(singleplayerMazeList);
 			if (singleplayerMazeList.ContainsKey(name))
 			{
 				return null;
@@ -77,12 +78,12 @@ namespace Server
 				case "0":
 					BFS<Position> bfs = new BFS<Position>(temp);
 					solution = bfs.Search(mazeSearchable);
-					nodesEvaluated = bfs.getNumberOfNodesEvaluated();
+					nodesEvaluated = bfs.GetNumberOfNodesEvaluated();
 					break;
 				case "1":
 					DFS<Position> dfs = new DFS<Position>(temp);
 					solution = dfs.Search(mazeSearchable);
-					nodesEvaluated = dfs.getNumberOfNodesEvaluated();
+					nodesEvaluated = dfs.GetNumberOfNodesEvaluated();
 					break;
 			}
 			SolveInfo solveInfo = new SolveInfo(nodesEvaluated, solution);
@@ -102,7 +103,7 @@ namespace Server
         public bool StartGame(string name, int rows, int cols, TcpClient client)
 		{
 			// if the game doesn't exist
-			if (games.ContainsKey(name))
+			if (MultiplayerMazeList.ContainsKey(name))
 			{
 				return true;
 			}
@@ -113,9 +114,9 @@ namespace Server
 
 			// add to games
 			MazeGame game = new MazeGame(maze);
-			games[name] = game;
+			MultiplayerMazeList[name] = game;
 
-			game.addPlayer(client, name);
+			game.AddPlayer(client, name);
 
 			return false;
 		}
@@ -126,7 +127,7 @@ namespace Server
         /// <returns></returns>
         public Dictionary<string, MazeGame> ShowList()
 		{
-			return games;
+			return MultiplayerMazeList;
 		}
 
         /// <summary>
@@ -135,17 +136,19 @@ namespace Server
         /// <param name="name">The name.</param>
         /// <param name="client">The client.</param>
         /// <returns></returns>
-        public Maze JoinGame(string name, TcpClient client)
+        public string JoinGame(string name, TcpClient client)
 		{
-			if (!games.ContainsKey(name))
+			if (!MultiplayerMazeList.ContainsKey(name))
 			{
-				return null;
+				return "invalid command";
 			}
-			MazeGame game = games[name];
+			MazeGame game = MultiplayerMazeList[name];
 
-			game.addPlayer(client, name);
+			game.AddPlayer(client, name);
 
-			return MazeGame.gamesInfo[name].maze;
+            MultiplayerMazeList.Remove(name);
+
+            return "";
 		}
 	}
 }
