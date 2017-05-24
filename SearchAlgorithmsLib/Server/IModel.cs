@@ -49,6 +49,8 @@ namespace Server
         /// <param name="name">The name.</param>
         /// <param name="client">The client.</param>
         /// <returns></returns>
-        Maze JoinGame(string name, TcpClient client);
-	}
+        string JoinGame(string name, TcpClient client);
+
+        Dictionary<string, MazeGame> MultiplayerMazeList { get; set; }
+    }
 }

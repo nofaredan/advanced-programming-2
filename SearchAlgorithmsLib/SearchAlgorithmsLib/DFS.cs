@@ -28,17 +28,17 @@ namespace SearchAlgorithmsLib
         public override Solution<T> Search(ISearchable<T> searchable)
         {
             State<T> temp;
-            states.Push(searchable.getInitialState());
+            states.Push(searchable.GetInitialState());
             // while stack is not empty:
             while (states.Count != 0)
             {
                 temp = states.Pop();
                 greys.Add(temp);
-                if (temp.Equals(searchable.getIGoallState()))
+                if (temp.Equals(searchable.GetIGoallState()))
                 {
-                    return backTrace(temp);
+                    return BackTrace(temp);
                 }
-                List<State<T>> succerssors = searchable.getAllPossibleStates(temp);
+                List<State<T>> succerssors = searchable.GetAllPossibleStates(temp);
                 foreach (State<T> s in succerssors)
                 {
                     evaluatedNodes++;

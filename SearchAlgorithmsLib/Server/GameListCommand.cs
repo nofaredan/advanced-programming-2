@@ -33,10 +33,10 @@ namespace Server
             List<string> list = new List<string>();
             foreach(GameInfo gameInfo in MazeGame.gamesInfo.Values)
             {
-                if (gameInfo.players.Count!=2)
+                if (gameInfo.Players.Count!=2)
                 {
                     // add name to list
-                    list.Add(gameInfo.name);
+                    list.Add(gameInfo.Name);
                 }
             }
 

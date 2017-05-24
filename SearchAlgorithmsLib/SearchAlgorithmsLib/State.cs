@@ -121,7 +121,7 @@ namespace SearchAlgorithmsLib
             /// <param name="stateKey">The state key.</param>
             /// <param name="cost">The cost.</param>
             /// <returns></returns>
-            public static State<T> getState(T stateKey, double cost)
+            public static State<T> GetState(T stateKey, double cost)
             {
                 if (!dictionary.ContainsKey(stateKey.ToString().GetHashCode()))
                 {
@@ -134,7 +134,7 @@ namespace SearchAlgorithmsLib
             /// <summary>
             /// Initializes the dictionary.
             /// </summary>
-            public static void initDictionary()
+            public static void InitDictionary()
             {
                 dictionary.Clear();
             }

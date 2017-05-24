@@ -10,6 +10,6 @@ namespace ClientGui
         /// <param name="args">The arguments.</param>
         /// <param name="client">The client.</param>
         /// <returns></returns>
-        RecieveInfo Execute(string[] args, TcpClient client = null);
+        RecieveInfo Execute(string[] args, IServerModel model,  TcpClient client = null);
 	}
 }

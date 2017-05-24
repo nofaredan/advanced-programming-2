@@ -33,9 +33,13 @@ namespace ClientGui
             try
             {
                 result = reader.ReadLine();
-                if (result == null || result.Equals("invalid command"))
+                if (result == null)
                 {
                     return "";
+                }
+                if (/*result == null ||*/ result.Equals("invalid command"))
+                {
+                    return "invalid command";
                 }
                 // read until end:
                 if (!result.Equals("end"))
@@ -43,13 +47,14 @@ namespace ClientGui
                     Console.WriteLine("Result = {0}", result);
 
                     currentMessage = reader.ReadLine();
-                    result += "\n" + currentMessage;
+                   // result += currentMessage;
                     while (currentMessage!= null && !currentMessage.Equals("end"))
                     {
                         // Console.WriteLine(result);
                         // Get result from server
-                        currentMessage = reader.ReadLine();
                         result += "\n" + currentMessage;
+                        currentMessage = reader.ReadLine();
+                       
                     }
                 }
             }

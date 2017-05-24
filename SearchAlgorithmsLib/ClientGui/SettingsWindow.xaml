@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientGui"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         MinHeight="700" MinWidth="1000" MaxHeight="400" MaxWidth="1091.667"
         Title="SettingsWindow" Height="300" Width="300">
     <Grid>

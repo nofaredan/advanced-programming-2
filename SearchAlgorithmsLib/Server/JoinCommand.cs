@@ -30,18 +30,10 @@ namespace Server
         public ConnectionInfo Execute(string[] args, TcpClient client = null)
         {
             string name = args[0];
-            Maze maze = model.JoinGame(name, client);
             ConnectionInfo connectionInfo = new ConnectionInfo();
-            connectionInfo.CloseConnection = false;
-
-			if (maze == null)
-			{
-				connectionInfo.Answer = "invalid command";
-			}
-			else
-			{
-				connectionInfo.Answer = maze.ToJSON();
-			}
+            connectionInfo.CloseConnection = true;
+            connectionInfo.Answer = model.JoinGame(name, client);
+          
 			return connectionInfo;
 		}
 	}

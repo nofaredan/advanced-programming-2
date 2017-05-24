@@ -10,17 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ClientGui
 {
     /// <summary>
-    /// Interaction logic for GridMultiPlayer.xaml
+    /// Interaction logic for WaitingForPlayer.xaml
     /// </summary>
-    public partial class GridMultiPlayer : UserControl
+    public partial class WaitingForPlayer : Window
     {
-        public GridMultiPlayer()
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WaitingForPlayer"/> class.
+        /// </summary>
+        public WaitingForPlayer()
         {
             InitializeComponent();
         }

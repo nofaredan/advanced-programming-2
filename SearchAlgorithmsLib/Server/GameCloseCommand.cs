@@ -30,7 +30,8 @@ namespace Server
         /// <param name="currentPlayer">The current player.</param>
         public void Execute(string[] args, string name, TcpClient currentPlayer = null)
         {
-            List<TcpClient> clients = MazeGame.gamesInfo[name].players;
+            GameInfo currenrGameInfo = MazeGame.gamesInfo[name];
+            List<TcpClient> clients = MazeGame.gamesInfo[name].Players;
             JObject json = new JObject();
             json[""] = "game closed";
             bool found = false;
@@ -51,7 +52,7 @@ namespace Server
             MazeGame.gamesInfo.Remove(name);
 
             // send json to client
-            game.WriteMessage(new StreamWriter(clientFound.GetStream()), json.ToString());
+            game.WriteMessage(new StreamWriter(clientFound.GetStream()), json.ToString(), currenrGameInfo);
         }
     }
 }

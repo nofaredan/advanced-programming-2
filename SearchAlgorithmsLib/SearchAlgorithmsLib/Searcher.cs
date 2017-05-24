@@ -28,7 +28,7 @@ namespace SearchAlgorithmsLib
         /// Pops from open list.
         /// </summary>
         /// <returns></returns>
-        protected State<T> popOpenList()
+        protected State<T> PopOpenList()
         {
             // evaluatedNodes++;
             State<T> first = open.First();
@@ -52,7 +52,7 @@ namespace SearchAlgorithmsLib
         /// Gets the number of nodes evaluated.
         /// </summary>
         /// <returns></returns>
-        public int getNumberOfNodesEvaluated()
+        public int GetNumberOfNodesEvaluated()
         {
             return evaluatedNodes;
         }
@@ -62,7 +62,7 @@ namespace SearchAlgorithmsLib
         /// </summary>
         /// <param name="state">The state.</param>
         /// <returns></returns>
-        public bool openContains(State<T> state)
+        public bool OpenContains(State<T> state)
         {
             return open.Contains(state);
         }
@@ -71,7 +71,7 @@ namespace SearchAlgorithmsLib
         /// Adds object to open list.
         /// </summary>
         /// <param name="state">The state.</param>
-        public void addToOpenList(State<T> state)
+        public void AddToOpenList(State<T> state)
         {
             open.Add(state);
             open.Sort(comperator);
@@ -82,7 +82,7 @@ namespace SearchAlgorithmsLib
         /// </summary>
         /// <param name="s">The s.</param>
         /// <returns></returns>
-        public State<T> getStateFromQueue(State<T> s)
+        public State<T> GetStateFromQueue(State<T> s)
         {
             foreach (State<T> state in open)
             {
@@ -98,7 +98,7 @@ namespace SearchAlgorithmsLib
         /// Pops the state from queue.
         /// </summary>
         /// <param name="state">The state.</param>
-        public void popStateFromQueue(State<T> state)
+        public void PopStateFromQueue(State<T> state)
         {
             List<State<T>> temp = new List<State<T>>();
             foreach (State<T> s in open)
@@ -118,7 +118,7 @@ namespace SearchAlgorithmsLib
         /// </summary>
         /// <param name="goal">The goal.</param>
         /// <returns></returns>
-        protected Solution<T> backTrace(State<T> goal)
+        protected Solution<T> BackTrace(State<T> goal)
         {
             Solution<T> solution = new Solution<T>();
             State<T> currentState = goal;

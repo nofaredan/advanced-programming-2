@@ -5,10 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientGui"
         mc:Ignorable="d"
+        
+        Closing="ClosingMenu"
         MinHeight="700" MinWidth="1000" MaxHeight="400" MaxWidth="1091.667"
+         WindowStartupLocation="CenterScreen"
         Title="MultiPlayerMenu" Height="300" Width="300">
     <Grid>
-        <Button x:Name="start_game" Content="Start Game" HorizontalAlignment="Center" Margin="350,563,380,0" VerticalAlignment="Top" Width="262" Height="58" Click="OK_Click" Background="#FFD5DE74" BorderThickness="0" RenderTransformOrigin="1,0.5" FontSize="29.333" FontFamily="Tahoma" FontWeight="Bold" Opacity="0.5">
+        <Button x:Name="start_game" Content="Start Game" HorizontalAlignment="Center" Margin="350,563,380,0" VerticalAlignment="Top" Width="262" Height="58" Click="Start_Click" Background="#FFD5DE74" BorderThickness="0" RenderTransformOrigin="1,0.5" FontSize="29.333" FontFamily="Tahoma" FontWeight="Bold" Opacity="0.5">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -17,14 +20,27 @@
             </Button.BorderBrush>
         </Button>
 
-        <TextBox x:Name="name_text" Canvas.Left="184" TextWrapping="Wrap" Canvas.Top="130" Margin="386,268,228,337" TextChanged="name_text_TextChanged"/>
-        <TextBox x:Name="rows_text" TextWrapping="Wrap" Margin="386,357,228,248"/>
+        <TextBox x:Name="name_text" Canvas.Left="184" TextWrapping="Wrap" Canvas.Top="130" Margin="386,270,228,335"/>
+        <TextBox x:Name="rows_text" Text ="{Binding VM_MazeRows}" TextWrapping="Wrap" Margin="386,359,228,246"/>
         <Label x:Name="game_name_label" Content="List of games:" Canvas.Left="145" Canvas.Top="89" Foreground="Black" FontWeight="Bold" FontFamily="Tahoma" FontSize="30" Margin="120,126,643,479"/>
-        <Label x:Name="maze_name_label" Content="Maze Name:" Foreground="Black" FontWeight="Bold" FontFamily="Tahoma" FontSize="30" Margin="146,268,643,337"/>
-        <Label x:Name="rows_label" Content="Maze Rows:" Foreground="Black" FontWeight="Bold" FontFamily="Tahoma" FontSize="30" Margin="146,357,643,248"/>
+        <Label x:Name="maze_name_label" Content="Maze Name:" Foreground="Black" FontWeight="Bold" FontFamily="Tahoma" FontSize="30" Margin="146,270,643,335"/>
+        <Label x:Name="rows_label" Content="Maze Rows:" Foreground="Black" FontWeight="Bold" FontFamily="Tahoma" FontSize="30" Margin="146,359,643,246"/>
         <Label x:Name="multi_player_label" Content="Multiplayer Menu" Foreground="Black" FontWeight="Bold" FontFamily="Tahoma" FontSize="30" Margin="362,55,331,526"/>
-        <Label x:Name="cols_label" Content="Maze Columns:" Foreground="Black" FontWeight="Bold" FontFamily="Tahoma" FontSize="30" Margin="95,441,643,164"/>
-        <TextBox x:Name="maze_columns_txt" TextWrapping="Wrap" Margin="386,437,228,168"/>
+        <Label x:Name="cols_label" Content="Maze Columns:" Foreground="Black" FontWeight="Bold" FontFamily="Tahoma" FontSize="30" Margin="95,443,643,162"/>
+        <TextBox x:Name="maze_columns_txt" Text ="{Binding VM_MazeCols}" TextWrapping="Wrap" Margin="386,439,228,166"/>
+        <Button x:Name="join_game" Click ="Join_Click" FontSize="20" Content="Join game" HorizontalAlignment="Center" Margin="392,207,384,0" VerticalAlignment="Top" Width="216" Height="37" Background="#FFD5DE74" BorderThickness="0" RenderTransformOrigin="1,0.5" FontFamily="Tahoma" FontWeight="Bold" Opacity="0.5">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFEADEDE" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+
+        <ComboBox x:Name="multiplayer_list" ItemsSource="{Binding Path=VM_GameMultiPlayerList}"
+                  BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left"
+            IsEditable="False" Canvas.Left="357" Canvas.Top="391" Height="44" Width="317" Margin="392,135,0,490">
+        </ComboBox>
 
     </Grid>
 </Window>
