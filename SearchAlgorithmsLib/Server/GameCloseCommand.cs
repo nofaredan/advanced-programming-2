@@ -52,7 +52,15 @@ namespace Server
             MazeGame.gamesInfo.Remove(name);
 
             // send json to client
-            game.WriteMessage(new StreamWriter(clientFound.GetStream()), json.ToString(), currenrGameInfo);
+            if (clientFound == null)
+            {
+                // player ended game before the second joined
+                game.WriteMessage(new StreamWriter(currentPlayer.GetStream()), "aborted", currenrGameInfo);
+            }
+            else
+            {
+                game.WriteMessage(new StreamWriter(clientFound.GetStream()), json.ToString(), currenrGameInfo);
+            }
         }
     }
 }

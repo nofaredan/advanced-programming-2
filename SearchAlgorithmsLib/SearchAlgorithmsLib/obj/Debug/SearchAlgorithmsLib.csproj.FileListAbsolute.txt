@@ -38,3 +38,5 @@ C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced
 C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\SearchAlgorithmsLib\obj\Debug\SearchAlgorithmsLib.csprojResolveAssemblyReference.cache
 C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\SearchAlgorithmsLib\obj\Debug\SearchAlgorithmsLib.dll
 C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\SearchAlgorithmsLib\obj\Debug\SearchAlgorithmsLib.pdb
+C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\SearchAlgorithmsLib\bin\Debug\MazeLib.dll
+C:\Users\PC\Desktop\שנה ב\סמסטר ב\תכנות מתקדם 2\git\advanced-programming-2\SearchAlgorithmsLib\SearchAlgorithmsLib\bin\Debug\MazeLib.pdb

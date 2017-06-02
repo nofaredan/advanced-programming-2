@@ -172,6 +172,10 @@ namespace ClientGui
                         currentWindow = commands[e.type].Execute(e.result, viewModel);
 
                         currentWindow.DataContext = viewModel;
+                        if (oldWindow is MultiPlayerMenu)
+                        {
+                            ((MultiPlayerMenu)oldWindow).GameBegin = true;
+                        }
                         oldWindow.Close();
                         ShowDialog();
                     }

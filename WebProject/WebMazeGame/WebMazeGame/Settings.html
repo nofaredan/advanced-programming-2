@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="DesignSettings.css" />
+</head>
+<body>
+    <div>
+        <h1>Settings</h1>
+        <form action="/action_page.php">
+            <label for="ip_text">IP</label>
+            <input type="text" id="ip_text" name="ip" placeholder="IP..">
+
+            <label for="port_text">Port number</label>
+            <input type="text" id="port_text" name="port" placeholder="The port number..">
+
+            <label for="rows_text">Number of rows</label>
+            <input type="text" id="rows_text" name="rows" placeholder="The number of rows..">
+
+            <label for="col_text">Number of columns</label>
+            <input type="text" id="col_text" name="cols" placeholder="The number of columns..">
+
+            <label for="search_algo_text">Search Algorithm</label>
+            <select id="search_algo_text" name="search_algo">
+                <option value="BFS">BFS</option>
+                <option value="DFS">DFS</option>
+            </select>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

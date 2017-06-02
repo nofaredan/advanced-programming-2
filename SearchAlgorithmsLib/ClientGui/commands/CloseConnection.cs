@@ -21,14 +21,14 @@ namespace ClientGui
         /// <returns></returns>
         public RecieveInfo Execute(string[] args, IServerModel model, TcpClient client = null)
 		{
-            NetworkStream stream = client.GetStream();
+         /*   NetworkStream stream = client.GetStream();
             StreamReader reader = new StreamReader(stream);
             string result = SendAndRecieve.RecieveInfo(reader);
             client.GetStream().Flush();
 			client.GetStream().Close();
 			client.Close();
-
-			return new RecieveInfo(result, false, "close");
+            */
+			return new RecieveInfo("close", false, "close");
 		}
        
     }

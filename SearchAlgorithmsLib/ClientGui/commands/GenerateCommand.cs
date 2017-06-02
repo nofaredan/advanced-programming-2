@@ -12,7 +12,7 @@ namespace ClientGui
     public class GenerateCommand : ICommand
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CloseConnection"/> class.
+        /// Initializes a new instance of the <see cref="GenerateCommand"/> class.
         /// </summary>
         public GenerateCommand()
         {

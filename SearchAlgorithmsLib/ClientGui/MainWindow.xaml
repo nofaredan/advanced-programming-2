@@ -8,12 +8,10 @@
         WindowStartupLocation="CenterScreen"
         MinHeight="700" MinWidth="1000" MaxHeight="400" MaxWidth="1091.667" 
         Title="MainWindow" Height="350" Width="525">
-    <Window.Background>
-        <ImageBrush ImageSource="pics\background.png"/>
-    </Window.Background>
+
     <Grid>
-
-        <Button x:Name="singleplayer_button" Content="Single player" HorizontalAlignment="Center" Margin="292,203,279,0" VerticalAlignment="Top" Width="416" Height="58" Click="SinglePlayer_Click" Background="White" BorderThickness="0" RenderTransformOrigin="1,0.5" FontSize="29.333" FontFamily="Tahoma" FontWeight="Bold" Opacity="0.8">
+        <Image x:Name="image" Source="pics/gameLogo.png" Margin="716,440,-6,20"></Image>
+        <Button x:Name="singleplayer_button" Content="Single player" HorizontalAlignment="Center" Margin="292,203,279,0" VerticalAlignment="Top" Width="416" Height="58" Click="SinglePlayer_Click" Background="#FFD5DE74" BorderThickness="0" RenderTransformOrigin="1,0.5" FontSize="29.333" FontFamily="Tahoma" FontWeight="Bold" Opacity="0.8">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -22,7 +20,7 @@
             </Button.BorderBrush>
         </Button>
 
-        <Button x:Name="multiplayer_button" Content="Multi player" HorizontalAlignment="Center" Margin="292,292,285,0" VerticalAlignment="Top" Width="416" Height="58" Click="MultiPlayer_Click" Background="White" BorderThickness="0" RenderTransformOrigin="1,0.5" FontSize="29.333" FontFamily="Tahoma" Opacity="0.8" FontWeight="Bold">
+        <Button x:Name="multiplayer_button" Content="Multi player" HorizontalAlignment="Center" Margin="292,292,285,0" VerticalAlignment="Top" Width="416" Height="58" Click="MultiPlayer_Click" Background="#FFD5DE74" BorderThickness="0" RenderTransformOrigin="1,0.5" FontSize="29.333" FontFamily="Tahoma" Opacity="0.8" FontWeight="Bold">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -31,7 +29,7 @@
             </Button.BorderBrush>
         </Button>
 
-        <Button x:Name="settings_button" Content="Settings" HorizontalAlignment="Center" Margin="292,381,279,0" VerticalAlignment="Top" Width="416" Height="58" Click="Settings_Click" Background="White" BorderThickness="0" RenderTransformOrigin="1,0.5" FontSize="29.333" FontFamily="Tahoma" FontWeight="Bold" Opacity="0.8">
+        <Button x:Name="settings_button" Content="Settings" HorizontalAlignment="Center" Margin="292,381,279,0" VerticalAlignment="Top" Width="416" Height="58" Click="Settings_Click" Background="#FFD5DE74" BorderThickness="0" RenderTransformOrigin="1,0.5" FontSize="29.333" FontFamily="Tahoma" FontWeight="Bold" Opacity="0.8">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -39,6 +37,5 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="62" Margin="10,659,0,0" VerticalAlignment="Top" Width="176"/>
     </Grid>
 </Window>

@@ -51,8 +51,8 @@ namespace ClientGui
                     }
                     else
                     {
+                       // model.GameOver();
                         gameAlive = false;
-                        model.GameOver();
                     }
 
                 }

@@ -213,18 +213,13 @@
       <Project>{71d671ca-a8a5-483a-a61b-1c57d3bec287}</Project>
       <Name>SearchAlgorithmsLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SolutionLib\SolutionLib.csproj">
-      <Project>{cf0c79bd-c604-441c-87fd-3b6d0d74ea8d}</Project>
-      <Name>SolutionLib</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="pics\purple.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="pics\background.png" />
+    <Resource Include="pics\gameLogo.png" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

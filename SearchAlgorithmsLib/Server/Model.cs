@@ -118,6 +118,11 @@ namespace Server
 
 			game.AddPlayer(client, name);
 
+            if (MultiplayerMazeList.ContainsKey(name))
+            {
+                MultiplayerMazeList.Remove(name);
+            }
+
 			return false;
 		}
 
@@ -146,7 +151,10 @@ namespace Server
 
 			game.AddPlayer(client, name);
 
-            MultiplayerMazeList.Remove(name);
+            if (MultiplayerMazeList.ContainsKey(name))
+            {
+                MultiplayerMazeList.Remove(name);
+            }
 
             return "";
 		}

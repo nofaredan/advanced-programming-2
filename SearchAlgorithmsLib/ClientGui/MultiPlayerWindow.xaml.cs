@@ -47,7 +47,8 @@ namespace ClientGui
         /// <param name="e">The <see cref="CancelEventArgs"/> instance containing the event data.</param>
         private void OnClosing(object sender, CancelEventArgs e)
         {
-            e.Cancel = false;
+            viewModel.Send("close " + viewModel.VM_GameName);
+            viewModel.InitializeGame();
         }
 
         /// <summary>
