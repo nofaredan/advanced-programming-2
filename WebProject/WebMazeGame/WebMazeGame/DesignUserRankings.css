@@ -1,0 +1,27 @@
+﻿body {
+
+}
+
+h2{
+    font-size:40px;
+    font-family:Calibri;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    font-family:Arial;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #ffe6e6;
+    color: #333;
+    font-family:Arial;
+}

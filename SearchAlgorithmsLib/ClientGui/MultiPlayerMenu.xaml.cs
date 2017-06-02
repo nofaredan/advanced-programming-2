@@ -23,6 +23,8 @@ namespace ClientGui
         public event EventHandler<MazeCommand> commands;
         private ViewModel viewModel;
         private InvalidCommand waitWindow;
+        private bool ifStartPressed;
+        public bool GameBegin{ get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MultiPlayerMenu"/> class.
@@ -33,6 +35,8 @@ namespace ClientGui
             this.viewModel = viewModel;
             viewModel.Send("list");
             this.DataContext = viewModel;
+            ifStartPressed = false;
+            GameBegin = false;
         }
 
         /// <summary>
@@ -42,6 +46,7 @@ namespace ClientGui
         /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Start_Click(object sender, RoutedEventArgs e)
         {
+            ifStartPressed = true;
             string[] args = { name_text.Text, rows_text.Text, maze_columns_txt.Text };
             this.commands.Invoke(this, new MazeCommand("start", args));
 
@@ -60,6 +65,15 @@ namespace ClientGui
             if (waitWindow != null)
             {
                 waitWindow.Close();
+            }
+            if (!GameBegin)
+            {
+                // if start pressed, close the game
+                if (ifStartPressed)
+                {
+                    viewModel.CloseSpecificGame(name_text.Text);
+                }
+                viewModel.InitializeGame();
             }
         }
 

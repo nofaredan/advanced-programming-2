@@ -11,6 +11,7 @@ namespace ClientGui
 {
     class StartCommand : ICommand
     {
+        private TcpClient client;
         /// <summary>
         /// Execute.
         /// </summary>
@@ -20,13 +21,19 @@ namespace ClientGui
         /// <returns></returns>
         public RecieveInfo Execute(string[] args, IServerModel model, TcpClient client = null)
         {
+            this.client = client;
             NetworkStream stream = client.GetStream();
             StreamReader reader = new StreamReader(stream);
             string result = SendAndRecieve.RecieveInfo(reader);
             client.GetStream().Flush();
 
+            // the first finished before the other joined
+            if (result.Equals("aborted"))
+            {
+                return new RecieveInfo("close", false, "close");
+            }
             // if the message is invalid
-            if (!result.Equals("invalid command"))
+            else if (!result.Equals("invalid command"))
             {
                 // save start and end point
                 Maze maze = Maze.FromJSON(result);
@@ -39,11 +46,16 @@ namespace ClientGui
 
                 model.EndRow = maze.GoalPos.Row;
                 model.EndCol = maze.GoalPos.Col;
-            }
-            Game.server = client;
-            Game.StartGame(model);
 
+                Game.server = client;
+                Game.StartGame(model);
+            }
             return new RecieveInfo(result, true, "start");
+        }
+
+        public void Abort(string gameName)
+        {
+            SendAndRecieve.Send(new StreamWriter(client.GetStream()),"close "+gameName);
         }
     }
 }

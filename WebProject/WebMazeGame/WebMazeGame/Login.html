@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="DesignLogin.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script>
+
+        $(function () {
+            $('#nav h2 button').on('click', function (e) {
+                e.preventDefault();
+                $('#content').load("Register.html");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="nav">
+        <h1>Log in</h1>
+        <h2>Use a local account to log in.</h2>
+        <form action="/action_page.php">
+            <label for="fname">Username</label>
+            <input type="text" id="fname" name="username" placeholder="Your username..">
+
+            <label for="lname">Password</label>
+            <input type="password" id="lname" name="password" placeholder="Your password..">
+
+            <input type="submit" value="Login">
+
+            <h2><button>Register as a new user</button></h2>
+        </form>
+    </div>
+</body>
+</html>

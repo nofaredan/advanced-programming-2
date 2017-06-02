@@ -7,7 +7,7 @@ using SearchAlgorithmsLib;
 using MazeLib;
  
 
-namespace SolutionLib
+namespace SearchAlgorithmsLib
 {
 	public class SolutionAdapter
 	{

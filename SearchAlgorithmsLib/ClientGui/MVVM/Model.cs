@@ -35,6 +35,7 @@ namespace ClientGui
         private string gameName;
         public Maze Maze { get; set; }
         private bool connectionAlive;
+        private ICommand command;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Model"/> class.
@@ -46,6 +47,7 @@ namespace ClientGui
             commands.Add("generate", new GenerateCommand());
             commands.Add("start", new StartCommand());
             commands.Add("join", new JoinCommand());
+            commands.Add("close", new CloseConnection());
 
             updateCommands = new Dictionary<string, ICommand>();
             updateCommands.Add("solve", new SolveCommand());
@@ -111,13 +113,16 @@ namespace ClientGui
                                 Dictionary<string, ICommand> tempCommands = (commands.ContainsKey(commandKey)) ? commands : updateCommands;
 
                                 string[] arguments = arr.Skip(1).ToArray();
-                                ICommand command = tempCommands[commandKey];
+                                command = tempCommands[commandKey];
                                 RecieveInfo recieveInfo = command.Execute(arguments, this, client);
                                 connectionAlive = recieveInfo.connectionAlive;
 
                                 Task viewTask = new Task(() =>
                                 {
-                                    temp.Invoke(this, new Recive(recieveInfo.typeCommand, recieveInfo.result));
+                                    if (!recieveInfo.typeCommand.Equals("close"))
+                                    {
+                                        temp.Invoke(this, new Recive(recieveInfo.typeCommand, recieveInfo.result));
+                                    }
                                 });
                                 viewTask.Start();
                             }
@@ -137,6 +142,18 @@ namespace ClientGui
                 task.Start();
                 task.Wait();
 
+            }
+        }
+
+        /// <summary>
+        /// Closes the specific game.
+        /// </summary>
+        /// <param name="gameName">Name of the game.</param>
+        public void CloseSpecificGame(string gameName)
+        {
+            if (command is StartCommand)
+            {
+                ((StartCommand)(command)).Abort(gameName);
             }
         }
 

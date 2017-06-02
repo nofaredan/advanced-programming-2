@@ -318,5 +318,10 @@ namespace ClientGui
 
             }
         }
+
+        public void CloseSpecificGame(string gameName)
+        {
+            model.CloseSpecificGame(gameName);
+        }
     }
 }

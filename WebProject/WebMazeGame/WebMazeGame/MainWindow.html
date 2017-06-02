@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="DesignMainWindow.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script>
+
+        $(function () {
+            $('#nav li a').on('click', function (e) {
+                e.preventDefault();
+                var page = $(this).attr('href');
+                $('#content').load(page);
+            });
+        });
+    </script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script>
+        $(function myfunc() {
+            $('#content').load("Home.html");
+        });
+    </script>
+</head>
+<body onload="myfunc">
+    <div id="nav">
+        <ul>
+            <li><a id="default" href="Home.html">Maze</a></li>
+            <li><a href="SignlePlayerWindow.html">Single Game</a></li>
+            <li><a href="MultiplayerWindow.html">Multiplayer Game</a></li>
+            <li><a href="Settings.html">Settings</a></li>
+            <li><a href="UserRankings.html">User Rankings</a></li>
+            <li style="float:right"><a class="sidebar" href="Login.html">Login</a></li>
+            <li style="float:right"><a class="sidebar" href="Register.html">Register</a></li>
+        </ul>
+    </div>
+    <div id="content">
+    </div>
+</body>
+</html>

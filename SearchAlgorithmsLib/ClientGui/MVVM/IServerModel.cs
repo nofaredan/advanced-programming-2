@@ -207,5 +207,11 @@ namespace ClientGui
         /// <param name="currentColPlace">The current col place.</param>
         /// <returns></returns>
         Object[] GetNewRowAndCol(Key key, int currentRowPlace, int currentColPlace);
+
+        /// <summary>
+        /// Closes the specific game.
+        /// </summary>
+        /// <param name="gameName">Name of the game.</param>
+        void CloseSpecificGame(string gameName);
     }
 }
