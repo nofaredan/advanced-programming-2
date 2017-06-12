@@ -11,7 +11,7 @@ namespace SearchAlgorithmsLib
 {
 	public class SolutionAdapter
 	{
-		private Solution<Position> solution;
+		private Solution<Position> solution = new Solution<Position>();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SolutionAdapter"/> class.

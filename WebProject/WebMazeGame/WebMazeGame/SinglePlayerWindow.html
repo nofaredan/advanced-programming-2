@@ -1,0 +1,34 @@
+﻿<script src="SinglePlayer.js"></script>
+    <div class="main_div">
+        <h1>Single Game</h1>
+        <div class="div_form">
+            <form type="game_form">
+                <label for="name">Name</label>
+                <input class="game_input" type="text" id="name" name="name" placeholder="Name.." value="">
+
+                <label for="rows">Rows</label>
+                <input class="game_input" type="text" id="rows" name="rows" placeholder="Rows.." value="">
+
+                <label for="cols">Cols</label>
+                <input class="game_input" type="text" id="cols" name="cols" placeholder="Cols.." value="">
+
+                <input class="game_input" id="btnStartGame" type="button" value="Start New Game">
+
+                <label for="search_algo_text">Search Algorithm</label>
+                <select id="search_algo_text" name="search_algo">
+                    <option value="BFS">BFS</option>
+                    <option value="DFS">DFS</option>
+                </select>
+
+                <input class="game_input" id="btnSolve" type="button" value="Solve Game">
+
+            </form>
+        </div>
+        <div class="div_canvas"><canvas class="game_canvas" id="mazeCanvas" width="500" height="500"></canvas></div>
+    </div>
+
+<img class="picture" id="bob" src="pics/bob.jpg" width="1" height="1">
+<img class="picture" id="exit" src="pics/exit.jpg" width="1" height="1">
+
+
+
