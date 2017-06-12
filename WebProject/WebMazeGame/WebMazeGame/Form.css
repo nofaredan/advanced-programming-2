@@ -1,18 +1,7 @@
 ﻿body {
 }
 
-h1{
-     font-size:40px;
-     margin-top: 10px;
-    margin-right: 10px;
-    font-family:Calibri;
-}
-h2{
- font-size:20px;
-    font-family:Calibri;
-}
-
-input[type=password]{
+input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -30,7 +19,6 @@ input[type=text], select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-
 }
 
 input[type=submit] {
@@ -57,4 +45,36 @@ form {
     border-radius: 5px;
     padding: 20px;
     font-family: Arial;
+     position:center;
+     float:left;
+     margin:0px;
 }
+
+h2 button {
+    color: blue;
+    text-decoration: underline;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    h2 button:hover {
+    }
+
+input[type=button] {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ffe6e6;
+    color: #333;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Arial;
+}
+
+    input[type=button]:hover {
+        color: white;
+        background-color: #333;
+    }

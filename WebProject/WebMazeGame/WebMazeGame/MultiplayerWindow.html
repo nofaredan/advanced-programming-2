@@ -1,10 +1,34 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-	<meta charset="utf-8" />
-</head>
-<body>
+﻿<script src="Multiplayer.js"></script>
 
-</body>
-</html>
+    <div id="main_div" class="main_div" hidden>
+        <h1>Multiplayer Game</h1>
+        <div class="div_form">
+            <form type="game_form">
+                <label for="name">Games</label>
+                <select id="games" name="games">
+                </select>
+
+                <input class="game_input" id="btnJoinGame" type="button" value="Join Game">
+
+                <h2>Start New Game</h2>
+
+                <label for="rows">Name</label>
+                <input class="game_input" type="text" id="name" name="name" placeholder="Name.." value="">
+
+                <label for="rows">Rows</label>
+                <input class="game_input" type="text" id="rows" name="rows" placeholder="Rows.." value="">
+
+                <label for="cols">Cols</label>
+                <input class="game_input" type="text" id="cols" name="cols" placeholder="Cols.." value="">
+
+                <input class="game_input" id="btnStart" type="button" value="Start Game">
+
+            </form>
+        </div>
+        <div class="div_canvas"><canvas class="game_canvas" id="mazeCanvas" width="500" height="500"></canvas></div>
+        <div class="div_canvas"><canvas class="game_canvas" id="mazeCanvas" width="500" height="500"></canvas></div>
+    </div>
+
+    <img class="picture" id="bob" src="pics/bob.jpg" width="1" height="1">
+    <img class="picture" id="exit" src="pics/exit.jpg" width="1" height="1">
+

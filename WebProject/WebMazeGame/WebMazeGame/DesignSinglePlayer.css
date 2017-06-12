@@ -1,2 +1,32 @@
 ﻿body {
 }
+
+.div_main{
+    float:left;
+    padding:20px;
+}
+
+.div_form{
+    width: 25%;
+    float:left;
+}
+
+.div_canvas{
+    padding-left: 5%;
+     float:left;
+}
+
+.game_input {
+    width: 50%;
+}
+
+.game_canvas {   
+    border-width: 2px;
+    border-color: black;
+    border-style:solid;
+    background-color:white;
+}
+
+.picture{
+    visibility:hidden;
+}

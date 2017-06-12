@@ -15,6 +15,7 @@ li {
 }
 
 li a {
+    cursor:pointer;
     display: block;
     color: white;
     text-align: center;

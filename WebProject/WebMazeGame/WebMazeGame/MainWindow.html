@@ -3,36 +3,28 @@
 <head>
     <title></title>
     <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="DesignSinglePlayer.css" />
+    <link rel="stylesheet" type="text/css" href="DesignUserRankings.css" />
     <link rel="stylesheet" type="text/css" href="DesignMainWindow.css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script>
+    <link rel="stylesheet" type="text/css" href="DesignHome.css" />
+    <link rel="stylesheet" type="text/css" href="Form.css" />
+    <link rel="stylesheet" type="text/css" href="Titles.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script> 
+    <script src="HomeLoad.js"></script>
 
-        $(function () {
-            $('#nav li a').on('click', function (e) {
-                e.preventDefault();
-                var page = $(this).attr('href');
-                $('#content').load(page);
-            });
-        });
-    </script>
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script>
-        $(function myfunc() {
-            $('#content').load("Home.html");
-        });
-    </script>
 </head>
-<body onload="myfunc">
+<body onload="press('Home.html')">
     <div id="nav">
         <ul>
-            <li><a id="default" href="Home.html">Maze</a></li>
-            <li><a href="SignlePlayerWindow.html">Single Game</a></li>
-            <li><a href="MultiplayerWindow.html">Multiplayer Game</a></li>
-            <li><a href="Settings.html">Settings</a></li>
-            <li><a href="UserRankings.html">User Rankings</a></li>
-            <li style="float:right"><a class="sidebar" href="Login.html">Login</a></li>
-            <li style="float:right"><a class="sidebar" href="Register.html">Register</a></li>
+            <li><a id="default" onclick="press('Home.html')">Maze</a></li>
+            <li><a onclick="press('SinglePlayerWindow.html')">Single Game</a></li>
+            <li><a onclick="press('MultiplayerWindow.html')">Multiplayer Game</a></li>
+            <li><a onclick="press('Settings.html')">Settings</a></li>
+            <li><a onclick="press('UserRankings.html')" >User Rankings</a></li>
+            <li style="float:right"><a class="sidebar" onclick="press('Login.html')">Login</a></li>
+            <li style="float:right"><a class="sidebar" onclick="press('Register.html')">Register</a></li>
         </ul>
     </div>
     <div id="content">

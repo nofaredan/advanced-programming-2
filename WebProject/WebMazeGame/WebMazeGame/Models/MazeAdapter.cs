@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SearchAlgorithmsLib;
 using MazeLib;
 
-namespace MazeProject
+namespace WebMazeGame
 {
     public class MazeAdapter : ISearchable<Position>
     {
@@ -19,7 +19,7 @@ namespace MazeProject
         public MazeAdapter(Maze myMaze)
         {
             maze = myMaze;
-            State<Position>.StatePool.initDictionary();
+            State<Position>.StatePool.InitDictionary();
         }
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace MazeProject
         /// </summary>
         /// <param name="state">The state.</param>
         /// <returns></returns>
-        public List<State<Position>> getAllPossibleStates(State<Position> state)
+        public List<State<Position>> GetAllPossibleStates(State<Position> state)
         {
             State<Position> tempState;
             Position position = new Position();
@@ -47,7 +47,7 @@ namespace MazeProject
                 {
                     position.Row = state.GetState().Row + arr[i, 0];
                     position.Col = state.GetState().Col + arr[i, 1];
-                    tempState = State<Position>.StatePool.getState(position, 1);
+                    tempState = State<Position>.StatePool.GetState(position, 1);
                     list.Add(tempState);
                 }
             }
@@ -63,18 +63,18 @@ namespace MazeProject
         /// Gets the state of the i goall.
         /// </summary>
         /// <returns></returns>
-        public State<Position> getIGoallState()
+        public State<Position> GetIGoallState()
         {
-            return State<Position>.StatePool.getState(maze.GoalPos, 1);
+            return State<Position>.StatePool.GetState(maze.GoalPos, 1);
         }
 
         /// <summary>
         /// Gets the initial state.
         /// </summary>
         /// <returns></returns>
-        public State<Position> getInitialState()
+        public State<Position> GetInitialState()
         {
-            return State<Position>.StatePool.getState(maze.InitialPos, 1);
+            return State<Position>.StatePool.GetState(maze.InitialPos, 1);
         }
     }
 }
