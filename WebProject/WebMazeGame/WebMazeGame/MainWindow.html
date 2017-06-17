@@ -17,14 +17,14 @@
 </head>
 <body onload="press('Home.html')">
     <div id="nav">
-        <ul>
+        <ul id="buttons">
             <li><a id="default" onclick="press('Home.html')">Maze</a></li>
-            <li><a onclick="press('SinglePlayerWindow.html')">Single Game</a></li>
-            <li><a onclick="press('MultiplayerWindow.html')">Multiplayer Game</a></li>
+            <li><a onclick="pressIfIn('SinglePlayerWindow.html')">Single Game</a></li>
+            <li><a  onclick="pressIfIn('MultiplayerWindow.html')">Multiplayer Game</a></li>
             <li><a onclick="press('Settings.html')">Settings</a></li>
             <li><a onclick="press('UserRankings.html')" >User Rankings</a></li>
-            <li style="float:right"><a class="sidebar" onclick="press('Login.html')">Login</a></li>
-            <li style="float:right"><a class="sidebar" onclick="press('Register.html')">Register</a></li>
+            <li style="float:right"><a id="login" class="sidebar" onclick="pressForLogIn()">Login</a></li>
+            <li style="float:right"><a id="register" class="sidebar" onclick="choosePress('Register.html')">Register</a></li>
         </ul>
     </div>
     <div id="content">

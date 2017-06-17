@@ -4,13 +4,14 @@
         <h2>Use a local account to log in.</h2>
         <form>
             <label for="fname">Username</label>
-            <input type="text" id="fname" name="username" placeholder="Your username..">
+            <input type="text" id="username" name="username" placeholder="Your username.." required>
 
             <label for="lname">Password</label>
-            <input type="password" id="lname" name="password" placeholder="Your password..">
+            <input type="password" id="password" name="password" placeholder="Your password.." required>
 
-            <input type="submit" value="Login">
+            <input id ="btnLogIn" type="button" value="Login">
+            <input id="submit_handle" type="submit" style="display: none" value="submit">
+            <h2><button id="register">Register as a new user</button></h2>
 
-            <h2><button>Register as a new user</button></h2>
         </form>
     </div>
