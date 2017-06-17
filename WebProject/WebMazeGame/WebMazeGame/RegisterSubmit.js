@@ -1,33 +1,40 @@
 ﻿$("#btnAddUser").click(function () {
+
     var user = {
         Name: $("#username").val(),
         Password: $("#password").val(),
         Email: $("#email").val()
     };
-    alert("Product added successfully");
+
+    var inputs = document.getElementsByTagName('input');
+    for (var i = 0; i < inputs.length; ++i) {
+        if (inputs[i].value == '') {
+            $('#submit_handle').click();
+            return;
+        }
+    }
+
+    // check if the passwords match
+    if (user.Password != $("#confirmPassword").val()){
+        alert("the passwords don't match");
+        return;
+    }
+    alert("send request server");
     $.post("api/Users/AddUser", user)
-    .done(function () {
-        alert("done!");
-        localStorage.userName = $("#username").val();
-        $('#content').load("Home.html");
+        .done(function (data) {
+        // if the user exists
+        if (data == "exist") {
+            alert("This user already exists");
+        } else {
+            // a new user is created
+            localStorage.userName = $("#username").val();
+
+            // load main manu
+           $('#content').load("Home.html");
+            var buttonLogIn = document.getElementById("login");
+            buttonLogIn.innerHTML = "Log off";
+            sessionStorage.setItem("ifUserIn", "yes");
+            document.getElementById("register").innerHTML = "hello " + user.Name;
+        }
     });
 });
-
-
-
-/*function onPress() {
-    alert("Product added successfully");
-    var user = {
-        Name: $("#username").val(),
-        Password: $("#password").val(),
-        Email: $("#email").val()
-    };
-    alert("Product2 added successfully");
-    $.post("api/User", user)
-    .done(function () {
-        alert("Product3 added successfully");
-        localStorage.userName = $("#username").val();
-        $('#content').load("Home.html");
-    });
-};*/
-

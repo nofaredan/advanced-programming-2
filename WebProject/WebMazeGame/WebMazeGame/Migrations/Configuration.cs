@@ -16,7 +16,7 @@ namespace WebMazeGame.Migrations
         protected override void Seed(WebMazeGame.Models.WebMazeGameContext context)
         {
             context.Users.AddOrUpdate(x => x.Id,
-           new User { Id = 1, Name = "aa", Password = "aaa", Email = "rr@gmail.com" });
+           new User { Id = 1, Name = "aa", Password = "aaa", Email = "rr@gmail.com", DateRegister = DateTime.Now, Wins = 0, Losses = 0 });
         }
     }
 }

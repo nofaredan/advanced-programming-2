@@ -124,6 +124,7 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Scripts\jquery.signalR-2.1.2.js" />
     <Content Include="Scripts\jquery.signalR-2.1.2.min.js" />
+    <Content Include="UserRankings.js" />
     <Content Include="web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -186,9 +187,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706161020334_Initial.cs" />
-    <Compile Include="Migrations\201706161020334_Initial.Designer.cs">
-      <DependentUpon>201706161020334_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201706170931125_initial.cs" />
+    <Compile Include="Migrations\201706170931125_initial.Designer.cs">
+      <DependentUpon>201706170931125_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Game.cs" />
@@ -207,8 +208,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706161020334_Initial.resx">
-      <DependentUpon>201706161020334_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706170931125_initial.resx">
+      <DependentUpon>201706170931125_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

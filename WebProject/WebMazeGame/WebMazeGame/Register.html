@@ -4,17 +4,18 @@
         <h2>Create a local account to register.</h2>
         <form id="registerForm">
             <label for="fname">Username</label>
-            <input type="text" id="username" name="username" placeholder="Your username..">
+            <input type="text" id="username" name="username" placeholder="Your username.." required>
 
             <label for="lname">Password</label>
-            <input type="password" id="password" name="password" placeholder="Your password..">
+            <input type="password" id="password" name="password" placeholder="Your password.." required>
 
             <label for="lname">Confirm password</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password..">
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password.." required>
 
             <label for="lname">Email</label>
-            <input type="text" id="email" name="email" placeholder="Your email..">
+            <input type="text" id="email" name="email" placeholder="Your email.." required>
 
             <input id ="btnAddUser" type="button" value="Register">
+            <input id="submit_handle" type="submit" style="display: none" value="submit">
         </form>
     </div>

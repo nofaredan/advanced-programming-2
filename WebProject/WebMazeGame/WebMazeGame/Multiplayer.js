@@ -1,4 +1,29 @@
-﻿loadList();
+﻿/*
+note to Nofar:
+---------------------------------------
+to update a winner use:
+    var user = {
+        Name: "ana"
+    };
+    $.post("api/Users/UpdateWinner", user)
+        .done(function (data) {
+            alert("done!");
+    });
+** You just need to send the name.
+----------------------------------------
+to update the looser use:
+    var user = {
+        Name: "ana"
+    };
+    $.post("api/Users/UpdateLooser", user)
+        .done(function (data) {
+     });
+(send the looser's name to the function inside the object: user)
+------------------------------------------
+*/
+
+
+loadList();
 
 function loadList() {
     alert("in load");
