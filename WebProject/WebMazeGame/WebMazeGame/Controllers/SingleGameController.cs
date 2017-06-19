@@ -23,8 +23,10 @@ namespace WebMazeGame.Controllers
             JObject obj = JObject.Parse(maze.ToJSON());
             return Ok(obj);
         }
-        [HttpPost()]
-        [Route("api/SingleGame/SolveMaze")]        public IHttpActionResult SolveMaze(SolveRequest solveRequest)
+
+        [HttpPost()]
+        [Route("api/SingleGame/SolveMaze")]
+        public IHttpActionResult SolveMaze(SolveRequest solveRequest)
         {
             string searchAlgo = "1";
             if (solveRequest.SearchAlgo == "BFS")
@@ -40,6 +42,7 @@ namespace WebMazeGame.Controllers
              solutionObj["Solution"] = strSolution;
 
              return Ok(solutionObj);
-        }
+        }
+
     }
 }
