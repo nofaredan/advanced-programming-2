@@ -1,12 +1,13 @@
-﻿<script src="Multiplayer.js"></script>
-
+﻿<script src="Scripts/jquery.signalR-2.2.2.js"></script>
+<script src="signalr/hubs"></script>
+<script src="Multiplayer.js"></script>
+    <div id="start_load_div"></div>
     <div id="main_div" class="main_div" hidden>
         <h1>Multiplayer Game</h1>
         <div class="div_form">
             <form type="game_form">
                 <label for="name">Games</label>
-                <select id="games" name="games">
-                </select>
+                <select id="games" name="games"></select>
 
                 <input class="game_input" id="btnJoinGame" type="button" value="Join Game">
 
@@ -25,10 +26,11 @@
 
             </form>
         </div>
-        <div class="div_canvas"><canvas class="game_canvas" id="mazeCanvas" width="500" height="500"></canvas></div>
-        <div class="div_canvas"><canvas class="game_canvas" id="mazeCanvas" width="500" height="500"></canvas></div>
+        <div class="div_canvas"><canvas class="game_canvas" id="mazeCanvas_left" width="500" height="500"></canvas></div>
+        <div class="div_canvas"><canvas class="game_canvas" id="mazeCanvas_right" width="500" height="500"></canvas></div>
     </div>
 
     <img class="picture" id="bob" src="pics/bob.jpg" width="1" height="1">
     <img class="picture" id="exit" src="pics/exit.jpg" width="1" height="1">
+    <img class="picture" id="purple" src="pics/purple.jpg" width="1" height="1">
 

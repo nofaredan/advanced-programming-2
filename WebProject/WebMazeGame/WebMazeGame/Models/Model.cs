@@ -8,13 +8,14 @@ using MazeGeneratorLib;
 using SearchAlgorithmsLib;
 using System.Net.Sockets;
 using WebMazeGame.Models;
+using Newtonsoft.Json.Linq;
 
 namespace WebMazeGame
 {
     public static class Model
     {
         private static Dictionary<string, Maze> singleplayerMazeList = new Dictionary<string, Maze>();
-        public static Dictionary<string, MultiMaze> MultiplayerMazeList=new Dictionary<string, MultiMaze>();
+        public static Dictionary<string, GameInfo> MultiplayerMazeList=new Dictionary<string, GameInfo>();
        private static Dictionary<Maze, SolveInfo> solutionsList = new Dictionary<Maze, SolveInfo>();
        // Controller controller;
 
@@ -90,7 +91,8 @@ namespace WebMazeGame
             solutionsList.Add(maze, solveInfo);
             return solveInfo;
         }
-/*
+
+
         /// <summary>
         /// Starts the game.
         /// </summary>
@@ -99,66 +101,106 @@ namespace WebMazeGame
         /// <param name="cols">The cols.</param>
         /// <param name="client">The client.</param>
         /// <returns></returns>
-        public bool StartGame(string name, int rows, int cols, TcpClient client)
+        public static JObject StartGame(GameInfo game)
         {
-            // if the game doesn't exist
-            if (MultiplayerMazeList.ContainsKey(name))
+            // if the game exist
+            if (MultiplayerMazeList.ContainsKey(game.Name))
             {
-                return true;
+                return null;
             }
+
             // generate
             DFSMazeGenerator dfsMazeGenerator = new DFSMazeGenerator();
-            Maze maze = dfsMazeGenerator.Generate(rows, cols);
-            maze.Name = name;
+            Maze maze = dfsMazeGenerator.Generate(game.Rows, game.Cols);
+            maze.Name = game.Name;
+
+            // add maze to game info
+            game.Maze = maze;
 
             // add to games
-            MazeGame game = new MazeGame(maze);
-            MultiplayerMazeList[name] = game;
+            //  MultiMaze game = new MultiMaze(maze);
+            MultiplayerMazeList[game.Name] = game;
 
-            game.AddPlayer(client, name);
+            // return maze
+            return JObject.Parse(maze.ToJSON());
+        }
 
-            if (MultiplayerMazeList.ContainsKey(name))
+        public static bool AddMultiPlayer(string game,string id)
+        {
+            // if the game exist
+            if (MultiplayerMazeList.ContainsKey(game))
             {
-                MultiplayerMazeList.Remove(name);
+                GameInfo currentGame = MultiplayerMazeList[game];
+                currentGame.Players.Add(id);
+
+                // game started
+                if (currentGame.Players.Count == 2)
+                {
+                    return true;
+                }
+                //return JObject.Parse(currentGame.Maze.ToJSON());
             }
 
             return false;
         }
-        */
+
+        public static void RemoveMultiGame(string game)
+        {
+            // cant be at game
+            MultiplayerMazeList.Remove(game);
+        }
+
         /// <summary>
         /// Shows the list.
         /// </summary>
         /// <returns></returns>
-        public static Dictionary<string, MultiMaze> ShowList()
+        public static Dictionary<string, GameInfo> ShowList()
         {
-            MultiplayerMazeList.Add("first game", null);
-            MultiplayerMazeList.Add("second game", null);
+            // returns only un-active games
+            Dictionary<string, GameInfo> tempList = new Dictionary<string, GameInfo>();
 
-            return MultiplayerMazeList;
+            foreach (KeyValuePair<string, GameInfo> entry in MultiplayerMazeList)
+            {
+                if (entry.Value.Players.Count < 2)
+                {
+                    tempList[entry.Key] = entry.Value;
+                }
+            }
+
+            return tempList;
         }
-        /*
+
+
+        public static string GetOpponent(string game, string id)
+        {
+            string opponent = null;
+            // if the game exist
+            if (MultiplayerMazeList.ContainsKey(game))
+            {
+                GameInfo currentGame = MultiplayerMazeList[game];
+                opponent = currentGame.GetOpponent(id);
+            }
+
+            return  opponent;
+        }
+
+        
         /// <summary>
         /// Joins the game.
         /// </summary>
         /// <param name="name">The name.</param>
         /// <param name="client">The client.</param>
         /// <returns></returns>
-        public string JoinGame(string name, TcpClient client)
+        public static JObject JoinGame(string name)
         {
             if (!MultiplayerMazeList.ContainsKey(name))
             {
-                return "invalid command";
-            }
-            MazeGame game = MultiplayerMazeList[name];
-
-            game.AddPlayer(client, name);
-
-            if (MultiplayerMazeList.ContainsKey(name))
-            {
-                MultiplayerMazeList.Remove(name);
+                return null;
             }
 
-            return "";
-        }*/
+            GameInfo game = MultiplayerMazeList[name];
+
+            return JObject.Parse(game.Maze.ToJSON()); ;
+        }
     }
 }

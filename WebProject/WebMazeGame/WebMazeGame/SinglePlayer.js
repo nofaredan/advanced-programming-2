@@ -1,4 +1,9 @@
-﻿var myMazeBoard;
+﻿// add plugin
+var imported = document.createElement('script');
+imported.src = 'CanvasPlugin.js';
+document.head.appendChild(imported);
+
+var myMazeBoard;
 var timer;
 var counter = 0;
 var animationSolve = false;
@@ -13,87 +18,16 @@ $("#btnStartGame").click(function () {
         , Rows: $("#rows").val()
         , Cols: $("#cols").val()
     };
+
+    // show loader
+    $("<div id= loader_div </div>").appendTo("#start_load_div");    $("<div class=\"loader\"></div>").appendTo("#loader_div");    $("<h2  class=\"loaderHeader\">Loading game..</h2>").appendTo("#loader_div");
+
     $.post("api/SingleGame/GenerateMaze", game)
-     .done(function (data) {         myMazeBoard = $("#mazeCanvas").mazeBoard(data, movePlayer);
+        .done(function (data) {            $("#start_load_div").remove();         myMazeBoard = $("#mazeCanvas").mazeBoard(data, movePlayer, "bob");
      });
 });
 
-(function ($) {
-
-    function DrawMazes(mazeCanvas, currentBoard) {
-        currentBoard.context = mazeCanvas.getContext("2d");
-        var rows = currentBoard.rows;
-        var cols = currentBoard.cols;
-        currentBoard.cellWidth = mazeCanvas.width / cols;
-        currentBoard.cellHeight = mazeCanvas.height / rows;
-        var cellWidth = currentBoard.cellWidth;
-        var cellHeight = currentBoard.cellHeight;
-
-        for (var i = 0; i < rows; i++) {
-            for (var j = 0; j < cols; j++) {
-                if (i == currentBoard.initPos.Row && j == currentBoard.initPos.Col) {
-                    currentBoard.context.drawImage(currentBoard.bob, cellWidth * j, cellHeight * i,
-                    cellWidth, cellHeight);
-                    currentBoard.currentRow = i;
-                    currentBoard.currentCol = j;
-                }
-                else if (i == currentBoard.goalPos.Row && j == currentBoard.goalPos.Col) {
-                    currentBoard.context.drawImage(currentBoard.exit, cellWidth * j, cellHeight * i,
-                 cellWidth, cellHeight);
-                }
-                else if (currentBoard.mazeArray[i][j] == 1) {
-                    currentBoard.context.fillRect(cellWidth * j, cellHeight * i,
-                   cellWidth, cellHeight);
-                }
-            }
-        }
-
-    };
-
-    function convertToMazeArr(strMaze, rows, cols) {
-        var maze = new Array();
-
-        var k = 0;
-        for (var i = 0; i < rows; i++) {
-            maze[i] = new Array();
-            for (var j = 0; j < cols; j++) {
-                if (strMaze.charAt(k) == '0')
-                    maze[i].push(0);
-                else if (strMaze.charAt(k) == '1')
-                    maze[i].push(1);
-                k++;
-            }
-        }
-        return maze;
-    }
-
-    $.fn.mazeBoard = function (data, callBackOnMove) {
-        var array = convertToMazeArr(data.Maze, data.Rows, data.Cols);
-        var currentBoard = {
-            mazeArray: array,
-            rows: data.Rows,
-            cols: data.Cols,
-            initPos: data.Start,
-            goalPos: data.End,
-            bob: document.getElementById("bob"),
-            exit: document.getElementById("exit"),
-            currentRow: 0,
-            currentCol: 0,
-            context: null,
-            cellWidth: 0,
-            cellHeight: 0,
-            gameOn: true
-        };
-        DrawMazes(this[0], currentBoard);
-
-        document.addEventListener("keydown", callBackOnMove);
-        return currentBoard;
-    };
-})(jQuery);
-
-
 $("#btnSolve").click(function () {
-    alert("in btn");
     var solutionRequest = {
         Name: $("#name").val(),
         SearchAlgo: $("#search_algo_text").val()
