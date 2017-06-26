@@ -38,7 +38,7 @@ namespace WebMazeGame.Controllers
             user.Password = Hash(user.Password);
 
             // initialize attributes
-            user.Wins = 2; // <------------------ CHANGE!!!!!
+            user.Wins = 0;
             user.Losses = 0;
             user.DateRegister = DateTime.Now;
 
@@ -131,32 +131,6 @@ namespace WebMazeGame.Controllers
             return Ok(user);
         }
 
-     /*
-        // DELETE: api/Users/5
-        [ResponseType(typeof(User))]
-        public async Task<IHttpActionResult> DeleteUser(int id)
-        {
-            User user = await db.Users.FindAsync(id);
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            db.Users.Remove(user);
-            await db.SaveChangesAsync();
-
-            return Ok(user);
-        }
-        
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-        */
         private bool UserExists(string name)
         {
             return db.Users.Count(e => e.Name == name) > 0;

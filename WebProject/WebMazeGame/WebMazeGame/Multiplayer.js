@@ -1,37 +1,12 @@
-﻿/*
-note to Nofar:
----------------------------------------
-to update a winner use:
-    var user = {
-        Name: "ana"
-    };
-    $.post("api/Users/UpdateWinner", user)
-        .done(function (data) {
-            alert("done!");
-    });
-** You just need to send the name.
-----------------------------------------
-to update the looser use:
-    var user = {
-        Name: "ana"
-    };
-    $.post("api/Users/UpdateLooser", user)
-        .done(function (data) {
-     });
-(send the looser's name to the function inside the object: user)
-------------------------------------------
-*/
-
-var messagesHub;
+﻿var messagesHub;
 var dataMaze;
 var gameName;
 var MultiMazeBoard;
 var OpponentMazeBoard;
-const DOWN = 40;
-const RIGHT = 39;
-const LEFT = 37;
-const UP = 38;
-
+var DOWN_CODE = 40;
+var RIGHT_CODE = 39;
+var LEFT_CODE = 37;
+var UP_CODE = 38;
 
 // add plugin
 var imported = document.createElement('script');
@@ -175,14 +150,16 @@ function moveOneStep(key,board) {
         }
 
         board.gameOn = false;
+        document.removeEventListener("keydown", movePlayer);
     }
 }
 
 function updateWinOrLose(isWon) {
     document.removeEventListener("keydown", movePlayer);
-
+    alert("session " + sessionStorage.getItem("user"));
+    alert("localStorage.userName " + localStorage.userName);
     var user = {
-        Name: localStorage.userName
+        Name: sessionStorage.getItem("user")
     };
 
     var strPath;
@@ -215,16 +192,16 @@ function getNewRowAndCol(key, currentRowPlace, currentColPlace) {
     var newCol = currentColPlace;
 
     switch (key) {
-        case UP:
+        case UP_CODE:
             newRow -= 1;
             break;
-        case DOWN:
+        case DOWN_CODE:
             newRow += 1;
             break;
-        case LEFT:
+        case LEFT_CODE:
             newCol -= 1;
             break;
-        case RIGHT:
+        case RIGHT_CODE:
             newCol += 1;
             break;
     }
