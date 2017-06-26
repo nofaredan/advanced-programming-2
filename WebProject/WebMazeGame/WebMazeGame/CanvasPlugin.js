@@ -67,7 +67,13 @@
         DrawMazes(this[0], currentBoard);
 
         if (callBackOnMove != null) {
-            document.addEventListener("keydown", callBackOnMove);
+
+            $(document).off("keydown");
+            $(document).on('keydown', callBackOnMove);
+            //  document.detachEvent("keydown", callBackOnMove);
+          //  document.off("keydown");
+         //   document.on('keydown', callBackOnMove);
+           // document.addEventListener("keydown", callBackOnMove);
         }
 
         return currentBoard;

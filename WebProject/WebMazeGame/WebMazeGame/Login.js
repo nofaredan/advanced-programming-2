@@ -21,7 +21,7 @@
                 return;
             } else {
                 // save in session storage
-             //   sessionStorage.setItem("user", data.Name);
+                sessionStorage.setItem("user", data.Name);
                 // a new user is created
                 localStorage.userName = $("#username").val();
 

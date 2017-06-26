@@ -7,10 +7,10 @@ var myMazeBoard;
 var timer;
 var counter = 0;
 var animationSolve = false;
-const DOWN = 40;
-const RIGHT = 39;
-const LEFT = 37;
-const UP = 38;
+var DOWN = 40;
+var RIGHT = 39;
+var LEFT = 37;
+var UP = 38;
 
 $("#btnStartGame").click(function () {
     var game = {
@@ -23,8 +23,8 @@ $("#btnStartGame").click(function () {
     $("<div id= loader_div </div>").appendTo("#start_load_div");    $("<div class=\"loader\"></div>").appendTo("#loader_div");    $("<h2  class=\"loaderHeader\">Loading game..</h2>").appendTo("#loader_div");
 
     $.post("api/SingleGame/GenerateMaze", game)
-        .done(function (data) {            $("#start_load_div").remove();         myMazeBoard = $("#mazeCanvas").mazeBoard(data, movePlayer, "bob");
-     });
+        .done(function (data) {            $("#start_load_div").remove();            myMazeBoard = $("#mazeCanvas").mazeBoard(data, movePlayer, "bob");
+        });
 });
 
 $("#btnSolve").click(function () {
@@ -33,11 +33,11 @@ $("#btnSolve").click(function () {
         SearchAlgo: $("#search_algo_text").val()
     };
     $.post("api/SingleGame/SolveMaze", solutionRequest)
-    .done(function (solutionData) {
-        document.removeEventListener("keydown", movePlayer);
-        animationSolve = true;
-        solveMaze(solutionData.Solution);
-    });
+        .done(function (solutionData) {
+            document.removeEventListener("keydown", movePlayer);
+            animationSolve = true;
+            solveMaze(solutionData.Solution);
+        });
 });
 
 function solveMaze(solution) {
@@ -107,17 +107,18 @@ function moveOneStep(key) {
         }
 
         myMazeBoard.gameOn = false;
+        document.removeEventListener("keydown", movePlayer);
     }
 }
 
 function drawPlayer(oldRow, oldCol) {
     myMazeBoard.context.fillStyle = "#FFFFFF";
     myMazeBoard.context.fillRect(myMazeBoard.cellWidth * oldCol, myMazeBoard.cellHeight * oldRow,
-               myMazeBoard.cellWidth, myMazeBoard.cellHeight);
+        myMazeBoard.cellWidth, myMazeBoard.cellHeight);
 
     myMazeBoard.context.drawImage(myMazeBoard.bob, myMazeBoard.cellWidth * myMazeBoard.currentCol,
         myMazeBoard.cellHeight * myMazeBoard.currentRow,
-               myMazeBoard.cellWidth, myMazeBoard.cellHeight);
+        myMazeBoard.cellWidth, myMazeBoard.cellHeight);
 }
 
 function getNewRowAndCol(key, currentRowPlace, currentColPlace) {
