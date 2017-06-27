@@ -1,5 +1,5 @@
 ﻿$("#btnAddUser").click(function () {
-
+    // create a user
     var user = {
         Name: $("#username").val(),
         Password: $("#password").val(),
@@ -19,7 +19,6 @@
         alert("the passwords don't match");
         return;
     }
-    alert("send request server");
     $.post("api/Users/AddUser", user)
         .done(function (data) {
         // if the user exists
@@ -36,5 +35,7 @@
             sessionStorage.setItem("ifUserIn", "yes");
             document.getElementById("register").innerHTML = "hello " + user.Name;
         }
-    });
+        }).fail(function (jqXHR, textStatus, err) {
+            alert("Error: " + err);
+        });
 });

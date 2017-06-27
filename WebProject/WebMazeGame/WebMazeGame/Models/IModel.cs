@@ -9,6 +9,9 @@ using WebMazeGame.Models;
 
 namespace WebMazeGame
 {
+    /// <summary>
+    /// IModel
+    /// </summary>
     public interface IModel
     {
         /// <summary>

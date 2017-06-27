@@ -6,6 +6,9 @@ using System.Web;
 
 namespace WebMazeGame.Models
 {
+    /// <summary>
+    /// WebMazeGameContext class
+    /// </summary>
     public class WebMazeGameContext : DbContext
     {
         // You can add custom code to this file. Changes will not be overwritten.

@@ -11,8 +11,15 @@ using WebMazeGame.Models;
 
 namespace WebMazeGame.Controllers
 {
+    /// <summary>
+    /// MultiplayerController class
+    /// </summary>
     public class MultiplayerController : ApiController
     {
+        /// <summary>
+        /// Get the list
+        /// </summary>
+        /// <returns></returns>
         [HttpPost()]
         [Route("api/Multiplayer/GetList")]
         public IHttpActionResult GetList()
@@ -20,6 +27,11 @@ namespace WebMazeGame.Controllers
              return Ok(JsonConvert.SerializeObject(Model.ShowList().Keys.ToArray()));
         }
 
+        /// <summary>
+        /// Start game
+        /// </summary>
+        /// <param name="game"></param>
+        /// <returns></returns>
         [HttpPost()]
         [Route("api/Multiplayer/Start")]
         public IHttpActionResult Start(GameInfo game)
@@ -35,11 +47,16 @@ namespace WebMazeGame.Controllers
             return Ok(obj);
         }
 
+        /// <summary>
+        /// Join the game
+        /// </summary>
+        /// <param name="game"></param>
+        /// <returns></returns>
         [HttpPost()]
         [Route("api/Multiplayer/Join")]
         public IHttpActionResult Join(GameInfo game)
         {
-            // startgame
+            // start game
             JObject obj = Model.JoinGame(game.Name);
 
             if (obj == null)

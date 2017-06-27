@@ -1,5 +1,6 @@
 ﻿(function ($) {
 
+    // draw the maze
     function DrawMazes(mazeCanvas, currentBoard) {
         currentBoard.context = mazeCanvas.getContext("2d");
         var rows = currentBoard.rows;
@@ -9,8 +10,10 @@
         var cellWidth = currentBoard.cellWidth;
         var cellHeight = currentBoard.cellHeight;
 
+        // go over the rows and columns
         for (var i = 0; i < rows; i++) {
             for (var j = 0; j < cols; j++) {
+                // if the point is the starting point:
                 if (i == currentBoard.initPos.Row && j == currentBoard.initPos.Col) {
                     currentBoard.context.drawImage(currentBoard.bob, cellWidth * j, cellHeight * i,
                         cellWidth, cellHeight);
@@ -30,12 +33,16 @@
 
     };
 
+    // convert to maze array
     function convertToMazeArr(strMaze, rows, cols) {
         var maze = new Array();
 
         var k = 0;
+        // go over the rows
         for (var i = 0; i < rows; i++) {
             maze[i] = new Array();
+
+            // go over the columns
             for (var j = 0; j < cols; j++) {
                 if (strMaze.charAt(k) == '0')
                     maze[i].push(0);
@@ -49,6 +56,7 @@
 
     $.fn.mazeBoard = function (data, callBackOnMove, gif) {
         var array = convertToMazeArr(data.Maze, data.Rows, data.Cols);
+        // create current board instance:
         var currentBoard = {
             mazeArray: array,
             rows: data.Rows,
@@ -67,13 +75,9 @@
         DrawMazes(this[0], currentBoard);
 
         if (callBackOnMove != null) {
-
             $(document).off("keydown");
+            // create event of key down
             $(document).on('keydown', callBackOnMove);
-            //  document.detachEvent("keydown", callBackOnMove);
-          //  document.off("keydown");
-         //   document.on('keydown', callBackOnMove);
-           // document.addEventListener("keydown", callBackOnMove);
         }
 
         return currentBoard;

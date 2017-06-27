@@ -15,10 +15,18 @@ using WebMazeGame.Models;
 
 namespace WebMazeGame.Controllers
 {
+    /// <summary>
+    /// UsersController class
+    /// </summary>
     public class UsersController : ApiController
     {
         private WebMazeGameContext db = new WebMazeGameContext();
 
+        /// <summary>
+        /// Add user
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("api/Users/AddUser")]
         public async Task<IHttpActionResult> AddUser(User user)
@@ -49,6 +57,11 @@ namespace WebMazeGame.Controllers
             return Ok(user);
         }
 
+        /// <summary>
+        /// Hash function
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         static string Hash(string input)
         {
             using (SHA1Managed sha1 = new SHA1Managed())
@@ -66,6 +79,10 @@ namespace WebMazeGame.Controllers
             }
         }
 
+        /// <summary>
+        /// Update the winner 
+        /// </summary>
+        /// <param name="winner"></param>
         [HttpPost]
         [Route("api/Users/UpdateWinner")]
         public void UpdateWinner(User winner)
@@ -75,6 +92,10 @@ namespace WebMazeGame.Controllers
             db.SaveChanges();
         }
 
+        /// <summary>
+        /// Update the looser
+        /// </summary>
+        /// <param name="looser"></param>
         [HttpPost]
         [Route("api/Users/UpdateLooser")]
         public void UpdateLooser(User looser)
@@ -84,6 +105,10 @@ namespace WebMazeGame.Controllers
             db.SaveChanges();
         }
 
+        /// <summary>
+        /// Create user ranking table
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         [Route("api/Users/CreateUserRankingTable")]
         public IEnumerable<User> CreateUserRankingTable()
@@ -92,6 +117,11 @@ namespace WebMazeGame.Controllers
             return db.Users.Where(e => (e.Wins >0 || e.Losses > 0)).ToArray();
         }
 
+        /// <summary>
+        /// Check user for log in
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("api/Users/CheckUserForLogIn")]
         public IHttpActionResult CheckUserForLogIn(User user)
@@ -112,13 +142,20 @@ namespace WebMazeGame.Controllers
             return Ok(userFromTable);
         }
 
-        // GET: api/Users
+        /// <summary>
+        /// get users.
+        /// </summary>
+        /// <returns></returns>
         public IQueryable<User> GetUsers()
         {
             return db.Users;
         }
 
-        // GET: api/Users/5
+        /// <summary>
+        /// get a user.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [ResponseType(typeof(User))]
         public async Task<IHttpActionResult> GetUser(int id)
         {
@@ -131,6 +168,11 @@ namespace WebMazeGame.Controllers
             return Ok(user);
         }
 
+        /// <summary>
+        /// Chechs if a user exists
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         private bool UserExists(string name)
         {
             return db.Users.Count(e => e.Name == name) > 0;

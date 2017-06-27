@@ -6,6 +6,9 @@ using WebMazeGame.Models;
 
 namespace WebMazeGame.Models
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class MultiUser
     {
         public GameInfo info { get; set; }

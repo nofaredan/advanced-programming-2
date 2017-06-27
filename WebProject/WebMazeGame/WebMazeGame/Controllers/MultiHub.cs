@@ -6,8 +6,15 @@ using Microsoft.AspNet.SignalR;
 
 namespace WebMazeGame
 {
+    /// <summary>
+    /// MultiHub class
+    /// </summary>
     public class MultiHub : Hub
     {
+        /// <summary>
+        /// Connect
+        /// </summary>
+        /// <param name="gameName"></param>
         public void Connect(string gameName)
         {
            bool isGameStarted = Model.AddMultiPlayer(gameName, Context.ConnectionId);
@@ -23,7 +30,11 @@ namespace WebMazeGame
                 Clients.Client(Context.ConnectionId).gotMessage("start");
             }
         }
-
+        /// <summary>
+        /// Send message
+        /// </summary>
+        /// <param name="gameName"></param>
+        /// <param name="keyMove"></param>
         public void SendMessage(string gameName, string keyMove)
         {
             string recipientId = Model.GetOpponent(gameName, Context.ConnectionId);

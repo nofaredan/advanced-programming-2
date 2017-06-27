@@ -6,6 +6,9 @@ using System.Web;
 
 namespace WebMazeGame.Models
 {
+    /// <summary>
+    /// User class
+    /// </summary>
     public class User
     {
         public int Id { set; get; }

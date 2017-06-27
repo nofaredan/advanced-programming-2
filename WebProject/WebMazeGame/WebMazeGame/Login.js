@@ -1,4 +1,5 @@
 ﻿$("#btnLogIn").click(function () {
+    // create a user
     var user = {
         Name: $("#username").val(),
         Password: $("#password").val(),
@@ -6,6 +7,7 @@
     };
 
     var inputs = document.getElementsByTagName('input');
+    // go over the input and check if it's empty
     for (var i = 0; i < inputs.length; ++i) {
         if (inputs[i].value == '') {
             $('#submit_handle').click();
@@ -32,5 +34,7 @@
                 sessionStorage.setItem("ifUserIn", "yes");
                 document.getElementById("register").innerHTML = "hello " + data.Name;
             }
+        }).fail(function (jqXHR, textStatus, err) {
+            alert("Error: " + err);
         });
 });
