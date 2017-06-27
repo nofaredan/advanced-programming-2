@@ -144,6 +144,10 @@ namespace WebMazeGame
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="game"></param>
         public static void RemoveMultiGame(string game)
         {
             // cant be at game
@@ -170,7 +174,12 @@ namespace WebMazeGame
             return tempList;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="game"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static string GetOpponent(string game, string id)
         {
             string opponent = null;
@@ -199,7 +208,6 @@ namespace WebMazeGame
             }
 
             GameInfo game = MultiplayerMazeList[name];
-
             return JObject.Parse(game.Maze.ToJSON()); ;
         }
     }

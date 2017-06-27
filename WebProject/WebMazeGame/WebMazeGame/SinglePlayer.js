@@ -20,13 +20,21 @@ $("#btnStartGame").click(function () {
     };
 
     // show loader
-    $("<div id= loader_div </div>").appendTo("#start_load_div");    $("<div class=\"loader\"></div>").appendTo("#loader_div");    $("<h2  class=\"loaderHeader\">Loading game..</h2>").appendTo("#loader_div");
+    $("<div id= loader_div </div>").appendTo("#start_load_div");
+    $("<div class=\"loader\"></div>").appendTo("#loader_div");
+    $("<h2  class=\"loaderHeader\">Loading game..</h2>").appendTo("#loader_div");
 
     $.post("api/SingleGame/GenerateMaze", game)
-        .done(function (data) {            $("#start_load_div").remove();            myMazeBoard = $("#mazeCanvas").mazeBoard(data, movePlayer, "bob");
-        });
+
+        (function (data) {
+            $("#start_load_div").remove();
+            myMazeBoard = $("#mazeCanvas").mazeBoard(data, movePlayer, "bob");
+        }).fail(function (jqXHR, textStatus, err) {
+            alert("Error: " + err);
+        });;
 });
 
+// click on solve button
 $("#btnSolve").click(function () {
     var solutionRequest = {
         Name: $("#name").val(),
@@ -34,31 +42,34 @@ $("#btnSolve").click(function () {
     };
     $.post("api/SingleGame/SolveMaze", solutionRequest)
         .done(function (solutionData) {
+            // remove the event of click
             document.removeEventListener("keydown", movePlayer);
             animationSolve = true;
             solveMaze(solutionData.Solution);
-        });
+        }).fail(function (jqXHR, textStatus, err) {
+            alert("Error: " + err);
+        });;
 });
 
+// solve the maze
 function solveMaze(solution) {
     timer = setInterval(moveSolvePlayer, 150, solution);
-    alert("first timer " + timer);
 }
 
+// move the player
 function moveSolvePlayer(solution) {
     if (myMazeBoard.gameOn) {
         moveOneStep(numberToKeyDirection(solution, counter));
         counter++;
     }
     else {
-        alert("last timerbefore clear " + timer);
         clearInterval(timer);
         counter = 0;
         animationSolve = false;
-        alert("last timer " + timer);
     }
 }
 
+// get the key
 function numberToKeyDirection(solution, i) {
     switch (solution.charAt(i)) {
         case '0':
@@ -76,14 +87,17 @@ function numberToKeyDirection(solution, i) {
     }
 }
 
+// draw the maze
 function drawMaze(maze) {
     var myCanvas = document.getElementById("mazeCanvas");
 }
 
+// move the player
 function movePlayer(event) {
     moveOneStep(event.keyCode);
 }
 
+// move the player one step
 function moveOneStep(key) {
     var lastRow = myMazeBoard.currentRow;
     var lastCol = myMazeBoard.currentCol;
@@ -111,6 +125,7 @@ function moveOneStep(key) {
     }
 }
 
+// draw the player
 function drawPlayer(oldRow, oldCol) {
     myMazeBoard.context.fillStyle = "#FFFFFF";
     myMazeBoard.context.fillRect(myMazeBoard.cellWidth * oldCol, myMazeBoard.cellHeight * oldRow,
@@ -121,6 +136,7 @@ function drawPlayer(oldRow, oldCol) {
         myMazeBoard.cellWidth, myMazeBoard.cellHeight);
 }
 
+// get new row and column
 function getNewRowAndCol(key, currentRowPlace, currentColPlace) {
     var arrResult = new Array(2);
     var newRow = currentRowPlace;

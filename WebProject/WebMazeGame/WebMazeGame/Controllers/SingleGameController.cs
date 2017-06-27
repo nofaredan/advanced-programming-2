@@ -11,10 +11,18 @@ using WebMazeGame.Models;
 
 namespace WebMazeGame.Controllers
 {
+    /// <summary>
+    /// SingleGameController class
+    /// </summary>
     public class SingleGameController : ApiController
     {
         private static Maze maze;
 
+        /// <summary>
+        /// GenerateMaze class
+        /// </summary>
+        /// <param name="game"></param>
+        /// <returns></returns>
         [HttpPost()]
         [Route("api/SingleGame/GenerateMaze")]
         public IHttpActionResult GenerateMaze(Game game)
@@ -24,6 +32,11 @@ namespace WebMazeGame.Controllers
             return Ok(obj);
         }
 
+        /// <summary>
+        /// Solve the maze 
+        /// </summary>
+        /// <param name="solveRequest"></param>
+        /// <returns></returns>
         [HttpPost()]
         [Route("api/SingleGame/SolveMaze")]
         public IHttpActionResult SolveMaze(SolveRequest solveRequest)

@@ -782,7 +782,8 @@
 
             if (connection.state === signalR.connectionState.connecting) {
                 // Connection hasn't been started yet
-                throw new Error("SignalR: Connection has not been fully initialized. Use .start().done() or .start().fail() to run logic after the connection has started.");
+                throw new Error("SignalR: Connection has not been fully initialized. Use .start()
+() or .start().fail() to run logic after the connection has started.");
             }
 
             connection.transport.send(connection, data);

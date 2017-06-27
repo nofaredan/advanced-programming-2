@@ -30,7 +30,7 @@ function choosePress(site) {
     // if the user is in, do nothing
 }
 
+// press function
 function press(site) {
-   
     $('#content').load(site);
 };

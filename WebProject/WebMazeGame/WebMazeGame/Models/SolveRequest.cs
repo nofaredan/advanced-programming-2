@@ -5,6 +5,9 @@ using System.Web;
 
 namespace WebMazeGame.Models
 {
+    /// <summary>
+    /// SolveRequest
+    /// </summary>
     public class SolveRequest
     {
         public string Name { get; set; }

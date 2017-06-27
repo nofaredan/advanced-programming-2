@@ -8,6 +8,9 @@ using MazeLib;
 
 namespace WebMazeGame
 {
+    /// <summary>
+    /// 
+    /// </summary>
 	public class SolveInfo
 	{
 		int nodesEvaluated;

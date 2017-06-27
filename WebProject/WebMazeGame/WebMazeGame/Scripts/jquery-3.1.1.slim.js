@@ -3468,7 +3468,8 @@ function adoptValue( value, resolve, reject ) {
 
 		// Check for promise aspect first to privilege synchronous behavior
 		if ( value && jQuery.isFunction( ( method = value.promise ) ) ) {
-			method.call( value ).done( resolve ).fail( reject );
+			method.call( value )
+( resolve ).fail( reject );
 
 		// Other thenables
 		} else if ( value && jQuery.isFunction( ( method = value.then ) ) ) {
